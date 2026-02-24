@@ -1,6 +1,285 @@
-*{
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+  * {
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
+        /* Первый блок на весь экран */
+        .block-1 {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Слайдер на фоне (псевдоэлемент) */
+        .block-1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+
+        /* Шапка */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 13%;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.623));
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 24px 40px 40px;
+            border: 1px solid #14a333;
+        }
+
+        /* Левый блок с информацией о расстоянии */
+        .header-left {
+            width: 33%;
+            height: 100%;
+            border: 1px solid #2b018d;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: flex-end; */
+        }
+
+        .distance-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .distance-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .distance-row h4 {
+            font-size: 16px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .city-text {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.9;
+            color: #A5B1D2;
+            margin-left: 19px; /* Отступ, чтобы текст начинался под буквой "9" */
+            line-height: 1.2;
+        }
+
+        /* Центральный блок с навигацией */
+        .header-center {
+            border: 1px solid #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .logo {
+            font-size: 16px;
+            font-weight: 700;
+            border: 1px solid #1f1a1a;
+        }
+
+        .nav-menu {
+            
+            border: 1px solid #ff6b6b;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 12px;
+            color: #B8C5E9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Правый блок с контактами */
+        .header-right {
+            width: 33%;
+            height: 100%;
+            border: 1px solid #2b018d;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        .phone-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .phone-info p {
+            font-size: 20px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .help-info {
+
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+        }
+
+        .help-info p {
+            margin: 0;
+            font-size: 12px;
+            color: #B8C5E9;
+        }
+
+        .help-icons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Блок справа по центру */
+        .right-center {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30%;
+            height: 30%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            z-index: 5;
+        }
+
+        /* Блок слева снизу */
+        .left-bottom {
+            position: absolute;
+            left: 5%;
+            bottom: 5%;
+            width: 30%;
+            height: 30%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            z-index: 5;
+        }
+
+        /* Второй блок на весь экран */
+        .block-2 {
+            height: 100vh;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        /* Третий блок 200vh */
+        .block-3 {
+            height: 200vh;
+            background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+            position: relative;
+        }
+
+        /* Футер */
+        .footer {
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 20;
+        }
+
+        /* Контент для третьего блока */
+        .block-3-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            padding-bottom: 100px;
+        }
+
+        /* Дополнительные стили для наглядности */
+        .center-text {
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Стили для карточек bootstrap */
+        .card {
+            background: rgba(255, 255, 255, 0.9) !important;
+            color: #333 !important;
+        }
+
+        .row {
+            width: 80%;
+            margin-bottom: 50px !important;
+        }
