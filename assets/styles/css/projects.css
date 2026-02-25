@@ -425,3 +425,10 @@ sup{
     border-radius: 24px;
     padding-bottom: 33px;
 }
+.contact-text{
+    background-image: url(../../img/back\ map.png);
+}
+.contact-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
