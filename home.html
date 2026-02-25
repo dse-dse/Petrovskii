@@ -79,14 +79,12 @@
                                     d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z"
                                     fill="currentColor" />
                             </svg></a>
-
                     </div>
                 </div>
             </div>
         </header>
 
         <div class="hero__main">
-            <span class="hero__tag hero__tag--left">2026, Chelyabinsk</span>
             <div class="hero__tag hero__tag--right">
                 <span>ОТ СК ООО “МОНТАЖРЕМОНТ”</span>
                 <span>В посёлке «ПЕТРОВСКИЙ 2»</span>
@@ -95,6 +93,23 @@
             <div class="hero__content">
                 <p class="hero__subtitle">СТРОИТЕЛЬСТВО ДОМОВ В ЧЕЛЯБИНСКЕ И ОБЛАСТИ</p>
                 <h1 class="hero__title">ВАШ ИДЕАЛЬНЫЙ<br>БАЛАНС ПРИРОДЫ<br><span>И КОМФОРТА</span></h1>
+
+                <!-- Полоски слайдера - ПОД ЗАГОЛОВКОМ -->
+                <div class="hero__slider-bars">
+                    <div class="hero__slider-bar" data-index="0">
+                        <div class="hero__slider-progress"></div>
+                    </div>
+                    <div class="hero__slider-bar" data-index="1">
+                        <div class="hero__slider-progress"></div>
+                    </div>
+                    <div class="hero__slider-bar" data-index="2">
+                        <div class="hero__slider-progress"></div>
+                    </div>
+                    <div class="hero__slider-bar" data-index="3">
+                        <div class="hero__slider-progress"></div>
+                    </div>
+                </div>
+
                 <div class="hero__actions">
                     <button class="hero__btn hero__btn--primary">Связаться</button>
                     <button class="hero__btn hero__btn--outline">Наши проекты</button>
@@ -103,7 +118,7 @@
 
             <div class="hero__card">
                 <div class="hero__card-inner">
-                    <div class="hero__video-placeholder">[Сосал?]</div>
+                    <div class="hero__video-placeholder">[Видео]</div>
                     <div class="hero__house-header">
                         <h2 class="hero__house-title">Семейный</h2>
                         <span class="hero__house-area">76 м²</span>
@@ -135,7 +150,7 @@
                     </div>
                     <span class="hero__pagination-label">ПЕТРОВСКИЙ 2</span>
                 </div>
-                <span class="hero__big-number">01</span>
+                <span class="hero__big-number" id="currentSlideNumber">01</span>
             </div>
         </div>
     </section>
@@ -159,20 +174,20 @@
 
         <div class="about__content">
             <div class="about__numbers">
-                <span class="about__number about__number--lg">01</span>
-                <span class="about__number about__number--md">02</span>
-                <span class="about__number about__number--sm">03</span>
+                <span class="about__number about__number--lg" id="about-number-1" data-index="0">01</span>
+                <span class="about__number about__number--md" id="about-number-2" data-index="1">02</span>
+                <span class="about__number about__number--sm" id="about-number-3" data-index="2">03</span>
             </div>
             <div class="about__info">
                 <div class="about__titles">
-                    <h2 class="about__title">Комфорт.</h2>
-                    <h3 class="about__subtitle">Местоположение.</h3>
-                    <h3 class="about__subtitle">Жители.</h3>
+                    <h2 class="about__title" id="about-title-1" data-index="0">Комфорт.</h2>
+                    <h3 class="about__subtitle" id="about-title-2" data-index="1">Местоположение.</h3>
+                    <h3 class="about__subtitle" id="about-title-3" data-index="2">Жители.</h3>
                 </div>
-                <p class="about__caption">Ваш комфорт за пределами городской квартиры</p>
+                <p class="about__caption" id="about-caption">Ваш комфорт за пределами городской квартиры</p>
             </div>
             <hr style="background-color: #5E7291; width: 80%; height: 2px;" class="about__divider">
-            <p class="about__text">
+            <p class="about__text" id="about-text">
                 Мы продумали всё до мелочей: от эргономичных планировок с просторными кухнями-гостиными до <br>
                 современных инженерных систем. <br><br><br>
                 Жизнь в собственном доме больше не требует компромиссов с привычным уровнем сервиса и уюта.
@@ -183,6 +198,19 @@
                     Подобрать дом
                 </button>
                 <button class="about__btn about__btn--text">Посмотреть работы</button>
+            </div>
+        </div>
+
+        <!-- Полоски слайдера для about -->
+        <div class="about__slider-bars">
+            <div class="about__slider-bar" data-about-index="0">
+                <div class="about__slider-progress"></div>
+            </div>
+            <div class="about__slider-bar" data-about-index="1">
+                <div class="about__slider-progress"></div>
+            </div>
+            <div class="about__slider-bar" data-about-index="2">
+                <div class="about__slider-progress"></div>
             </div>
         </div>
 
@@ -218,7 +246,6 @@
                 <span class="about__help-dot"></span>
                 <span>Нужна помощь?</span>
                 <div class="about__help-icons">
-
                     <a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -228,8 +255,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-
         </div>
         <img class="about__image" src="assets/img/Rectangle 35.png" alt="Пример дома">
     </section>
@@ -333,6 +358,7 @@
                 </button>
             </div>
         </section>
+
         <section class="contact-form">
             <div class="contact-text">
                 <h1>СВЯЖИТЕСЬ С НАМИ — НАЧНЁМ ВАШ ПРОЕКТ УЖЕ СЕГОДНЯ</h1>
@@ -377,7 +403,6 @@
                                         d="M6.24686 15.919L6.24857 15.9181L6.25286 15.915L6.26571 15.9048L6.31629 15.867C6.35971 15.8341 6.42114 15.7861 6.50057 15.723C6.65829 15.5977 6.882 15.4132 7.149 15.1763C7.84989 14.555 8.50527 13.8806 9.10971 13.1585C10.5274 11.458 12 9.0313 12 6.25613C12 4.59832 11.3683 3.00717 10.2437 1.83382C9.6879 1.25305 9.0268 0.792033 8.29849 0.477308C7.57017 0.162584 6.78902 0.000368273 6 0C5.21101 0.000310056 4.42988 0.162456 3.70156 0.477103C2.97325 0.791751 2.31214 1.25269 1.75629 1.83337C0.630729 3.00949 -0.000615818 4.59954 4.5074e-07 6.25657C4.5074e-07 9.0313 1.47257 11.458 2.89029 13.1585C3.49473 13.8806 4.15011 14.555 4.851 15.1763C5.11843 15.4132 5.34171 15.5977 5.49943 15.723C5.5768 15.7848 5.65495 15.8455 5.73386 15.9052L5.74757 15.915L5.75143 15.9181L5.75314 15.919C5.901 16.027 6.099 16.027 6.24686 15.919ZM8.14286 6.22235C8.14286 6.81173 7.91709 7.37698 7.51523 7.79373C7.11337 8.21049 6.56832 8.44462 6 8.44462C5.43168 8.44462 4.88663 8.21049 4.48477 7.79373C4.08291 7.37698 3.85714 6.81173 3.85714 6.22235C3.85714 5.63297 4.08291 5.06773 4.48477 4.65097C4.88663 4.23421 5.43168 4.00008 6 4.00008C6.56832 4.00008 7.11337 4.23421 7.51523 4.65097C7.91709 5.06773 8.14286 5.63297 8.14286 6.22235Z"
                                         fill="#2C2F37" />
                                 </svg>
-
                                 г. Челябинск, ул. Энгельса 79А</p>
                         </div>
                     </div>
@@ -414,8 +439,8 @@
     <!-- Футер -->
     <footer class="footer">
         <hr>
-        <div></div> <!-- Пустой div для соблюдения структуры flex -->
-        <nav class="footer__nav"> <!-- Изменен класс с hero__nav на footer__nav -->
+        <div></div>
+        <nav class="footer__nav">
             <a href="home.html">КЛИЕНТАМ </a>
             <a href="#">О СОЮЗЕ</a>
             <a href="projects.html">ПРОЕКТЫ</a>
@@ -423,17 +448,271 @@
         </nav>
         <div class="footer__help">
             <span>Нужна помощь?</span>
-            <div class="footer__help-icons"> <!-- Изменен класс для стилизации -->
+            <div class="footer__help-icons">
                 <a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z"
                             fill="currentColor" />
                     </svg></a>
-               
             </div>
         </div>
     </footer>
+
+    <script>
+        // Слайдер для hero фона
+        class HeroSlider {
+            constructor() {
+                this.heroSection = document.querySelector('.hero');
+                this.sliderBars = document.querySelectorAll('.hero__slider-bar');
+                this.currentSlideSpan = document.getElementById('currentSlideNumber');
+                this.totalSlidesSpan = document.querySelector('.hero__pagination-number');
+                this.totalSlides = this.sliderBars.length;
+                
+                this.images = [
+                    'assets/img/image 4.png',
+                    'assets/img/image 5.png',
+                    'assets/img/image 6.png',
+                    'assets/img/image 7.png',
+                    'assets/img/image 8.png'
+                ];
+                
+                this.currentSlide = 0;
+                this.intervalTime = 10000;
+                this.interval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                if (!this.heroSection) return;
+                
+                if (this.totalSlidesSpan) {
+                    this.totalSlidesSpan.textContent = `/ ${this.totalSlides.toString().padStart(2, '0')}`;
+                }
+                
+                this.heroSection.style.backgroundImage = `url('${this.images[0]}')`;
+                this.startSlider();
+                
+                this.sliderBars.forEach((bar, index) => {
+                    bar.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                const sliderBars = document.querySelector('.hero__slider-bars');
+                if (sliderBars) {
+                    sliderBars.addEventListener('mouseenter', () => this.pauseSlider());
+                    sliderBars.addEventListener('mouseleave', () => this.startSlider());
+                }
+            }
+            
+            startSlider() {
+                if (this.interval) clearInterval(this.interval);
+                this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
+                this.updateActiveBar();
+            }
+            
+            pauseSlider() {
+                clearInterval(this.interval);
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlide();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateSlide();
+            }
+            
+            updateSlide() {
+                this.heroSection.style.backgroundImage = `url('${this.images[this.currentSlide]}')`;
+                
+                if (this.currentSlideSpan) {
+                    this.currentSlideSpan.textContent = (this.currentSlide + 1).toString().padStart(2, '0');
+                }
+                
+                this.updateActiveBar();
+                this.pauseSlider();
+                this.startSlider();
+            }
+            
+            updateActiveBar() {
+                this.sliderBars.forEach((bar, index) => {
+                    bar.classList.remove('active');
+                    const progress = bar.querySelector('.hero__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'none';
+                    }
+                });
+                
+                const currentBar = this.sliderBars[this.currentSlide];
+                if (currentBar) {
+                    currentBar.classList.add('active');
+                    const progress = currentBar.querySelector('.hero__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'progress 10s linear forwards';
+                    }
+                }
+            }
+        }
+
+        // Слайдер для about секции - ИСПРАВЛЕННАЯ ВЕРСИЯ
+        class AboutSlider {
+            constructor() {
+                console.log('AboutSlider запущен');
+                
+                this.numbers = document.querySelectorAll('.about__number');
+                this.titles = document.querySelectorAll('.about__title, .about__subtitle');
+                this.sliderBars = document.querySelectorAll('.about__slider-bar');
+                this.caption = document.getElementById('about-caption');
+                this.text = document.getElementById('about-text');
+                
+                console.log('Цифр:', this.numbers.length, 'Заголовков:', this.titles.length);
+                
+                this.currentSlide = 0;
+                this.totalSlides = 3;
+                this.intervalTime = 10000;
+                this.interval = null;
+                
+                this.slidesData = [
+                    {
+                        caption: 'Ваш комфорт за пределами городской квартиры',
+                        text: 'Мы продумали всё до мелочей: от эргономичных планировок с просторными кухнями-гостиными до современных инженерных систем. Жизнь в собственном доме больше не требует компромиссов с привычным уровнем сервиса и уюта.'
+                    },
+                    {
+                        caption: 'Идеальное расположение в экологически чистом районе',
+                        text: 'Посёлок находится всего в 9 км от Челябинска, что позволяет совмещать загородную жизнь с доступностью городской инфраструктуры. Рядом лес, чистый воздух и развитая транспортная сеть.'
+                    },
+                    {
+                        caption: 'Дружное сообщество и развитая инфраструктура',
+                        text: 'В посёлке формируется активное сообщество жителей. Для детей и взрослых созданы все условия: детские площадки, зоны отдыха, спортивные площадки. Соседи становятся друзьями.'
+                    }
+                ];
+                
+                this.init();
+            }
+            
+            init() {
+                // Активируем первый слайд
+                this.activateSlide(0);
+                
+                // Запускаем автоплей
+                this.startAutoPlay();
+                
+                // Добавляем обработчики на цифры
+                this.numbers.forEach((number, index) => {
+                    number.addEventListener('click', () => {
+                        console.log('Клик по цифре', index + 1);
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Добавляем обработчики на заголовки
+                this.titles.forEach((title, index) => {
+                    title.addEventListener('click', () => {
+                        console.log('Клик по заголовку', index + 1);
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Добавляем обработчики на полоски
+                this.sliderBars.forEach((bar, index) => {
+                    bar.addEventListener('click', () => {
+                        console.log('Клик по полоске', index + 1);
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Ховер на полоски
+                const barsContainer = document.querySelector('.about__slider-bars');
+                if (barsContainer) {
+                    barsContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+                    barsContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+                }
+            }
+            
+            activateSlide(index) {
+                console.log('Активация слайда', index + 1);
+                
+                // Убираем active со всех цифр
+                this.numbers.forEach(num => num.classList.remove('active'));
+                
+                // Убираем active со всех заголовков
+                this.titles.forEach(title => title.classList.remove('active'));
+                
+                // Активируем нужную цифру (по data-index или позиции)
+                this.numbers.forEach((num, i) => {
+                    if (i === index) {
+                        num.classList.add('active');
+                    }
+                });
+                
+                // Активируем нужный заголовок
+                this.titles.forEach((title, i) => {
+                    if (i === index) {
+                        title.classList.add('active');
+                    }
+                });
+                
+                // Обновляем текст
+                if (this.caption) this.caption.textContent = this.slidesData[index].caption;
+                if (this.text) this.text.textContent = this.slidesData[index].text;
+                
+                // Обновляем полоски
+                this.updateBars(index);
+            }
+            
+            updateBars(index) {
+                this.sliderBars.forEach((bar, i) => {
+                    bar.classList.remove('active');
+                    const progress = bar.querySelector('.about__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'none';
+                    }
+                });
+                
+                const currentBar = this.sliderBars[index];
+                if (currentBar) {
+                    currentBar.classList.add('active');
+                    const progress = currentBar.querySelector('.about__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'about-progress 10s linear forwards';
+                    }
+                }
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.activateSlide(index);
+                this.stopAutoPlay();
+                this.startAutoPlay();
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.activateSlide(this.currentSlide);
+            }
+            
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
+            }
+            
+            stopAutoPlay() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
+                }
+            }
+        }
+
+        // Запуск слайдеров после загрузки страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            new HeroSlider();
+            new AboutSlider();
+        });
+    </script>
 </body>
 
 </html>
