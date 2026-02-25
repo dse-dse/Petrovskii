@@ -16,7 +16,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    color: #F0F6FF;
+    color: #ECEEF7;
 }
 
 .hero::before {
@@ -485,7 +485,7 @@ body {
 /* ==================== БЛОК 2: About ==================== */
 .about {
     height: 100vh;
-    background: #040506;
+    background: #ECEEF7;
     color: white;
     display: flex;
     flex-direction: column;
@@ -512,7 +512,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    color: #F0F6FF;
+    color: #000000;
 }
 
 .about__years {
@@ -523,7 +523,7 @@ body {
     letter-spacing: -0.02em;
     display: flex;
     gap: 88px;
-    color: #A5B1D2;
+    color: #040506;
 }
 
 .about__content {
@@ -541,7 +541,7 @@ body {
     font-size: 128px;
     line-height: 128px;
     letter-spacing: -0.04em;
-    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #F0F6FF 0%, rgba(240, 246, 255, 0) 100%);
+    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #040506 0%, rgba(240, 246, 255, 0) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -558,7 +558,7 @@ body {
     font-size: 64px;
     line-height: 64px;
     letter-spacing: -0.04em;
-    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #F0F6FF 0%, rgba(240, 246, 255, 0) 100%);
+    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #040506 0%, rgba(240, 246, 255, 0) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -572,7 +572,7 @@ body {
     font-size: 48px;
     line-height: 48px;
     letter-spacing: -0.04em;
-    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #F0F6FF 0%, rgba(240, 246, 255, 0) 100%);
+    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #040506 0%, rgba(240, 246, 255, 0) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -599,7 +599,7 @@ body {
     font-size: 56px;
     line-height: 56px;
     letter-spacing: -0.04em;
-    color: #F0F6FF;
+    color: #040506;
 }
 
 .about__titles h3 {
@@ -607,7 +607,7 @@ body {
     font-size: 32px;
     line-height: 32px;
     letter-spacing: -0.04em;
-    color: #A5B1D2;
+    color: #040506;
     opacity: 0.4;
     display: flex;
     justify-content: space-between;
@@ -624,13 +624,15 @@ body {
     text-transform: uppercase;
     margin-top: 60px;
     margin-bottom: 40px;
-    color: #F0F6FF;
+    color: #040506;
     opacity: 0.44;
 }
 
 .about__divider {
-    opacity: 0.1;
+    /* opacity: 0.1; */
     margin: 20px 0;
+    background-color:#5E7291 ;
+    color: #5E7291;
 }
 
 .about__text {
@@ -639,7 +641,7 @@ body {
     line-height: 24px;
     letter-spacing: -0.02em;
     margin-top: 40px;
-    color: #CACFDC;
+    color: #040506;
 }
 
 .about__actions {
@@ -661,13 +663,13 @@ body {
     gap: 10px;
     width: 226px;
     height: 61px;
-    background: #F0F6FF;
+    background: #000;
     border: none;
     font-weight: 700;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: #F0F6FF;
 }
 
 .about__btn--text {
@@ -677,7 +679,7 @@ body {
     font-size: 14px;
     line-height: 14px;
     letter-spacing: -0.02em;
-    color: #A5B1D2;
+    color: #6E7D8B;
     opacity: 0.44;
 }
 
@@ -711,7 +713,7 @@ body {
 
 .about__pagination span:last-child {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: #040506;
     letter-spacing: 1px;
 }
 
@@ -725,11 +727,11 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 2px solid #FDFF62;
+    border: 2px solid #6E7D8B;
 }
 
 .about__help span:not(.about__help-dot) {
-    color: #F0F6FF;
+    color: #000000;
     font-size: 13px;
 }
 
@@ -743,7 +745,7 @@ body {
 }
 
 /* Наиболее близкий к оригиналу вариант */
-.about__image{
+.about__image {
     position: absolute;
     width: 557px;
     height: 828px;
@@ -756,13 +758,342 @@ body {
 
 /* ==================== БЛОК 3: Details ==================== */
 .details {
-    height: 200vh;
-    background: #ffffff;
+    height: 250vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    background: #ECEEF7;
     padding: 0px;
     gap: 0px;
     /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
 }
+/* ==================== БЛОК 3: Details ==================== */
 
+
+/* Верхнее изображение */
+.details__image {
+    width: 100%;
+    height: 378px;
+    object-fit: cover;
+}
+
+/* Блок с проектами (верхняя часть) */
+.projects-block-3 {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Контейнер для заголовка и логотипа */
+.projects-block-3__header {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+/* Заголовок с количеством проектов */
+.projects-block-3__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -0.04em;
+    color: #040506;
+}
+
+.projects-block-3__count {
+    margin-bottom: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #737C8A;
+    opacity: 0.44;
+}
+
+/* Блок с логотипом и звездами */
+.projects-block-3__brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-block-3__stars {
+    opacity: 0.44;
+    display: flex;
+    gap: 4px;
+}
+
+.projects-block-3__stars svg path {
+    fill: #262830;
+}
+
+.projects-block-3__logo {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #262830;
+    opacity: 0.44;
+}
+
+/* Кнопки действий */
+.projects-block-3__actions {
+    display: flex;
+    gap: 16px;
+}
+
+.projects-block-3__btn {
+    border-radius: 64px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+}
+
+.projects-block-3__btn--primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 233px;
+    height: 61px;
+    background: #000000;
+    border: none;
+    color: #FFFFFF;
+}
+
+.projects-block-3__btn--primary svg path {
+    fill: #F0F6FF;
+}
+
+.projects-block-3__btn--primary p {
+    color: #FFFFFF;
+}
+
+.projects-block-3__btn--outline {
+    box-sizing: border-box;
+    width: 175px;
+    height: 61px;
+    border: 1.5px solid rgba(39, 42, 46, 0.16);
+    background: transparent;
+    border-radius: 64px;
+    color: #272A2E;
+}
+
+.projects-block-3__btn--outline p {
+    color: #272A2E;
+}
+
+/* Разделитель */
+.details__divider {
+    width: 84%;
+    margin: 0 auto;
+    opacity: 0.2;
+    border-color: #272A2E;
+}
+
+/* Контентная часть с карточками домов */
+.content-block-3 {
+    display: flex;
+    gap: 30px;
+    padding: 30px 80px 60px 80px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Карточка дома */
+.house-card {
+    flex: 1;
+}
+
+.house-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Для первой карточки с фиксированной шириной */
+.house-card--small {
+    max-width: 560px;
+}
+
+.house-card--small .house-card__image {
+    width: 560px;
+}
+
+/* Для второй карточки */
+.house-card--large {
+    flex: 1;
+}
+
+.house-card--large .house-card__image {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Заголовок карточки */
+.house-card__title {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.house-card__name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #1A1C1F;
+}
+
+.house-card__area {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #262830;
+    opacity: 0.4;
+}
+
+/* Описание карточки */
+.house-card__description {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #2C2F37;
+    margin-bottom: 20px;
+    max-width: 560px;
+}
+
+/* Кнопка в карточке */
+.house-card__btn {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 175px;
+    height: 61px;
+    border: 1.5px solid rgba(39, 42, 46, 0.16);
+    border-radius: 64px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: #272A2E;
+}
+
+.house-card__btn svg path {
+    fill: #272A2E;
+}
+
+.house-card__btn:hover {
+    background: rgba(0, 0, 0, 0.02);
+    transition: background 0.3s;
+}
+
+/* Адаптация для экранов разного размера */
+@media (max-width: 1600px) {
+    .content-block-3 {
+        padding: 30px 60px;
+    }
+    
+    .house-card--small {
+        max-width: 500px;
+    }
+    
+    .house-card--small .house-card__image {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .content-block-3 {
+        padding: 30px 40px;
+        gap: 20px;
+    }
+    
+    .house-card--small {
+        max-width: 450px;
+    }
+    
+    .house-card--small .house-card__image {
+        width: 450px;
+    }
+    
+    .projects-block-3__title {
+        font-size: 48px;
+        line-height: 48px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-block-3 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .house-card--small,
+    .house-card--large {
+        max-width: 100%;
+    }
+    
+    .house-card--small .house-card__image,
+    .house-card--large .house-card__image {
+        width: 100%;
+        max-width: 800px;
+    }
+    
+    .projects-block-3 {
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .projects-block-3__header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .projects-block-3__actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 /* ==================== FOOTER ==================== */
 .footer {
     width: 100%;
