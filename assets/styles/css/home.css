@@ -151,13 +151,13 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 13px;
-    color: #B8C5E9;
+    color: #fdfdfd;
     text-decoration: none;
     font-weight: 500;
 }
 
 .hero__nav a:hover {
-    color: #ffffff;
+    color: #979797;
     transition: color 0.3s;
 }
 
@@ -758,7 +758,7 @@ body {
 
 /* ==================== БЛОК 3: Details ==================== */
 .details {
-    height: 250vh;
+    height: 203vh;
     display: flex;
     align-items: center;
     /* justify-content: center; */
@@ -780,6 +780,8 @@ body {
 
 /* Блок с проектами (верхняя часть) */
 .projects-block-3 {
+    margin-top: 60px;
+    margin-bottom: 40px;
     height: 200px;
     width: 100%;
     display: flex;
@@ -1094,53 +1096,231 @@ body {
         justify-content: center;
     }
 }
+
+.contact-text{
+    background-image: url(../../img/map.png);
+    background-repeat: no-repeat;
+}.contact-text h1{
+
+
+ margin: 56px 0px 0px 80px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 56px;
+line-height: 56px;
+/* or 100% */
+letter-spacing: -0.04em;
+text-transform: uppercase;
+
+color: #040506;
+
+
+
+}
+.contact-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+ 
+}
+.contact-row{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}.contact-row p{
+    padding-top: 21px;
+display: flex;
+align-items: center;
+    gap: 16px;
+
+
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 14px;
+/* identical to box height, or 100% */
+letter-spacing: -0.02em;
+
+color: #2C2F37;
+
+
+}
+
+.sec-desc span{
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 24px;
+/* identical to box height, or 100% */
+letter-spacing: -0.04em;
+
+color: #262830;
+
+opacity: 0.4;
+
+}
+.contact-desc{
+    margin-right: 80px;
+}
 /* ==================== FOOTER ==================== */
 .footer {
     width: 100%;
     height: 100px;
-    background: rgba(8, 12, 22, 0.95);
+    background-color: #ECEEF7;
     backdrop-filter: blur(10px);
-    color: #B8C5E9;
+    color: #000000; /* Изменен цвет текста по умолчанию на черный */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Затемнена граница */
 }
 
+/* Навигация в футере теперь по центру */
 .footer__nav {
     display: flex;
     gap: 40px;
+    /* Центрирование внутри flex-контейнера .footer */
+    margin: 0 auto; /* Добавлено для центрирования */
+    position: absolute; /* Абсолютное позиционирование для точного центрирования */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer__nav a {
-    color: #B8C5E9;
+    color: #000000; /* Черный цвет для ссылок */
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__nav a svg {
+    stroke: #000000; /* Черный цвет для стрелок в ссылках */
 }
 
 .footer__nav a:hover {
-    color: #ffffff;
+    color: #555555; /* Серый при наведении */
 }
 
 .footer__help {
     display: flex;
     align-items: center;
     gap: 20px;
+    /* Оставляем справа */
 }
 
 .footer__help span {
     font-size: 13px;
-    color: #B8C5E9;
+    color: #000000; /* Черный текст */
 }
 
+/* Контейнер для иконок помощи в футере */
 .footer__help-icons {
     display: flex;
     gap: 15px;
 }
 
-.footer__help-icons img {
+.footer__help-icons svg {
     opacity: 0.7;
-    filter: brightness(0) invert(1);
+    /* Убираем старый filter, меняем цвет через fill */
+    filter: none;
+}
+
+.footer__help-icons svg path {
+    fill: #000000; /* Черный цвет для иконок */
+}
+
+.footer__help-icons a:hover svg {
+    opacity: 1;
+}
+
+/* ==================== НОВЫЕ ХОВЕРЫ ==================== */
+/* Добавлены в конец файла, чтобы не нарушать существующие стили */
+
+/* Ховеры для кнопок в блоке Hero */
+.hero__btn--primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+.hero__btn--outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для карточек в блоке Hero */
+.hero__card-btn:hover {
+    background: rgba(255, 255, 255, 0.384);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для иконок социальных сетей */
+.hero__help-icons a:hover svg,
+.footer__help-icons a:hover svg,
+.about__help-icons a:hover svg {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для кнопок в блоке About */
+.about__btn--primary:hover {
+    background: #1a1a1a;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+.about__btn--text:hover {
+    opacity: 1;
+    color: #000;
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для кнопок в блоке Projects (projects-block-3) */
+.projects-block-3__btn--primary:hover {
+    background: #1a1a1a;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+.projects-block-3__btn--outline:hover {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: #272A2E;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для кнопок в карточках домов */
+.house-card__btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: #272A2E;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* Ховеры для навигационных ссылок (уже были, но оставлю для целостности) */
+.hero__nav a:hover {
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+/* Ховеры для ссылок в контактной форме */
+.help-icons a:hover svg {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+.help-icons a:hover svg path {
+    fill: #000; /* Затемнение иконок */
+    transition: fill 0.2s ease;
 }
