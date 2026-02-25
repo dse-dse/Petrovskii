@@ -758,7 +758,7 @@ body {
 
 /* ==================== БЛОК 3: Details ==================== */
 .details {
-    height: 203vh;
+    height: 210vh;
     display: flex;
     align-items: center;
     /* justify-content: center; */
