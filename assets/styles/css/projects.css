@@ -203,9 +203,10 @@ opacity: 0.44;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+ 
 }
 .projects-count-body h1{
-
 
 font-weight: 600;
 font-size: 56px;
@@ -218,7 +219,7 @@ color: #040506;
 
 }
 .contact-btn-dark{
-
+flex-shrink: 0;
 width: 239px;
 height: 61px;
 background: #000000;
