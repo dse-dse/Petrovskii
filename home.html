@@ -111,14 +111,22 @@
                 </div>
 
                 <div class="hero__actions">
-                    <button class="hero__btn hero__btn--primary">Связаться</button>
+                    =
+                    <button class="hero__btn hero__btn--primary">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                fill="#272A2E" />
+                        </svg>
+                        <p>Узнать цену</p>
+                    </button>
                     <button class="hero__btn hero__btn--outline">Наши проекты</button>
                 </div>
             </div>
 
             <div class="hero__card">
                 <div class="hero__card-inner">
-                    <div class="hero__video-placeholder">[Видео]</div>
+                    <div class="hero__video-placeholder">[Сосал?]</div>
                     <div class="hero__house-header">
                         <h2 class="hero__house-title">Семейный</h2>
                         <span class="hero__house-area">76 м²</span>
@@ -174,15 +182,15 @@
 
         <div class="about__content">
             <div class="about__numbers">
-                <span class="about__number about__number--lg" id="about-number-1" data-index="0">01</span>
-                <span class="about__number about__number--md" id="about-number-2" data-index="1">02</span>
-                <span class="about__number about__number--sm" id="about-number-3" data-index="2">03</span>
+                <span class="about__number" id="about-number-1">01</span>
+                <span class="about__number" id="about-number-2">02</span>
+                <span class="about__number" id="about-number-3">03</span>
             </div>
             <div class="about__info">
                 <div class="about__titles">
-                    <h2 class="about__title" id="about-title-1" data-index="0">Комфорт.</h2>
-                    <h3 class="about__subtitle" id="about-title-2" data-index="1">Местоположение.</h3>
-                    <h3 class="about__subtitle" id="about-title-3" data-index="2">Жители.</h3>
+                    <h2 class="about__title" id="about-title-1">Комфорт.</h2>
+                    <h3 class="about__subtitle" id="about-title-2">Местоположение.</h3>
+                    <h3 class="about__subtitle" id="about-title-3">Жители.</h3>
                 </div>
                 <p class="about__caption" id="about-caption">Ваш комфорт за пределами городской квартиры</p>
             </div>
@@ -468,7 +476,7 @@
                 this.currentSlideSpan = document.getElementById('currentSlideNumber');
                 this.totalSlidesSpan = document.querySelector('.hero__pagination-number');
                 this.totalSlides = this.sliderBars.length;
-                
+
                 this.images = [
                     'assets/img/image 4.png',
                     'assets/img/image 5.png',
@@ -476,67 +484,67 @@
                     'assets/img/image 7.png',
                     'assets/img/image 8.png'
                 ];
-                
+
                 this.currentSlide = 0;
                 this.intervalTime = 10000;
                 this.interval = null;
-                
+
                 this.init();
             }
-            
+
             init() {
                 if (!this.heroSection) return;
-                
+
                 if (this.totalSlidesSpan) {
                     this.totalSlidesSpan.textContent = `/ ${this.totalSlides.toString().padStart(2, '0')}`;
                 }
-                
+
                 this.heroSection.style.backgroundImage = `url('${this.images[0]}')`;
                 this.startSlider();
-                
+
                 this.sliderBars.forEach((bar, index) => {
                     bar.addEventListener('click', () => this.goToSlide(index));
                 });
-                
+
                 const sliderBars = document.querySelector('.hero__slider-bars');
                 if (sliderBars) {
                     sliderBars.addEventListener('mouseenter', () => this.pauseSlider());
                     sliderBars.addEventListener('mouseleave', () => this.startSlider());
                 }
             }
-            
+
             startSlider() {
                 if (this.interval) clearInterval(this.interval);
                 this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
                 this.updateActiveBar();
             }
-            
+
             pauseSlider() {
                 clearInterval(this.interval);
             }
-            
+
             nextSlide() {
                 this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
                 this.updateSlide();
             }
-            
+
             goToSlide(index) {
                 this.currentSlide = index;
                 this.updateSlide();
             }
-            
+
             updateSlide() {
                 this.heroSection.style.backgroundImage = `url('${this.images[this.currentSlide]}')`;
-                
+
                 if (this.currentSlideSpan) {
                     this.currentSlideSpan.textContent = (this.currentSlide + 1).toString().padStart(2, '0');
                 }
-                
+
                 this.updateActiveBar();
                 this.pauseSlider();
                 this.startSlider();
             }
-            
+
             updateActiveBar() {
                 this.sliderBars.forEach((bar, index) => {
                     bar.classList.remove('active');
@@ -545,7 +553,7 @@
                         progress.style.animation = 'none';
                     }
                 });
-                
+
                 const currentBar = this.sliderBars[this.currentSlide];
                 if (currentBar) {
                     currentBar.classList.add('active');
@@ -557,24 +565,31 @@
             }
         }
 
-        // Слайдер для about секции - ИСПРАВЛЕННАЯ ВЕРСИЯ
+        // Слайдер для about секции
         class AboutSlider {
             constructor() {
-                console.log('AboutSlider запущен');
-                
                 this.numbers = document.querySelectorAll('.about__number');
                 this.titles = document.querySelectorAll('.about__title, .about__subtitle');
+                this.titlesContainer = document.querySelector('.about__titles');
                 this.sliderBars = document.querySelectorAll('.about__slider-bar');
                 this.caption = document.getElementById('about-caption');
                 this.text = document.getElementById('about-text');
-                
-                console.log('Цифр:', this.numbers.length, 'Заголовков:', this.titles.length);
-                
+
+                // Сохраняем ссылки на конкретные элементы
+                this.number1 = document.getElementById('about-number-1');
+                this.number2 = document.getElementById('about-number-2');
+                this.number3 = document.getElementById('about-number-3');
+
+                this.title1 = document.getElementById('about-title-1');
+                this.title2 = document.getElementById('about-title-2');
+                this.title3 = document.getElementById('about-title-3');
+
                 this.currentSlide = 0;
                 this.totalSlides = 3;
-                this.intervalTime = 10000;
+                this.intervalTime = 25000;
                 this.interval = null;
-                
+
+                // Контент для каждого слайда
                 this.slidesData = [
                     {
                         caption: 'Ваш комфорт за пределами городской квартиры',
@@ -589,41 +604,48 @@
                         text: 'В посёлке формируется активное сообщество жителей. Для детей и взрослых созданы все условия: детские площадки, зоны отдыха, спортивные площадки. Соседи становятся друзьями.'
                     }
                 ];
-                
+
                 this.init();
             }
-            
+
             init() {
+                // Устанавливаем тексты цифр (всегда 01, 02, 03 по порядку)
+                if (this.number1) this.number1.textContent = '01';
+                if (this.number2) this.number2.textContent = '02';
+                if (this.number3) this.number3.textContent = '03';
+
+                // Устанавливаем тексты заголовков (всегда Комфорт, Местоположение, Жители по порядку)
+                if (this.title1) this.title1.textContent = 'Комфорт.';
+                if (this.title2) this.title2.textContent = 'Местоположение.';
+                if (this.title3) this.title3.textContent = 'Жители.';
+
                 // Активируем первый слайд
                 this.activateSlide(0);
-                
+
                 // Запускаем автоплей
                 this.startAutoPlay();
-                
+
                 // Добавляем обработчики на цифры
                 this.numbers.forEach((number, index) => {
                     number.addEventListener('click', () => {
-                        console.log('Клик по цифре', index + 1);
                         this.goToSlide(index);
                     });
                 });
-                
+
                 // Добавляем обработчики на заголовки
                 this.titles.forEach((title, index) => {
                     title.addEventListener('click', () => {
-                        console.log('Клик по заголовку', index + 1);
                         this.goToSlide(index);
                     });
                 });
-                
+
                 // Добавляем обработчики на полоски
                 this.sliderBars.forEach((bar, index) => {
                     bar.addEventListener('click', () => {
-                        console.log('Клик по полоске', index + 1);
                         this.goToSlide(index);
                     });
                 });
-                
+
                 // Ховер на полоски
                 const barsContainer = document.querySelector('.about__slider-bars');
                 if (barsContainer) {
@@ -631,38 +653,71 @@
                     barsContainer.addEventListener('mouseleave', () => this.startAutoPlay());
                 }
             }
-            
+
             activateSlide(index) {
-                console.log('Активация слайда', index + 1);
-                
-                // Убираем active со всех цифр
-                this.numbers.forEach(num => num.classList.remove('active'));
-                
-                // Убираем active со всех заголовков
-                this.titles.forEach(title => title.classList.remove('active'));
-                
-                // Активируем нужную цифру (по data-index или позиции)
-                this.numbers.forEach((num, i) => {
-                    if (i === index) {
-                        num.classList.add('active');
-                    }
+                // Убираем классы слайдов с контейнера заголовков
+                if (this.titlesContainer) {
+                    this.titlesContainer.classList.remove('slide-0', 'slide-1', 'slide-2');
+                    this.titlesContainer.classList.add(`slide-${index}`);
+                }
+
+                // Сначала убираем все классы размеров с цифр
+                this.numbers.forEach(num => {
+                    num.classList.remove('about__number--lg', 'about__number--md', 'about__number--sm');
                 });
-                
-                // Активируем нужный заголовок
-                this.titles.forEach((title, i) => {
-                    if (i === index) {
-                        title.classList.add('active');
-                    }
+
+                // Сначала убираем все классы размеров с заголовков
+                this.titles.forEach(title => {
+                    title.classList.remove('about__title--lg', 'about__title--md', 'about__title--sm',
+                        'about__subtitle--lg', 'about__subtitle--md', 'about__subtitle--sm');
                 });
-                
+
+                // В зависимости от индекса применяем нужные классы
+                if (index === 0) {
+                    // Слайд 1: 
+                    // Цифры: большая 01, средняя 02, маленькая 03
+                    this.number1.classList.add('about__number--lg');
+                    this.number2.classList.add('about__number--md');
+                    this.number3.classList.add('about__number--sm');
+
+                    // Заголовки: большой Комфорт, средний Местоположение, маленький Жители
+                    this.title1.classList.add('about__title--lg');
+                    this.title2.classList.add('about__subtitle--md');
+                    this.title3.classList.add('about__subtitle--sm');
+                }
+                else if (index === 1) {
+                    // Слайд 2:
+                    // Цифры: маленькая 01, большая 02, средняя 03
+                    this.number1.classList.add('about__number--sm');
+                    this.number2.classList.add('about__number--lg');
+                    this.number3.classList.add('about__number--md');
+
+                    // Заголовки: маленький Комфорт, большой Местоположение, средний Жители
+                    this.title1.classList.add('about__title--sm');
+                    this.title2.classList.add('about__subtitle--lg');
+                    this.title3.classList.add('about__subtitle--md');
+                }
+                else if (index === 2) {
+                    // Слайд 3:
+                    // Цифры: средняя 01, маленькая 02, большая 03
+                    this.number1.classList.add('about__number--sm');
+                    this.number2.classList.add('about__number--md');
+                    this.number3.classList.add('about__number--lg');
+
+                    // Заголовки: средний Комфорт, маленький Местоположение, большой Жители
+                    this.title1.classList.add('about__title--sm');
+                    this.title2.classList.add('about__subtitle--md');
+                    this.title3.classList.add('about__subtitle--lg');
+                }
+
                 // Обновляем текст
                 if (this.caption) this.caption.textContent = this.slidesData[index].caption;
                 if (this.text) this.text.textContent = this.slidesData[index].text;
-                
+
                 // Обновляем полоски
                 this.updateBars(index);
             }
-            
+
             updateBars(index) {
                 this.sliderBars.forEach((bar, i) => {
                     bar.classList.remove('active');
@@ -671,7 +726,7 @@
                         progress.style.animation = 'none';
                     }
                 });
-                
+
                 const currentBar = this.sliderBars[index];
                 if (currentBar) {
                     currentBar.classList.add('active');
@@ -681,24 +736,24 @@
                     }
                 }
             }
-            
+
             goToSlide(index) {
                 this.currentSlide = index;
                 this.activateSlide(index);
                 this.stopAutoPlay();
                 this.startAutoPlay();
             }
-            
+
             nextSlide() {
                 this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
                 this.activateSlide(this.currentSlide);
             }
-            
+
             startAutoPlay() {
                 this.stopAutoPlay();
                 this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
             }
-            
+
             stopAutoPlay() {
                 if (this.interval) {
                     clearInterval(this.interval);
@@ -706,7 +761,6 @@
                 }
             }
         }
-
         // Запуск слайдеров после загрузки страницы
         document.addEventListener('DOMContentLoaded', () => {
             new HeroSlider();

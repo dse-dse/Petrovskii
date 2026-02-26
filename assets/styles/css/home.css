@@ -260,6 +260,10 @@ body {
 .hero__btn--primary {
     background: white;
     color: #0B0F1C;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero__btn--primary:hover {
@@ -312,12 +316,13 @@ body {
 }
 
 @keyframes progress {
-    from { width: 0%; }
-    to { width: 100%; }
-}
+    from {
+        width: 0%;
+    }
 
-.hero__slider-indicator {
-    display: none;
+    to {
+        width: 100%;
+    }
 }
 
 .hero__card {
@@ -484,12 +489,12 @@ body {
 .about {
     height: 100vh;
     background: #ECEEF7;
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
+    overflow: hidden;
 }
 
 .about__header {
@@ -526,57 +531,62 @@ body {
 
 .about__content {
     height: 70%;
-    width: 80%;
+    width: 70%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 3;
 }
 
 .about__numbers {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 128px;
-    line-height: 128px;
     letter-spacing: -0.04em;
+    position: relative;
+    height: 150px;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .about__number {
-    background: radial-gradient(225.2% 214.77% at 15.2% 19.14%, #040506 0%, rgba(240, 246, 255, 0) 100%);
+    background: radial-gradient(255.2% 224.77% at 15.2% 19.14%, #040506 0%, rgba(240, 246, 255, 0) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    height: 150px;
+    /* width: 150px;
+    /* width: 150px; */
 }
 
 .about__number--lg {
-    font-style: italic;
-    font-size: 128px;
-    line-height: 128px;
+    font-size: 128px !important;
+    line-height: 128px !important;
+    opacity: 1 !important;
 }
 
 .about__number--md {
     font-weight: 200;
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 64px !important;
+    line-height: 64px !important;
+    opacity: 0.4 !important;
 }
 
 .about__number--sm {
     font-weight: 200;
-    font-size: 48px;
-    line-height: 48px;
-}
-
-.about__number.active {
-    opacity: 1;
-}
-
-.about__number:not(.active) {
-    opacity: 0.2;
-}
-
-.about__number:hover:not(.active) {
-    opacity: 0.4;
+    font-size: 48px !important;
+    line-height: 48px !important;
+    opacity: 0.4 !important;
 }
 
 .about__info {
@@ -584,48 +594,105 @@ body {
     justify-content: flex-end;
     align-items: baseline;
     flex-direction: column;
+    width: 100%;
 }
 
 .about__titles {
     display: flex;
-    justify-content: flex-end;
-    gap: 160px;
+    justify-content: flex-start;
+    position: relative;
+    align-items: flex-end;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+    transition: gap 0.5s ease;
+}
+
+/* Динамические отступы в зависимости от активного слайда */
+.about__titles.slide-0 {
+    gap: 60px;
+
+}
+
+.about__titles.slide-1 {
+    gap: 40px;
+}
+
+.about__titles.slide-2 {
+    gap: 80px;
 }
 
 .about__title {
     font-weight: 400;
-    font-size: 56px;
-    line-height: 56px;
-    letter-spacing: -0.04em;
     color: #040506;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     cursor: pointer;
+    /* width: 300px; */
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* height: 60px; */
+    /* Базовые размеры */
+    font-size: 32px;
+    line-height: 32px;
+    opacity: 0.4;
+    flex-shrink: 0;
 }
 
 .about__subtitle {
     font-weight: 400;
+    color: #040506;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    /* width: 300px; */
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* height: 60px; */
+    /* Базовые размеры */
     font-size: 32px;
     line-height: 32px;
-    letter-spacing: -0.04em;
-    color: #040506;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.about__title.active,
-.about__subtitle.active {
-    opacity: 1;
-    color: #040506;
-}
-
-.about__title:not(.active),
-.about__subtitle:not(.active) {
-    opacity: 0.2;
-}
-
-.about__title:hover:not(.active),
-.about__subtitle:hover:not(.active) {
     opacity: 0.4;
+    flex-shrink: 0;
+}
+
+/* Классы для размеров заголовков */
+.about__title--lg {
+    font-size: 56px !important;
+    line-height: 56px !important;
+    opacity: 1 !important;
+}
+
+.about__title--md {
+    font-size: 32px !important;
+    line-height: 32px !important;
+    opacity: 0.4 !important;
+}
+
+.about__title--sm {
+    font-size: 24px !important;
+    line-height: 24px !important;
+    opacity: 0.4 !important;
+}
+
+.about__subtitle--lg {
+    font-size: 56px !important;
+    line-height: 56px !important;
+    opacity: 1 !important;
+}
+
+.about__subtitle--md {
+    font-size: 32px !important;
+    line-height: 32px !important;
+    opacity: 0.4 !important;
+}
+
+.about__subtitle--sm {
+    font-size: 24px !important;
+    line-height: 24px !important;
+    opacity: 0.4 !important;
 }
 
 .about__caption {
@@ -638,6 +705,7 @@ body {
     margin-bottom: 40px;
     color: #040506;
     opacity: 0.44;
+    height: 14px;
 }
 
 .about__divider {
@@ -653,6 +721,7 @@ body {
     letter-spacing: -0.02em;
     margin-top: 40px;
     color: #040506;
+    min-height: 120px;
 }
 
 .about__actions {
@@ -660,6 +729,7 @@ body {
     align-items: center;
     margin-top: 60px;
     gap: 40px;
+    height: 61px;
 }
 
 .about__btn {
@@ -713,6 +783,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 80px;
+    position: relative;
+    z-index: 3;
 }
 
 .about__pagination {
@@ -722,9 +794,10 @@ body {
 
 .about__pagination .about__stars {
     display: flex;
-    gap: 8px;
+    gap: 4px;
     justify-content: flex-start;
     margin-bottom: 5px;
+    opacity: 0.5;
 }
 
 .about__pagination .about__stars svg path {
@@ -735,6 +808,7 @@ body {
     font-size: 14px;
     color: #040506;
     letter-spacing: 1px;
+    opacity: 0.5;
 }
 
 .about__help {
@@ -774,10 +848,11 @@ body {
     position: absolute;
     width: 557px;
     height: 828px;
-    left: 1009px;
+    right: 200px;
     top: -200px;
     border-radius: 40px;
     object-fit: cover;
+    z-index: 2;
 }
 
 /* Слайдер для about секции */
@@ -787,6 +862,8 @@ body {
     margin: 20px 0 40px 80px;
     max-width: 300px;
     align-self: flex-start;
+    position: relative;
+    z-index: 3;
 }
 
 .about__slider-bar {
@@ -812,8 +889,13 @@ body {
 }
 
 @keyframes about-progress {
-    from { width: 0%; }
-    to { width: 100%; }
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 /* ==================== БЛОК 3: Details ==================== */
@@ -1227,11 +1309,11 @@ body {
     .content-block-3 {
         padding: 30px 60px;
     }
-    
+
     .house-card--small {
         max-width: 500px;
     }
-    
+
     .house-card--small .house-card__image {
         width: 500px;
     }
@@ -1242,15 +1324,15 @@ body {
         padding: 30px 40px;
         gap: 20px;
     }
-    
+
     .house-card--small {
         max-width: 450px;
     }
-    
+
     .house-card--small .house-card__image {
         width: 450px;
     }
-    
+
     .projects-block-3__title {
         font-size: 48px;
         line-height: 48px;
@@ -1262,31 +1344,31 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .house-card--small,
     .house-card--large {
         max-width: 100%;
     }
-    
+
     .house-card--small .house-card__image,
     .house-card--large .house-card__image {
         width: 100%;
         max-width: 800px;
     }
-    
+
     .projects-block-3 {
         height: auto;
         padding: 40px 20px;
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .projects-block-3__header {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
+
     .projects-block-3__actions {
         flex-wrap: wrap;
         justify-content: center;
