@@ -8,6 +8,7 @@
 
 body {
     background-color: #0B0F1C;
+    overflow-x: hidden;
 }
 
 /* ==================== БЛОК 1: Hero ==================== */
@@ -485,6 +486,56 @@ body {
     background-clip: text;
 }
 
+/* Бургер-меню */
+.hero__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hero__burger span {
+    width: 100%;
+    height: 2px;
+    background-color: #F0F6FF;
+    transition: all 0.3s ease;
+}
+
+/* Мобильная пагинация */
+.hero__mobile-pagination {
+    display: none;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    align-items: baseline;
+    gap: 5px;
+    z-index: 5;
+}
+
+.hero__big-number-mobile {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.04em;
+    color: #F0F6FF;
+}
+
+.hero__pagination-number-mobile {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #A5B1D2;
+}
+
 /* ==================== БЛОК 2: About ==================== */
 .about {
     height: 100vh;
@@ -565,8 +616,6 @@ body {
     justify-content: flex-end;
     position: relative;
     height: 150px;
-    /* width: 150px;
-    /* width: 150px; */
 }
 
 .about__number--lg {
@@ -627,13 +676,10 @@ body {
     color: #040506;
     transition: all 0.5s ease;
     cursor: pointer;
-    /* width: 300px; */
     text-align: left;
     margin: 0;
     display: flex;
     align-items: center;
-    /* height: 60px; */
-    /* Базовые размеры */
     font-size: 32px;
     line-height: 32px;
     opacity: 0.4;
@@ -645,13 +691,10 @@ body {
     color: #040506;
     transition: all 0.5s ease;
     cursor: pointer;
-    /* width: 300px; */
     text-align: left;
     margin: 0;
     display: flex;
     align-items: center;
-    /* height: 60px; */
-    /* Базовые размеры */
     font-size: 32px;
     line-height: 32px;
     opacity: 0.4;
@@ -1304,7 +1347,550 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Адаптация */
+/* ==================== МОБИЛЬНАЯ АДАПТАЦИЯ (до 768px) ==================== */
+@media (max-width: 768px) {
+    /* Утилиты */
+    .mobile-hidden {
+        display: none !important;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Блок 1: Hero - Исправленный порядок без дублирования */
+    .hero__header {
+        padding: 0 20px;
+        height: 70px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .hero__brand {
+        width: auto;
+        align-items: flex-start;
+    }
+
+    .hero__logo {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .hero__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        z-index: 101;
+    }
+
+    .hero__burger span {
+        width: 100%;
+        height: 2px;
+        background-color: #F0F6FF;
+        transition: all 0.3s ease;
+    }
+
+    /* Активное состояние бургера */
+    .hero__burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hero__burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hero__burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Мобильное меню */
+    .hero__mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: rgba(11, 15, 28, 0.98); */
+        backdrop-filter: blur(10px);
+        padding: 40px 20px;
+        z-index: 99;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero__mobile-menu.active {
+        display: flex;
+    }
+
+    .hero__mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero__mobile-nav a {
+        color: #F0F6FF;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 500;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(240, 246, 255, 0.1);
+    }
+
+    .hero__mobile-contacts {
+        margin-top: auto;
+        padding: 20px 0;
+    }
+
+    .hero__mobile-phone {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F0F6FF;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .hero__mobile-social {
+        display: flex;
+        gap: 20px;
+    }
+
+    .hero__mobile-social svg {
+        width: 24px;
+        height: 24px;
+        fill: #F0F6FF;
+        opacity: 0.7;
+    }
+
+    .hero__contacts {
+        width: auto;
+    }
+
+    .hero__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: calc(100% - 70px);
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    /* Мобильная пагинация сверху справа */
+    .hero__mobile-pagination {
+        display: flex;
+        position: absolute;
+        /* top: -40px; */
+        right: 20px;
+        align-items: baseline;
+        gap: 5px;
+        z-index: 5;
+    }
+
+    .hero__big-number-mobile {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    .hero__pagination-number-mobile {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    /* Контент - правильный порядок */
+    .hero__content {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        padding: 0 20px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 1. Заголовок - исправлено дублирование */
+    .hero__title {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        order: 1;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    .hero__title br {
+        display: block;
+    }
+
+    .hero__title span {
+        font-size: 36px;
+        display: block;
+        font-style: italic;
+    }
+
+    /* Убираем псевдоэлемент */
+    .hero__title::before {
+        display: none;
+        content: none;
+    }
+
+    /* 2. Подзаголовок */
+    .hero__subtitle {
+        font-size: 12px;
+        margin-bottom: 20px;
+        order: 2;
+        text-transform: uppercase;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 100%;
+        line-height: 1.4;
+    }
+
+    /* 3. Кнопки */
+    .hero__actions {
+        order: 3;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero__btn {
+        /* font-size: 12px; */
+        /* padding: 12px 20px; */
+        white-space: nowrap;
+    }
+
+    .hero__btn--primary {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .hero__btn--outline {
+        flex: 1.5;
+        min-width: 140px;
+    }
+
+    .hero__btn--primary svg {
+        display: none;
+    }
+
+    /* 4. Полоски слайдера */
+    .hero__slider-bars {
+        order: 4;
+        margin: 10px 0 0 0;
+        max-width: 100%;
+    }
+
+    .hero__tag--right {
+        display: none;
+    }
+
+    .hero__card {
+        display: none;
+    }
+
+    .hero__pagination {
+        display: none;
+    }
+
+    /* Блок 2: About */
+    .about {
+        display: flex;
+        height: auto;
+        overflow-x: hidden;
+        position: relative;
+        flex-direction: column;
+        align-content: flex-end;
+        align-items: center;
+    }
+
+    .about__header {
+        padding: 20px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .about__location {
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        gap: 10px;
+        width: 100%;
+        order: 2;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .about__years {
+        gap: 20px;
+        order: 1;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .about__content {
+        width: 90%;
+        height: auto;
+    }
+
+    .about__numbers {
+        gap: 30px;
+        height: auto;
+        height: 100px;
+    }
+
+    .about__number--lg {
+        height: 100px;
+        font-size: 64px !important;
+        line-height: 64px !important;
+    }
+    .about__number--md {
+        height: 100px;
+        font-size: 48px !important;
+        line-height: 48px !important;
+    }
+    .about__number--sm {
+        height: 100px;
+        font-size: 32px !important;
+        line-height: 32px !important;
+    }
+
+    .about__titles {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 10px !important;
+        margin: 20px 0;
+    }
+
+    .about__title, .about__subtitle {
+        width: 100%;
+        font-size: 24px !important;
+        line-height: 24px !important;
+        opacity: 0.4 !important;
+    }
+
+    .about__title--lg, .about__subtitle--lg {
+        font-size: 36px !important;
+        line-height: 36px !important;
+        opacity: 1 !important;
+    }
+
+    .about__caption {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .about__divider {
+        width: 100% !important;
+    }
+
+    .about__text {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        min-height: auto;
+    }
+
+    .about__actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    .about__btn--primary img {
+        display: none;
+    }
+
+    .about__footer {
+        padding: 20px;
+        padding-top: 50px;
+        height: auto;
+        position: relative;
+    }
+
+    .about__help {
+        gap: 10px;
+    }
+
+    .about__image {
+        position: absolute;
+        z-index: 0;
+        width: 400px;
+        height: auto;
+        right: -100px;
+        top: -100px;
+        border-radius: 20px;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    /* Блок 3: Details */
+    .details {
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    .details__image {
+        height: 200px;
+    }
+
+    .projects-block-3 {
+        flex-direction: column;
+        height: auto;
+        margin: 30px 0;
+        gap: 20px;
+    }
+
+    .projects-block-3__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .projects-block-3__title {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .projects-block-3__actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .projects-block-3__btn {
+        width: 160px;
+        font-size: 14px;
+    }
+
+    .projects-block-3__btn--primary svg {
+        display: none;
+    }
+
+    .details__divider {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .content-block-3 {
+        flex-direction: column;
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .house-card--small,
+    .house-card--large {
+        max-width: 100%;
+    }
+
+    .house-card--small .house-card__image,
+    .house-card--large .house-card__image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .house-card__title {
+        flex-wrap: wrap;
+    }
+
+    .house-card__name {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .house-card__area {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .house-card__description {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .house-card__btn svg {
+        display: inline-block;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .contact-text h1 {
+        margin: 30px 0;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .contact-desc {
+        margin-right: 0;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px !important;
+    }
+
+    .contact-row p {
+        padding-top: 10px;
+    }
+
+    .contact-row:last-child {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .sec-desc span {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    /* Футер */
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .footer__nav {
+        position: relative;
+        left: auto;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 0;
+    }
+
+    .footer__help {
+        justify-content: center;
+    }
+}
+
+/* Адаптация для больших экранов (оставляем как есть) */
 @media (max-width: 1600px) {
     .content-block-3 {
         padding: 30px 60px;
@@ -1334,43 +1920,6 @@ body {
     }
 
     .projects-block-3__title {
-        font-size: 48px;
         line-height: 48px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .content-block-3 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .house-card--small,
-    .house-card--large {
-        max-width: 100%;
-    }
-
-    .house-card--small .house-card__image,
-    .house-card--large .house-card__image {
-        width: 100%;
-        max-width: 800px;
-    }
-
-    .projects-block-3 {
-        height: auto;
-        padding: 40px 20px;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .projects-block-3__header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .projects-block-3__actions {
-        flex-wrap: wrap;
-        justify-content: center;
     }
 }
