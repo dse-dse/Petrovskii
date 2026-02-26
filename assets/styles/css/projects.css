@@ -571,3 +571,596 @@ opacity: 0.4;
 .footer__help-icons a:hover svg {
     opacity: 1;
 }
+/* ==================== АДАПТИВ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) ==================== */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 0 30px;
+        height: auto;
+        min-height: 80px;
+        flex-wrap: wrap;
+    }
+
+    .header-left,
+    .header-right {
+        width: auto;
+    }
+
+    .header-center {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .projects {
+        margin: 30px 40px 0px 40px;
+    }
+
+    .projects-count-body h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .contact-btn-dark {
+        width: 200px;
+        height: 61px;
+        font-size: 13px;
+    }
+
+    .call-me {
+        margin: 30px 40px 32px 40px;
+        padding: 0px 30px 30px 30px;
+        height: 250px;
+    }
+
+    .call-me-body h3 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .projects-list {
+        margin: 0px 40px 0px 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .contact-text h1 {
+        margin: 40px 40px 0px 40px;
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .contact-desc {
+        margin: 0 40px;
+    }
+
+    .contact-row {
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+}
+
+/* ==================== АДАПТИВ ДЛЯ МОБИЛЬНЫХ (768px и меньше) ==================== */
+@media screen and (max-width: 768px) {
+    /* Хедер: лого слева, бургер справа на одной строке */
+    .header {
+        padding: 15px 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        gap: 0;
+    }
+
+    .header-left,
+    .header-right,
+    .nav-menu,
+    .phone-info,
+    .help-info,
+    .distance-block {
+        display: none !important;
+    }
+
+    /* Логотип слева */
+    .header-center {
+        width: auto;
+        margin: 0;
+        order: 0;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .logo-container {
+        margin-bottom: 0;
+        align-items: flex-start;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    /* Бургер-меню справа */
+    .burger-menu {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .burger-menu svg {
+        width: 24px;
+        height: 18px;
+    }
+
+    .burger-menu svg path {
+        fill: #2C2F37;
+    }
+
+    /* Секция проектов */
+    .projects {
+        margin: 20px 20px 0px 20px;
+    }
+
+    .projects-count-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .projects-count-body h1 {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    /* Убираем лого из блока "НАШИ ПРОЕКТЫ" */
+    .logo-projects .logo-container {
+        display: none;
+    }
+
+    .logo-projects {
+        gap: 0;
+    }
+
+    /* Кнопка строго 200x61 */
+    .contact-btn-dark {
+        width: 200px !important;
+        height: 61px !important;
+        max-width: 200px;
+        flex-shrink: 0;
+        font-size: 14px;
+    }
+
+    .projects-header {
+        padding-bottom: 32px;
+    }
+
+    /* Блок call-me */
+    .call-me {
+        margin: 20px 20px 24px 20px;
+        padding: 0px 20px 20px 20px;
+        height: 220px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .call-me-body {
+        gap: 12px;
+    }
+
+    .call-me-body h3 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .call-me-body p {
+        font-size: 12px;
+    }
+
+    .call-me-btn-light {
+        width: 160px;
+        height: 54px;
+        font-size: 13px;
+    }
+
+    /* Сетка проектов */
+    .projects-list {
+        margin: 0px 20px 0px 20px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project {
+        padding-bottom: 32px;
+    }
+
+    .project img {
+        padding-bottom: 20px;
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    .project-desc-row {
+        padding-bottom: 16px;
+        flex-wrap: wrap;
+    }
+
+    .project-desc-row h3 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .project-desc-row span {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .project-desc p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .project-desc p br {
+        display: none;
+    }
+
+    .project-button {
+        padding-top: 20px;
+    }
+
+    .cost-btn {
+        width: 200px;
+        height: 61px;
+        font-size: 14px;
+    }
+
+    /* Контактная форма с фоновым изображением БЕЗ затемнения */
+    .contact-form {
+        display: block;
+        position: relative;
+        background-image: url('../../img/map.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 40px 0;
+    }
+
+    /* Убираем затемнение */
+    .contact-form::before {
+        display: none;
+    }
+
+    .contact-text,
+    .contact-desc {
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-text {
+        background-image: none;
+        min-height: auto;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .contact-text h1 {
+        margin: 0 20px 30px 20px;
+        font-size: 28px;
+        line-height: 32px;
+        max-width: 100%;
+        word-wrap: break-word;
+        color: #040506;
+    }
+
+    .contact-desc {
+        margin: 0 20px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 25px !important;
+    }
+
+    .contact-row p {
+        padding-top: 10px;
+        flex-wrap: wrap;
+        font-size: 14px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .contact-row p svg {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    .contact-row span {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contact-row span br {
+        display: none;
+    }
+
+    .sec-desc {
+        width: 100%;
+    }
+
+    .sec-desc span {
+        font-size: 22px;
+        line-height: 22px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Разделительная черта */
+    .contact-row[style*="border-bottom"] {
+        border-bottom: 1px solid rgba(94, 114, 145, 0.22) !important;
+        padding-bottom: 25px !important;
+    }
+
+    /* Текст "Ответим на вопросы..." */
+    .contact-row span {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #2C2F37;
+        opacity: 0.9;
+    }
+
+    /* Кнопка связаться с иконкой VK - на одной строке */
+    .contact-row:last-child {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 25px !important;
+        padding-bottom: 0 !important;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+
+    .contact-row:last-child .contact-btn-dark {
+        width: 233px !important;
+        height: 61px !important;
+        min-width: 233px;
+        flex: 0 0 auto;
+    }
+
+    .contact-row:last-child .help-icons {
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+    }
+
+    .contact-row:last-child .help-icons a svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact-row:last-child .help-icons a svg path {
+        fill: #2C2F37;
+    }
+
+    /* Футер */
+    .footer {
+        display: none !important;
+        height: auto;
+        min-height: 80px;
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff;
+        border-top: 1px solid rgba(94, 114, 145, 0.22);
+    }
+
+    .footer__nav {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: static;
+        transform: none;
+        margin: 0;
+    }
+
+    .footer__nav a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .footer__help {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer__help span {
+        font-size: 13px;
+        color: #000000;
+        white-space: nowrap;
+    }
+
+    .footer__help-icons {
+        display: flex;
+        gap: 12px;
+    }
+
+    .footer__help-icons svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer__help-icons svg path {
+        fill: #000000;
+    }
+
+    .footer hr {
+        display: none;
+    }
+}
+
+/* ==================== ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ ==================== */
+@media screen and (max-width: 640px) {
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .footer__nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .contact-row:last-child {
+        flex-wrap: wrap;
+    }
+    
+    .contact-row:last-child .contact-btn-dark {
+        width: 100% !important;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-count-body h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .call-me {
+        height: 200px;
+    }
+
+    .call-me-body h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .contact-text h1 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .contact-row p {
+        font-size: 13px;
+    }
+
+    .sec-desc span {
+        font-size: 20px;
+    }
+    
+    .project-button {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .cost-btn {
+        width: 200px;
+    }
+}
+
+/* ==================== БУРГЕР-МЕНЮ ==================== */
+.burger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+}
+
+/* Исправление для блока "logo-projects" - скрываем лишний логотип */
+.logo-projects .logo-container {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-projects .logo-container {
+        display: none !important;
+    }
+}
+
+/* Исправление для кнопок - фиксированные размеры */
+.cost-btn,
+.contact-btn-dark,
+.call-me-btn-light {
+    cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.cost-btn {
+    width: 200px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color: #272A2E;
+    background: none;
+    border: 1.5px solid rgba(39, 42, 46, 0.5);
+    border-radius: 64px;
+}
+
+.contact-btn-dark {
+    width: 233px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #000000;
+    border-radius: 64px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ffffff;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-btn-dark {
+        width: 233px !important;
+    }
+}
+
+/* Исправление для гридов */
+.projects-list {
+    grid-auto-rows: minmax(auto, auto);
+}
+
+/* Исправление для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Исправление для текста в проектах */
+.project-desc p {
+    word-wrap: break-word;
+}
