@@ -4,11 +4,14 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     letter-spacing: -0.02em;
+    transition: transform 0.3s ease;
 }
 
 body {
     background-color: #0B0F1C;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* ==================== БЛОК 1: Hero ==================== */
@@ -22,6 +25,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .hero::before {
@@ -37,6 +42,8 @@ body {
     position: relative;
     border-bottom: 1px solid rgba(94, 114, 145, 0.22);
     z-index: 10;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero__header::before {
@@ -190,6 +197,9 @@ body {
 .hero__main {
     height: calc(100% - 100px);
     padding-top: 75px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero__tag {
@@ -200,7 +210,7 @@ body {
 }
 
 .hero__tag--right {
-    top: 170px;
+    /* top: 170px; */
     right: 60px;
     color: #ffffff;
     text-align: right;
@@ -217,8 +227,8 @@ body {
 .hero__content {
     position: absolute;
     left: 60px;
-    bottom: 200px;
-    max-width: 550px;
+    bottom: 5%;
+    max-width: 50%;
     color: white;
 }
 
@@ -329,9 +339,9 @@ body {
 .hero__card {
     position: absolute;
     right: 80px;
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
-    width: 350px;
+    width: 30%;
 }
 
 .hero__card-inner {
@@ -546,6 +556,8 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .about__header {
@@ -660,7 +672,6 @@ body {
 /* Динамические отступы в зависимости от активного слайда */
 .about__titles.slide-0 {
     gap: 60px;
-
 }
 
 .about__titles.slide-1 {
@@ -755,6 +766,8 @@ body {
     margin: 20px 0;
     background-color: #5E7291;
     color: #5E7291;
+    width: 80%;
+    height: 2px;
 }
 
 .about__text {
@@ -943,13 +956,16 @@ body {
 
 /* ==================== БЛОК 3: Details ==================== */
 .details {
-    height: 210vh;
+    min-height: 210vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     background: #ECEEF7;
-    padding: 0px;
-    gap: 0px;
+    padding: 0;
+    gap: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .details__image {
@@ -965,10 +981,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: space-around;
     align-items: center;
+    padding: 0 20px;
 }
 
 .projects-block-3__header {
@@ -978,6 +995,7 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .projects-block-3__title {
@@ -1032,6 +1050,8 @@ body {
 .projects-block-3__actions {
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .projects-block-3__btn {
@@ -1105,6 +1125,7 @@ body {
     padding: 30px 80px 60px 80px;
     max-width: 1920px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .house-card {
@@ -1123,7 +1144,8 @@ body {
 }
 
 .house-card--small .house-card__image {
-    width: 560px;
+    width: 100%;
+    max-width: 560px;
 }
 
 .house-card--large {
@@ -1141,6 +1163,7 @@ body {
     align-items: baseline;
     margin-top: 20px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .house-card__name {
@@ -1208,9 +1231,13 @@ body {
     transition: all 0.2s ease;
 }
 
+/* ==================== КОНТАКТНАЯ ФОРМА ==================== */
 .contact-text {
     background-image: url(../../img/map.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
 }
 
 .contact-text h1 {
@@ -1223,17 +1250,23 @@ body {
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: #040506;
+    max-width: calc(100% - 160px);
 }
 
 .contact-form {
+    gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .contact-row {
     display: flex;
     flex-direction: row;
     gap: 100px;
+    flex-wrap: wrap;
 }
 
 .contact-row p {
@@ -1263,16 +1296,11 @@ body {
 
 .contact-desc {
     margin-right: 80px;
+    max-width: 100%;
 }
 
-.help-icons a:hover svg {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-}
-
-.help-icons a:hover svg path {
-    fill: #000000;
-    transition: fill 0.2s ease;
+.contact-row-mobile {
+    display: none;
 }
 
 /* ==================== FOOTER ==================== */
@@ -1287,6 +1315,7 @@ body {
     justify-content: space-between;
     padding: 0 40px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .footer__nav {
@@ -1296,6 +1325,8 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer__nav a {
@@ -1306,6 +1337,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .footer__nav a svg {
@@ -1320,6 +1352,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    margin-left: auto;
 }
 
 .footer__help span {
@@ -1356,6 +1389,7 @@ body {
 
     body {
         overflow-x: hidden;
+        width: 100%;
     }
 
     /* Блок 1: Hero - Исправленный порядок без дублирования */
@@ -1364,6 +1398,7 @@ body {
         height: 70px;
         position: relative;
         z-index: 100;
+        width: 100%;
     }
 
     .hero__brand {
@@ -1418,12 +1453,13 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        /* background: rgba(11, 15, 28, 0.98); */
         backdrop-filter: blur(10px);
         padding: 40px 20px;
         z-index: 99;
         flex-direction: column;
         gap: 30px;
+        width: 100%;
+        background: rgba(11, 15, 28, 0.98);
     }
 
     .hero__mobile-menu.active {
@@ -1434,6 +1470,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        width: 100%;
     }
 
     .hero__mobile-nav a {
@@ -1443,11 +1480,13 @@ body {
         font-weight: 500;
         padding: 10px 0;
         border-bottom: 1px solid rgba(240, 246, 255, 0.1);
+        width: 100%;
     }
 
     .hero__mobile-contacts {
         margin-top: auto;
         padding: 20px 0;
+        width: 100%;
     }
 
     .hero__mobile-phone {
@@ -1483,22 +1522,23 @@ body {
         height: calc(100% - 70px);
         padding-bottom: 30px;
         position: relative;
+        width: 100%;
     }
 
     /* Мобильная пагинация сверху справа */
     .hero__mobile-pagination {
         display: flex;
         position: absolute;
-        /* top: -40px; */
         right: 20px;
-        align-items: baseline;
+        align-items: flex-end;
         gap: 5px;
         z-index: 5;
+        flex-direction: column;
     }
 
     .hero__big-number-mobile {
-        font-size: 48px;
-        line-height: 48px;
+        font-size: 104px;
+        line-height: 104px;
     }
 
     .hero__pagination-number-mobile {
@@ -1515,6 +1555,7 @@ body {
         max-width: 100%;
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     /* 1. Заголовок - исправлено дублирование */
@@ -1562,22 +1603,21 @@ body {
         gap: 10px;
         margin-bottom: 20px;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .hero__btn {
-        /* font-size: 12px; */
-        /* padding: 12px 20px; */
         white-space: nowrap;
+        flex: 1 1 auto;
+        min-width: 140px;
     }
 
     .hero__btn--primary {
         flex: 1;
-        min-width: 140px;
     }
 
     .hero__btn--outline {
         flex: 1.5;
-        min-width: 140px;
     }
 
     .hero__btn--primary svg {
@@ -1589,6 +1629,7 @@ body {
         order: 4;
         margin: 10px 0 0 0;
         max-width: 100%;
+        width: 100%;
     }
 
     .hero__tag--right {
@@ -1606,18 +1647,22 @@ body {
     /* Блок 2: About */
     .about {
         display: flex;
+        min-height: auto;
         height: auto;
         overflow-x: hidden;
         position: relative;
         flex-direction: column;
         align-content: flex-end;
         align-items: center;
+        padding-bottom: 40px;
+        width: 100%;
     }
 
     .about__header {
         padding: 20px;
         height: auto;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .about__location {
@@ -1629,6 +1674,7 @@ body {
         order: 2;
         margin-top: 10px;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .about__years {
@@ -1644,23 +1690,29 @@ body {
     }
 
     .about__numbers {
+        display: flex;
         gap: 30px;
         height: auto;
-        height: 100px;
+        min-height: 100px;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-end;
     }
 
     .about__number--lg {
-        height: 100px;
+        height: auto;
         font-size: 64px !important;
         line-height: 64px !important;
     }
+
     .about__number--md {
-        height: 100px;
+        height: auto;
         font-size: 48px !important;
         line-height: 48px !important;
     }
+
     .about__number--sm {
-        height: 100px;
+        height: auto;
         font-size: 32px !important;
         line-height: 32px !important;
     }
@@ -1671,6 +1723,7 @@ body {
         height: auto;
         gap: 10px !important;
         margin: 20px 0;
+        width: 100%;
     }
 
     .about__title, .about__subtitle {
@@ -1710,7 +1763,14 @@ body {
         gap: 20px;
         margin-top: 30px;
         align-content: flex-end;
-        justify-content: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about__btn--primary {
+        width: auto;
+        min-width: 200px;
+        padding: 0 20px;
     }
 
     .about__btn--primary img {
@@ -1722,19 +1782,22 @@ body {
         padding-top: 50px;
         height: auto;
         position: relative;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .about__help {
         gap: 10px;
+        flex-wrap: wrap;
     }
 
     .about__image {
         position: absolute;
         z-index: 0;
-        width: 400px;
+        width: 300px;
         height: auto;
-        right: -100px;
-        top: -100px;
+        right: -50px;
+        top: -50px;
         border-radius: 20px;
         opacity: 0.5;
         pointer-events: none;
@@ -1742,12 +1805,15 @@ body {
 
     /* Блок 3: Details */
     .details {
+        min-height: auto;
         height: auto;
         overflow-x: hidden;
+        width: 100%;
     }
 
     .details__image {
         height: 200px;
+        width: 100%;
     }
 
     .projects-block-3 {
@@ -1755,6 +1821,7 @@ body {
         height: auto;
         margin: 30px 0;
         gap: 20px;
+        padding: 0 20px;
     }
 
     .projects-block-3__header {
@@ -1763,11 +1830,13 @@ body {
         align-items: center;
         padding: 10px;
         gap: 10px;
+        width: 100%;
     }
 
     .projects-block-3__title {
         font-size: 36px;
         line-height: 36px;
+        text-align: center;
     }
 
     .projects-block-3__actions {
@@ -1775,11 +1844,17 @@ body {
         align-items: center;
         gap: 10px;
         padding: 20px;
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     .projects-block-3__btn {
-        width: 160px;
+        width: auto;
+        min-width: 160px;
         font-size: 14px;
+        padding: 0 15px;
     }
 
     .projects-block-3__btn--primary svg {
@@ -1795,11 +1870,13 @@ body {
         flex-direction: column;
         padding: 20px;
         gap: 40px;
+        width: 100%;
     }
 
     .house-card--small,
     .house-card--large {
         max-width: 100%;
+        width: 100%;
     }
 
     .house-card--small .house-card__image,
@@ -1825,101 +1902,313 @@ body {
     .house-card__description {
         font-size: 12px;
         line-height: 20px;
+        max-width: 100%;
+    }
+
+    .house-card__btn {
+        width: 100%;
+        max-width: 175px;
     }
 
     .house-card__btn svg {
         display: inline-block;
     }
+}
+
+/* ==================== МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ КОНТАКТНОЙ ФОРМЫ ==================== */
+@media (max-width: 768px) {
+    .contact-form {
+        display: block;
+        position: relative;
+        background-image: url('../../img/map.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 40px 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
 
     .contact-form {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: relative;
+    }
+
+    .contact-text,
+    .contact-desc {
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .contact-text {
+        background-image: none;
+        min-height: auto;
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
     }
 
     .contact-text h1 {
-        margin: 30px 0;
+        margin: 0 20px 30px 20px;
         font-size: 28px;
         line-height: 32px;
+        max-width: 100%;
+        word-wrap: break-word;
+        color: #040506;
     }
 
     .contact-desc {
-        margin-right: 0;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+        overflow-x: hidden;
     }
 
     .contact-row {
         flex-direction: column;
-        gap: 20px;
-        padding-bottom: 20px !important;
+        gap: 25px;
+        padding-bottom: 25px !important;
+        width: 100%;
+        max-width: 100%;
     }
 
     .contact-row p {
         padding-top: 10px;
+        flex-wrap: wrap;
+        font-size: 14px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        word-break: break-word;
+        max-width: 100%;
     }
 
+    .contact-row p svg {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    .contact-row span {
+        font-size: 14px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+    .contact-row span br {
+        display: none;
+    }
+
+    .sec-desc {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sec-desc span {
+        font-size: 22px;
+        line-height: 22px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Разделительная черта */
+    .contact-row[style*="border-bottom"] {
+        border-bottom: 1px solid rgba(94, 114, 145, 0.22) !important;
+        padding-bottom: 25px !important;
+        width: 100%;
+    }
+
+    /* Текст "Ответим на вопросы..." */
+    .contact-row span {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #2C2F37;
+        opacity: 0.9;
+        display: block;
+        width: 100%;
+    }
+
+    /* Кнопка связаться с иконкой VK - на одной строке */
     .contact-row:last-child {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 25px !important;
+        padding-bottom: 0 !important;
+        flex-wrap: nowrap;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .contact-row:last-child .projects-block-3__btn--primary {
+        width: auto !important;
+        min-width: 200px;
+        height: 61px !important;
+        padding: 0 25px;
+        /* flex: 1 1 auto; */
+        white-space: nowrap;
+    }
+
+    .contact-row:last-child .projects-block-3__btn--primary p {
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .contact-row:last-child .help-icons {
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+    }
+
+    .contact-row:last-child .help-icons a svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact-row:last-child .help-icons a svg path {
+        fill: #2C2F37;
+    }
+
+    .contact-row-mobile {
+        padding-top: 32px;
+        display: block;
+        width: 100%;
+    }
+    
+    .contact-section {
+        padding-bottom: 20px;
+        width: 100%;
+    }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    .contact-form {
+        padding: 30px 0;
+    }
+    
+    .contact-text h1 {
+        font-size: 24px;
+        line-height: 28px;
+        margin: 0 15px 20px 15px;
+    }
+
+    .contact-desc {
+        margin: 0 15px;
+    }
+
+    .contact-row p {
+        font-size: 13px;
+        gap: 8px;
     }
 
     .sec-desc span {
         font-size: 20px;
         line-height: 20px;
     }
+    
+    .contact-row:last-child {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .contact-row:last-child .projects-block-3__btn--primary {
+        width: 50% !important;
+        min-width: 50%;
+        justify-content: center;
 
-    /* Футер */
+    }
+    
+    .contact-row:last-child .help-icons {
+        width: 100%;
+        justify-content: center;
+    }
+
     .footer {
         flex-direction: column;
-        height: auto;
+        gap: 15px;
         padding: 20px;
+        height: auto;
+    }
+    
+    .footer__nav {
+        position: static;
+        transform: none;
+        margin: 0;
         gap: 20px;
     }
+    
+    .footer__help {
+        margin-left: 0;
+    }
+    
+    .footer__nav a {
+        white-space: normal;
+        text-align: center;
+    }
+}
 
+/* ==================== ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ ==================== */
+@media screen and (max-width: 640px) {
+    .footer {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        height: auto;
+    }
+    
     .footer__nav {
-        position: relative;
-        left: auto;
-        transform: none;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        position: static;
+        transform: none;
         margin: 0;
     }
-
+    
     .footer__help {
-        justify-content: center;
+        margin-left: 0;
     }
 }
 
-/* Адаптация для больших экранов (оставляем как есть) */
-@media (max-width: 1600px) {
-    .content-block-3 {
-        padding: 30px 60px;
-    }
+/* Исправление для изображений, чтобы они не выходили за границы */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-    .house-card--small {
-        max-width: 500px;
-    }
+/* Исправление для контейнеров */
+section, div, header, footer {
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
-    .house-card--small .house-card__image {
-        width: 500px;
+/* Исправление для абсолютно позиционированных элементов */
+.about__image {
+    max-width: 50%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .about__image {
+        max-width: 60%;
+        right: -30px;
     }
 }
 
-@media (max-width: 1400px) {
-    .content-block-3 {
-        padding: 30px 40px;
-        gap: 20px;
-    }
-
-    .house-card--small {
-        max-width: 450px;
-    }
-
-    .house-card--small .house-card__image {
-        width: 450px;
-    }
-
-    .projects-block-3__title {
-        line-height: 48px;
+@media (max-width: 480px) {
+    .about__image {
+        max-width: 70%;
+        right: -20px;
+        top: -30px;
     }
 }
