@@ -203,7 +203,7 @@ opacity: 0.44;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    gap: 20px;
  
 }
 .projects-count-body h1{
@@ -215,8 +215,10 @@ line-height: 56px;
 letter-spacing: -0.04em;
 
 color: #040506;
-text-wrap: nowrap;
-width: min-content;
+white-space: normal; /* ИЗМЕНЕНО: разрешаем перенос текста */
+        word-break: break-word; /* ДОБАВЛЕНО: гарантирует перенос длинных слов */
+        max-width: 100%;
+
 
 }
 .contact-btn-dark{
@@ -247,6 +249,8 @@ color: #ffffff;
 .logo-projects .logo-container{
     display: flex;
     justify-content: flex-end;
+    white-space: nowrap;
+    
 }
 .projects-header{
   border-bottom: 1px solid rgba(94, 114, 145, 0.22);
