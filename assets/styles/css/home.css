@@ -748,7 +748,23 @@ body {
     line-height: 24px !important;
     opacity: 0.4 !important;
 }
-
+/* Медиа-запрос для экранов шириной 1040px и меньше */
+@media screen and (max-width: 1040px) {
+    .about__subtitle--lg {
+        font-size: 36px !important;
+        line-height: 36px !important;
+    }
+    
+    .about__subtitle--md {
+        font-size: 20px !important;
+        line-height: 20px !important;
+    }
+    
+    .about__subtitle--sm {
+        font-size: 16px !important;
+        line-height: 16px !important;
+    }
+}
 .about__caption {
     font-weight: 600;
     font-size: 14px;
