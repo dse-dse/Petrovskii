@@ -215,7 +215,8 @@ line-height: 56px;
 letter-spacing: -0.04em;
 
 color: #040506;
-
+text-wrap: nowrap;
+width: min-content;
 
 }
 .contact-btn-dark{
@@ -290,7 +291,9 @@ color: #C0C6D8;
 
 
 }
-
+.contact-row-mobile{
+    display: none;
+}
 .call-me-body h3{
 
 font-family: 'Montserrat';
@@ -448,6 +451,7 @@ color: #040506;
 
 }
 .contact-form{
+    gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
  
@@ -619,11 +623,7 @@ opacity: 0.4;
         height: 250px;
     }
 
-    .call-me-body h3 {
-        font-size: 32px;
-        line-height: 32px;
-    }
-
+    
     .projects-list {
         margin: 0px 40px 0px 40px;
         grid-template-columns: 1fr 1fr;
@@ -658,6 +658,18 @@ opacity: 0.4;
         gap: 0;
     }
 
+.contact-row span{
+    display: none;
+
+}
+.contact-row-mobile{
+    padding-top: 32px;
+    display: block;
+}
+.contact-section{
+    padding-bottom: 20px;
+}
+
     .header-left,
     .header-right,
     .nav-menu,
@@ -674,6 +686,8 @@ opacity: 0.4;
         order: 0;
         display: flex;
         justify-content: flex-start;
+         flex: 1;
+         flex-direction: row-reverse;
     }
 
     .logo-container {
@@ -697,6 +711,8 @@ opacity: 0.4;
         display: flex;
         justify-content: flex-end;
         margin-top: 0;
+          margin-left: auto; /* Добавлено: прижимает к правому краю */
+        flex-shrink: 0; 
     }
 
     .burger-menu svg {
@@ -744,6 +760,7 @@ opacity: 0.4;
 
     .projects-header {
         padding-bottom: 32px;
+        padding-left: 20px
     }
 
     /* Блок call-me */
@@ -760,14 +777,9 @@ opacity: 0.4;
         gap: 12px;
     }
 
-    .call-me-body h3 {
-        font-size: 28px;
-        line-height: 28px;
-    }
+   
 
-    .call-me-body p {
-        font-size: 12px;
-    }
+    
 
     .call-me-btn-light {
         width: 160px;
@@ -1036,25 +1048,23 @@ opacity: 0.4;
     }
     
     .contact-row:last-child .contact-btn-dark {
-        width: 100% !important;
-        min-width: 100%;
+        width: 233px !important;
+       
+
     }
 }
 
 @media screen and (max-width: 480px) {
     .projects-count-body h1 {
-        font-size: 28px;
-        line-height: 28px;
+        font-size: 32px;
+        line-height: 32px;
     }
 
     .call-me {
         height: 200px;
     }
 
-    .call-me-body h3 {
-        font-size: 24px;
-        line-height: 24px;
-    }
+ 
 
     .contact-text h1 {
         font-size: 24px;
@@ -1163,4 +1173,45 @@ img {
 /* Исправление для текста в проектах */
 .project-desc p {
     word-wrap: break-word;
+}/* Замена фона для call-me блока на мобильных */
+/* ==================== АДАПТИВ ДЛЯ МОБИЛЬНЫХ (768px и меньше) ==================== */
+@media screen and (max-width: 768px) {
+    /* ... (весь остальной код до блока .call-me остается без изменений) ... */
+
+    /* Блок call-me */
+    .call-me {
+        margin: 20px 20px 24px 20px; /* Оставляем внешние отступы как у .projects-list */
+        padding: 0; /* Убираем внутренние отступы у родителя */
+        height: 472px; /* Оставляем высоту */
+        background-image: url('../../img/callme\ mobile.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 32px;
+        display: flex; /* Убедимся, что это flex */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end; /* Прижимаем контент к низу */
+    }
+
+    /* Добавляем внутренние отступы контенту, чтобы текст не прилипал к краям */
+    .call-me-body {
+        gap: 12px;
+        max-width: 100%;
+        padding: 0px 20px 30px 20px; /* Переносим сюда отступы от родителя */
+    }
+
+  
+    
+   
+    
+    /* Кнопка теперь будет иметь отступ слева благодаря padding у .call-me-body */
+    .call-me-btn-light {
+        width: 160px;
+        height: 54px;
+        font-size: 13px;
+        margin-left: 20px; /* Добавляем такой же отступ слева, как у текста */
+        margin-bottom: 30px; /* Добавляем отступ снизу, если нужно */
+    }
+
 }
