@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <!-- <link rel="stylesheet" href="assets/styles/css/cursor.css"> -->
 </head>
 
 <body>
@@ -83,9 +84,9 @@
                 </div>
                 <!-- Бургер-меню (видно только на мобилке) -->
                 <button class="hero__burger" aria-label="Меню">
+                    <span style="width: 50%;"></span>
                     <span></span>
-                    <span></span>
-                    <span></span>
+                    <span style="display: flex; width: 50%; margin-left: auto;"></span>
                 </button>
             </div>
         </header>
@@ -125,7 +126,8 @@
                 <div class="hero__actions">
                     <button class="hero__btn hero__btn--primary">
                         <!-- SVG скрыт на мобилке -->
-                        <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
                                 fill="#272A2E" />
@@ -322,7 +324,8 @@
             <div class="projects-block-3__actions">
                 <button class="projects-block-3__btn projects-block-3__btn--primary">
                     <!-- SVG скрыт на мобилке -->
-                    <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
                             fill="#F0F6FF" />
@@ -597,307 +600,308 @@
             }
         }
 
-       // Слайдер для about секции
-class AboutSlider {
-    constructor() {
-        this.numbers = document.querySelectorAll('.about__number');
-        this.titles = document.querySelectorAll('.about__title, .about__subtitle');
-        this.titlesContainer = document.querySelector('.about__titles');
-        this.sliderBars = document.querySelectorAll('.about__slider-bar');
-        this.caption = document.getElementById('about-caption');
-        this.text = document.getElementById('about-text');
+        // Слайдер для about секции
+        class AboutSlider {
+            constructor() {
+                this.numbers = document.querySelectorAll('.about__number');
+                this.titles = document.querySelectorAll('.about__title, .about__subtitle');
+                this.titlesContainer = document.querySelector('.about__titles');
+                this.sliderBars = document.querySelectorAll('.about__slider-bar');
+                this.caption = document.getElementById('about-caption');
+                this.text = document.getElementById('about-text');
 
-        // Сохраняем ссылки на конкретные элементы
-        this.number1 = document.getElementById('about-number-1');
-        this.number2 = document.getElementById('about-number-2');
-        this.number3 = document.getElementById('about-number-3');
+                // Сохраняем ссылки на конкретные элементы
+                this.number1 = document.getElementById('about-number-1');
+                this.number2 = document.getElementById('about-number-2');
+                this.number3 = document.getElementById('about-number-3');
 
-        this.title1 = document.getElementById('about-title-1');
-        this.title2 = document.getElementById('about-title-2');
-        this.title3 = document.getElementById('about-title-3');
+                this.title1 = document.getElementById('about-title-1');
+                this.title2 = document.getElementById('about-title-2');
+                this.title3 = document.getElementById('about-title-3');
 
-        this.currentSlide = 0;
-        this.totalSlides = 3;
-        this.intervalTime = 25000;
-        this.interval = null;
+                this.currentSlide = 0;
+                this.totalSlides = 3;
+                this.intervalTime = 25000;
+                this.interval = null;
 
-        // Контент для каждого слайда
-        this.slidesData = [
-            {
-                caption: 'Ваш комфорт за пределами городской квартиры',
-                text: 'Мы продумали всё до мелочей: от эргономичных планировок с просторными кухнями-гостиными до современных инженерных систем. Жизнь в собственном доме больше не требует компромиссов с привычным уровнем сервиса и уюта.'
-            },
-            {
-                caption: 'Идеальное расположение в экологически чистом районе',
-                text: 'Посёлок находится всего в 9 км от Челябинска, что позволяет совмещать загородную жизнь с доступностью городской инфраструктуры. Рядом лес, чистый воздух и развитая транспортная сеть.'
-            },
-            {
-                caption: 'Дружное сообщество и развитая инфраструктура',
-                text: 'В посёлке формируется активное сообщество жителей. Для детей и взрослых созданы все условия: детские площадки, зоны отдыха, спортивные площадки. Соседи становятся друзьями.'
+                // Контент для каждого слайда
+                this.slidesData = [
+                    {
+                        caption: 'Ваш комфорт за пределами городской квартиры',
+                        text: 'Мы продумали всё до мелочей: от эргономичных планировок с просторными кухнями-гостиными до современных инженерных систем. Жизнь в собственном доме больше не требует компромиссов с привычным уровнем сервиса и уюта.'
+                    },
+                    {
+                        caption: 'Идеальное расположение в экологически чистом районе',
+                        text: 'Посёлок находится всего в 9 км от Челябинска, что позволяет совмещать загородную жизнь с доступностью городской инфраструктуры. Рядом лес, чистый воздух и развитая транспортная сеть.'
+                    },
+                    {
+                        caption: 'Дружное сообщество и развитая инфраструктура',
+                        text: 'В посёлке формируется активное сообщество жителей. Для детей и взрослых созданы все условия: детские площадки, зоны отдыха, спортивные площадки. Соседи становятся друзьями.'
+                    }
+                ];
+
+                this.init();
             }
-        ];
 
-        this.init();
-    }
+            init() {
+                // Устанавливаем тексты цифр
+                if (this.number1) this.number1.textContent = '01';
+                if (this.number2) this.number2.textContent = '02';
+                if (this.number3) this.number3.textContent = '03';
 
-    init() {
-        // Устанавливаем тексты цифр
-        if (this.number1) this.number1.textContent = '01';
-        if (this.number2) this.number2.textContent = '02';
-        if (this.number3) this.number3.textContent = '03';
+                // Устанавливаем тексты заголовков
+                if (this.title1) this.title1.textContent = 'Комфорт.';
+                if (this.title2) this.title2.textContent = 'Местоположение.';
+                if (this.title3) this.title3.textContent = 'Жители.';
 
-        // Устанавливаем тексты заголовков
-        if (this.title1) this.title1.textContent = 'Комфорт.';
-        if (this.title2) this.title2.textContent = 'Местоположение.';
-        if (this.title3) this.title3.textContent = 'Жители.';
+                // Активируем первый слайд
+                this.activateSlide(0);
 
-        // Активируем первый слайд
-        this.activateSlide(0);
+                // Запускаем автоплей
+                this.startAutoPlay();
 
-        // Запускаем автоплей
-        this.startAutoPlay();
+                // Добавляем обработчики на цифры
+                this.numbers.forEach((number, index) => {
+                    number.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
 
-        // Добавляем обработчики на цифры
-        this.numbers.forEach((number, index) => {
-            number.addEventListener('click', () => {
-                this.goToSlide(index);
-            });
-        });
+                // Добавляем обработчики на заголовки
+                this.titles.forEach((title, index) => {
+                    title.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
 
-        // Добавляем обработчики на заголовки
-        this.titles.forEach((title, index) => {
-            title.addEventListener('click', () => {
-                this.goToSlide(index);
-            });
-        });
+                // Добавляем обработчики на полоски
+                this.sliderBars.forEach((bar, index) => {
+                    bar.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
 
-        // Добавляем обработчики на полоски
-        this.sliderBars.forEach((bar, index) => {
-            bar.addEventListener('click', () => {
-                this.goToSlide(index);
-            });
-        });
-
-        // Ховер на полоски
-        const barsContainer = document.querySelector('.about__slider-bars');
-        if (barsContainer) {
-            barsContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
-            barsContainer.addEventListener('mouseleave', () => this.startAutoPlay());
-        }
-    }
-
-    activateSlide(index) {
-        // Убираем классы слайдов с контейнера заголовков
-        if (this.titlesContainer) {
-            this.titlesContainer.classList.remove('slide-0', 'slide-1', 'slide-2');
-            this.titlesContainer.classList.add(`slide-${index}`);
-        }
-
-        // Убираем все классы размеров с цифр
-        this.numbers.forEach(num => {
-            num.classList.remove('about__number--lg', 'about__number--md', 'about__number--sm');
-        });
-
-        // Убираем все классы размеров с заголовков
-        this.titles.forEach(title => {
-            title.classList.remove('about__title--lg', 'about__title--md', 'about__title--sm',
-                'about__subtitle--lg', 'about__subtitle--md', 'about__subtitle--sm');
-        });
-
-        // В зависимости от индекса применяем нужные классы
-        if (index === 0) {
-            this.number1.classList.add('about__number--lg');
-            this.number2.classList.add('about__number--md');
-            this.number3.classList.add('about__number--sm');
-
-            this.title1.classList.add('about__title--lg');
-            this.title2.classList.add('about__subtitle--md');
-            this.title3.classList.add('about__subtitle--sm');
-        }
-        else if (index === 1) {
-            this.number1.classList.add('about__number--md');
-            this.number2.classList.add('about__number--lg');
-            this.number3.classList.add('about__number--md');
-
-            this.title1.classList.add('about__title--md');
-            this.title2.classList.add('about__subtitle--lg');
-            this.title3.classList.add('about__subtitle--md');
-        }
-        else if (index === 2) {
-            this.number1.classList.add('about__number--sm');
-            this.number2.classList.add('about__number--md');
-            this.number3.classList.add('about__number--lg');
-
-            this.title1.classList.add('about__title--sm');
-            this.title2.classList.add('about__subtitle--md');
-            this.title3.classList.add('about__subtitle--lg');
-        }
-
-        // Обновляем текст
-        if (this.caption) this.caption.textContent = this.slidesData[index].caption;
-        if (this.text) this.text.textContent = this.slidesData[index].text;
-
-        // Обновляем полоски
-        this.updateBars(index);
-
-        // Для мобильной версии показываем только активный заголовок
-        this.showOnlyActiveTitleOnMobile(index);
-    }
-
-    showOnlyActiveTitleOnMobile(index) {
-        // Проверяем, мобильная ли версия
-        if (window.innerWidth <= 768) {
-            // Скрываем все заголовки
-            this.titles.forEach(title => {
-                title.style.display = 'none';
-            });
-
-            // Показываем только активный заголовок
-            if (index === 0 && this.title1) {
-                this.title1.style.display = 'block';
-            } else if (index === 1 && this.title2) {
-                this.title2.style.display = 'block';
-            } else if (index === 2 && this.title3) {
-                this.title3.style.display = 'block';
+                // Ховер на полоски
+                const barsContainer = document.querySelector('.about__slider-bars');
+                if (barsContainer) {
+                    barsContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+                    barsContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+                }
             }
-        } else {
-            // На десктопе показываем все заголовки
-            this.titles.forEach(title => {
-                title.style.display = 'block';
-            });
-        }
-    }
 
-    updateBars(index) {
-        this.sliderBars.forEach((bar, i) => {
-            bar.classList.remove('active');
-            const progress = bar.querySelector('.about__slider-progress');
-            if (progress) {
-                progress.style.animation = 'none';
+            activateSlide(index) {
+                // Убираем классы слайдов с контейнера заголовков
+                if (this.titlesContainer) {
+                    this.titlesContainer.classList.remove('slide-0', 'slide-1', 'slide-2');
+                    this.titlesContainer.classList.add(`slide-${index}`);
+                }
+
+                // Убираем все классы размеров с цифр
+                this.numbers.forEach(num => {
+                    num.classList.remove('about__number--lg', 'about__number--md', 'about__number--sm');
+                });
+
+                // Убираем все классы размеров с заголовков
+                this.titles.forEach(title => {
+                    title.classList.remove('about__title--lg', 'about__title--md', 'about__title--sm',
+                        'about__subtitle--lg', 'about__subtitle--md', 'about__subtitle--sm');
+                });
+
+                // В зависимости от индекса применяем нужные классы
+                if (index === 0) {
+                    this.number1.classList.add('about__number--lg');
+                    this.number2.classList.add('about__number--md');
+                    this.number3.classList.add('about__number--sm');
+
+                    this.title1.classList.add('about__title--lg');
+                    this.title2.classList.add('about__subtitle--md');
+                    this.title3.classList.add('about__subtitle--sm');
+                }
+                else if (index === 1) {
+                    this.number1.classList.add('about__number--md');
+                    this.number2.classList.add('about__number--lg');
+                    this.number3.classList.add('about__number--md');
+
+                    this.title1.classList.add('about__title--md');
+                    this.title2.classList.add('about__subtitle--lg');
+                    this.title3.classList.add('about__subtitle--md');
+                }
+                else if (index === 2) {
+                    this.number1.classList.add('about__number--sm');
+                    this.number2.classList.add('about__number--md');
+                    this.number3.classList.add('about__number--lg');
+
+                    this.title1.classList.add('about__title--sm');
+                    this.title2.classList.add('about__subtitle--md');
+                    this.title3.classList.add('about__subtitle--lg');
+                }
+
+                // Обновляем текст
+                if (this.caption) this.caption.textContent = this.slidesData[index].caption;
+                if (this.text) this.text.textContent = this.slidesData[index].text;
+
+                // Обновляем полоски
+                this.updateBars(index);
+
+                // Для мобильной версии показываем только активный заголовок
+                this.showOnlyActiveTitleOnMobile(index);
+            }
+
+            showOnlyActiveTitleOnMobile(index) {
+                // Проверяем, мобильная ли версия
+                if (window.innerWidth <= 768) {
+                    // Скрываем все заголовки
+                    this.titles.forEach(title => {
+                        title.style.display = 'none';
+                    });
+
+                    // Показываем только активный заголовок
+                    if (index === 0 && this.title1) {
+                        this.title1.style.display = 'block';
+                    } else if (index === 1 && this.title2) {
+                        this.title2.style.display = 'block';
+                    } else if (index === 2 && this.title3) {
+                        this.title3.style.display = 'block';
+                    }
+                } else {
+                    // На десктопе показываем все заголовки
+                    this.titles.forEach(title => {
+                        title.style.display = 'block';
+                    });
+                }
+            }
+
+            updateBars(index) {
+                this.sliderBars.forEach((bar, i) => {
+                    bar.classList.remove('active');
+                    const progress = bar.querySelector('.about__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'none';
+                    }
+                });
+
+                const currentBar = this.sliderBars[index];
+                if (currentBar) {
+                    currentBar.classList.add('active');
+                    const progress = currentBar.querySelector('.about__slider-progress');
+                    if (progress) {
+                        progress.style.animation = 'about-progress 10s linear forwards';
+                    }
+                }
+            }
+
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.activateSlide(index);
+                this.stopAutoPlay();
+                this.startAutoPlay();
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.activateSlide(this.currentSlide);
+            }
+
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
+            }
+
+            stopAutoPlay() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
+                }
+            }
+        }
+
+        // Добавляем обработчик изменения размера окна
+        window.addEventListener('resize', () => {
+            const aboutSlider = window.aboutSlider;
+            if (aboutSlider) {
+                aboutSlider.showOnlyActiveTitleOnMobile(aboutSlider.currentSlide);
             }
         });
 
-        const currentBar = this.sliderBars[index];
-        if (currentBar) {
-            currentBar.classList.add('active');
-            const progress = currentBar.querySelector('.about__slider-progress');
-            if (progress) {
-                progress.style.animation = 'about-progress 10s linear forwards';
+        // Бургер-меню для мобильной версии
+        class MobileMenu {
+            constructor() {
+                this.burger = document.querySelector('.hero__burger');
+                this.mobileMenu = document.querySelector('.hero__mobile-menu');
+                this.init();
             }
-        }
-    }
 
-    goToSlide(index) {
-        this.currentSlide = index;
-        this.activateSlide(index);
-        this.stopAutoPlay();
-        this.startAutoPlay();
-    }
+            init() {
+                if (!this.burger) return;
 
-    nextSlide() {
-        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-        this.activateSlide(this.currentSlide);
-    }
+                // Создаем мобильное меню, если его нет
+                if (!this.mobileMenu) {
+                    this.createMobileMenu();
+                }
 
-    startAutoPlay() {
-        this.stopAutoPlay();
-        this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
-    }
+                this.burger.addEventListener('click', () => this.toggleMenu());
+            }
 
-    stopAutoPlay() {
-        if (this.interval) {
-            clearInterval(this.interval);
-            this.interval = null;
-        }
-    }
-}
+            createMobileMenu() {
+                const menu = document.createElement('div');
+                menu.className = 'hero__mobile-menu';
 
-// Добавляем обработчик изменения размера окна
-window.addEventListener('resize', () => {
-    const aboutSlider = window.aboutSlider;
-    if (aboutSlider) {
-        aboutSlider.showOnlyActiveTitleOnMobile(aboutSlider.currentSlide);
-    }
-});
-        
-// Бургер-меню для мобильной версии
-class MobileMenu {
-    constructor() {
-        this.burger = document.querySelector('.hero__burger');
-        this.mobileMenu = document.querySelector('.hero__mobile-menu');
-        this.init();
-    }
+                // Навигация
+                const nav = document.createElement('nav');
+                nav.className = 'hero__mobile-nav';
+                const navLinks = [
+                    { text: 'КЛИЕНТАМ', href: 'home.html' },
+                    { text: 'О СОЮЗЕ', href: '#' },
+                    { text: 'ПРОЕКТЫ', href: 'projects.html' },
+                    { text: 'КОНТАКТЫ', href: '#' }
+                ];
 
-    init() {
-        if (!this.burger) return;
+                navLinks.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = link.href;
+                    a.textContent = link.text;
+                    nav.appendChild(a);
+                });
 
-        // Создаем мобильное меню, если его нет
-        if (!this.mobileMenu) {
-            this.createMobileMenu();
-        }
-
-        this.burger.addEventListener('click', () => this.toggleMenu());
-    }
-
-    createMobileMenu() {
-        const menu = document.createElement('div');
-        menu.className = 'hero__mobile-menu';
-        
-        // Навигация
-        const nav = document.createElement('nav');
-        nav.className = 'hero__mobile-nav';
-        const navLinks = [
-            { text: 'КЛИЕНТАМ', href: 'home.html' },
-            { text: 'О СОЮЗЕ', href: '#' },
-            { text: 'ПРОЕКТЫ', href: 'projects.html' },
-            { text: 'КОНТАКТЫ', href: '#' }
-        ];
-        
-        navLinks.forEach(link => {
-            const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.text;
-            nav.appendChild(a);
-        });
-        
-        // Контакты
-        const contacts = document.createElement('div');
-        contacts.className = 'hero__mobile-contacts';
-        contacts.innerHTML = `
+                // Контакты
+                const contacts = document.createElement('div');
+                contacts.className = 'hero__mobile-contacts';
+                contacts.innerHTML = `
             <div class="hero__mobile-phone">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="30" height="30" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#F0F6FF"/>
                 </svg>
                 +7 (922) 632-39-00
             </div>
             <div class="hero__mobile-social">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="34" height="34" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z" fill="#F0F6FF"/>
                 </svg>
             </div>
         `;
-        
-        menu.appendChild(nav);
-        menu.appendChild(contacts);
-        
-        document.querySelector('.hero').appendChild(menu);
-        this.mobileMenu = menu;
-    }
 
-    toggleMenu() {
-        this.burger.classList.toggle('active');
-        this.mobileMenu.classList.toggle('active');
-        document.body.style.overflow = this.mobileMenu.classList.contains('active') ? 'hidden' : '';
-    }
-}
+                menu.appendChild(nav);
+                menu.appendChild(contacts);
 
-// Добавляем в DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    new HeroSlider();
-    new AboutSlider();
-    new MobileMenu(); // Добавляем инициализацию мобильного меню
-});
+                document.querySelector('.hero').appendChild(menu);
+                this.mobileMenu = menu;
+            }
+
+            toggleMenu() {
+                this.burger.classList.toggle('active');
+                this.mobileMenu.classList.toggle('active');
+                document.body.style.overflow = this.mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        // Добавляем в DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new HeroSlider();
+            new AboutSlider();
+            new MobileMenu(); // Добавляем инициализацию мобильного меню
+        });
     </script>
+    <!-- <script src="assets/js/global-cursor.js"></script> -->
 </body>
 
 </html>

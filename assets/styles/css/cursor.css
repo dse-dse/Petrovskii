@@ -1,0 +1,206 @@
+/* GlobalCursor2.css */
+* {
+  cursor: default !important;
+}
+
+.cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+/* Сброс стилей для Apple устройств */
+@supports (-webkit-touch-callout: none) {
+  /* Для всех интерактивных элементов Apple */
+  button,
+  a,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    -webkit-appearance: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    border-radius: inherit !important;
+    outline: none !important;
+  }
+  
+  /* Особый сброс для Safari */
+  .cursor-sticky-circle {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+}
+
+/* Лого-курсор */
+.cursor-lens-backdrop {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 2147483647;
+  will-change: transform;
+  
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 298.49 298.49'%3E%3Cpath d='m140.09,61.73l7.36-4.25c1.11-.64,2.47-.64,3.57,0l50.64,29.24c1.31.76,1.51,2.57.39,3.58l-29.4,26.85c-1.05.96-2.73.7-3.44-.53l-29.95-51.84c-.62-1.07-.25-2.44.82-3.05Z'/%3E%3Cpath d='m68.57,165.37v-61.05c0-.8.43-1.54,1.12-1.93l52.67-30.42c1.07-.62,2.43-.25,3.05.82l32.19,55.75c.52.91.35,2.06-.43,2.77l-47.88,43.74c-.53.49-1.27.69-1.98.53l-36.99-8.02c-1.03-.22-1.76-1.13-1.76-2.18Z'/%3E%3Cpath d='m196.38,215.23l-45.38,25.78c-1.1.62-2.44.62-3.53,0l-77.77-44.21c-.7-.4-1.13-1.14-1.13-1.94v-8.55c0-1.42,1.31-2.48,2.71-2.18l124.47,26.97c2,.43,2.41,3.11.63,4.13Z'/%3E%3Cpath d='m229.92,104.32v90.55c0-.8.43,1.55-1.13,1.94l-5.28,3c-.76.43-1.66.57-2.52.39l-89.15-19.3c-1.77-.38-2.37-2.61-1.03-3.83l86.84-79.32c.72-.66,1.78-.77,2.62-.29l8.53,4.92c.69.4,1.12,1.14,1.12,1.94Z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 298.49 298.49'%3E%3Cpath d='m140.09,61.73l7.36-4.25c1.11-.64,2.47-.64,3.57,0l50.64,29.24c1.31.76,1.51,2.57.39,3.58l-29.4,26.85c-1.05.96-2.73.7-3.44-.53l-29.95-51.84c-.62-1.07-.25-2.44.82-3.05Z'/%3E%3Cpath d='m68.57,165.37v-61.05c0-.8.43-1.54,1.12-1.93l52.67-30.42c1.07-.62,2.43-.25,3.05.82l32.19,55.75c.52.91.35,2.06-.43,2.77l-47.88,43.74c-.53.49-1.27.69-1.98.53l-36.99-8.02c-1.03-.22-1.76-1.13-1.76-2.18Z'/%3E%3Cpath d='m196.38,215.23l-45.38,25.78c-1.1.62-2.44.62-3.53,0l-77.77-44.21c-.7-.40-1.13-1.14-1.13-1.94v-8.55c0-1.42,1.31-2.48,2.71-2.18l124.47,26.97c2,.43,2.41,3.11.63,4.13Z'/%3E%3Cpath d='m229.92,104.32v90.55c0-.8.43,1.55-1.13,1.94l-5.28,3c-.76.43-1.66.57-2.52.39l-89.15-19.3c-1.77-.38-2.37-2.61-1.03-3.83l86.84-79.32c.72-.66,1.78-.77,2.62-.29l8.53,4.92c.69.40,1.12,1.14,1.12,1.94Z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  
+  transition: 
+    opacity 0.15s ease,
+    transform 0.2s ease;
+}
+
+/* Круг для прилипания */
+.cursor-sticky-circle {
+  position: fixed;
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 2147483648;
+  will-change: transform, opacity, width, height, border-radius;
+  
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  
+  /* Исправление для Apple - более точное позиционирование */
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  transition: 
+    opacity 0.15s ease,
+    width 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-radius 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Стиль для кнопок БЕЗ фона */
+.cursor-sticky-circle.outside-button {
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+}
+
+/* Стиль для кнопок С фоном */
+.cursor-sticky-circle.inside-button {
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+}
+
+/* Корекция для Apple системных кнопок */
+.cursor-sticky-circle[class*="apple"] {
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.1) !important;
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.1) !important;
+}
+
+/* Эффект при наведении */
+.cursor-lens-backdrop.hover {
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.4) brightness(1.15);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.4) brightness(1.15);
+}
+
+/* Эффект растягивания */
+.cursor-sticky-circle.pulling {
+  backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.3) brightness(1.1);
+  -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.3) brightness(1.1);
+  transition: 
+    opacity 0.15s ease,
+    width 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-radius 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Анимация клика */
+.cursor-lens-backdrop.clicked {
+  animation: lensClick 0.25s ease;
+}
+
+.cursor-sticky-circle.clicked {
+  animation: circleClick 0.2s ease;
+}
+
+@keyframes lensClick {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.88);
+  }
+}
+
+@keyframes circleClick {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+}
+
+/* Фикс для Safari с backdrop-filter */
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .cursor-lens-backdrop,
+  .cursor-sticky-circle {
+    -webkit-backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+    backdrop-filter: invert(100%) hue-rotate(180deg) contrast(1.2);
+  }
+  
+  /* Для старых версий Safari */
+  @media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+      .cursor-sticky-circle {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        mix-blend-mode: difference !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+      }
+    }
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px), (hover: none) {
+  .cursor-container {
+    display: none !important;
+  }
+}
+
+/* Производительность */
+.cursor-container * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Проверка поддержки backdrop-filter */
+@supports not ((backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1))) {
+  .cursor-lens-backdrop,
+  .cursor-sticky-circle {
+    display: none;
+  }
+}
+
+/* Дополнительный фикс для Apple */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .cursor-sticky-circle {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+}
