@@ -883,6 +883,7 @@ body {
 }
 
 .about__pagination span:last-child {
+     font-family: "Montserrat Alternates", sans-serif;
     font-size: 14px;
     color: #040506;
     letter-spacing: 1px;
@@ -2244,7 +2245,6 @@ img {
 section, div, header, footer {
     max-width: 100%;
     box-sizing: border-box;
-    font-size: 34px;
 }
 
 /* Исправление для абсолютно позиционированных элементов */
