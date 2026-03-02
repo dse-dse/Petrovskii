@@ -1259,9 +1259,7 @@ body {
 .contact-text {
     background-image: url(../../img/map.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+        background-size: 100% auto;
 }
 
 .contact-text h1 {
@@ -1278,12 +1276,10 @@ body {
 }
 
 .contact-form {
-    gap: 20px;
+   gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+    height: 600px;
 }
 
 .contact-row {
@@ -1319,8 +1315,10 @@ body {
 }
 
 .contact-desc {
+   display: flex;
     margin-right: 80px;
-    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-row-mobile {
