@@ -138,28 +138,116 @@
                 </div>
             </div>
 
-            <div class="hero__card mobile-hidden">
-                <div class="hero__card-inner">
-                    <div class="hero__video-placeholder"></div>
-                    <div class="hero__house-header">
-                        <h2 class="hero__house-title">Семейный</h2>
-                        <span class="hero__house-area">76 м²</span>
+            <!-- Слайдер карточек домов -->
+<div class="hero__slider-container">
+    <div class="hero__slider">
+        <!-- Слайд 1 - Семейный -->
+        <div class="hero__card hero__card--active" data-slide="0">
+            <div class="hero__card-inner">
+                <div class="hero__video-placeholder">
+                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Семейный дом.png" alt="Семейный дом">
+                </div>
+                <div class="hero__house-header">
+                    <h2 class="hero__house-title">Семейный</h2>
+                    <span class="hero__house-area">76 м²</span>
+                </div>
+                <p class="hero__house-description">
+                    Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.
+                </p>
+                <div class="hero__specs">
+                    <div>
+                        <span class="hero__spec-value">76 м²</span>
+                        <span class="hero__spec-label">Площадь</span>
                     </div>
-                    <p class="hero__house-description">
-                        Уютный дом с продуманным зонированием. Просторная кухня-гостиная ...
-                    </p>
-                    <div class="hero__specs">
-                        <div><span class="hero__spec-value">76 м²</span><span class="hero__spec-label">Площадь</span>
-                        </div>
-                        <div><span class="hero__spec-value">3</span><span class="hero__spec-label">Спальни</span></div>
-                        <div><span class="hero__spec-value">1</span><span class="hero__spec-label">Санузлы</span></div>
+                    <div>
+                        <span class="hero__spec-value">3</span>
+                        <span class="hero__spec-label">Спальни</span>
+                    </div>
+                    <div>
+                        <span class="hero__spec-value">1</span>
+                        <span class="hero__spec-label">Санузлы</span>
                     </div>
                 </div>
-                <button class="hero__card-btn">
-                    Подробнее
-                    <span class="hero__card-dot"></span>
-                </button>
             </div>
+        </div>
+
+        <!-- Слайд 2 - Современный -->
+        <div class="hero__card hero__card--next" data-slide="1">
+            <div class="hero__card-inner">
+                <div class="hero__video-placeholder">
+                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Современный дом.png" alt="Современный дом">
+                </div>
+                <div class="hero__house-header">
+                    <h2 class="hero__house-title">Современный</h2>
+                    <span class="hero__house-area">124 м²</span>
+                </div>
+                <p class="hero__house-description">
+                    Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.
+                </p>
+                <div class="hero__specs">
+                    <div>
+                        <span class="hero__spec-value">124 м²</span>
+                        <span class="hero__spec-label">Площадь</span>
+                    </div>
+                    <div>
+                        <span class="hero__spec-value">4</span>
+                        <span class="hero__spec-label">Спальни</span>
+                    </div>
+                    <div>
+                        <span class="hero__spec-value">2</span>
+                        <span class="hero__spec-label">Санузлы</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 3 - Классический -->
+        <div class="hero__card hero__card--prev" data-slide="2">
+            <div class="hero__card-inner">
+                <div class="hero__video-placeholder">
+                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Классический дом.png" alt="Классический дом">
+                </div>
+                <div class="hero__house-header">
+                    <h2 class="hero__house-title">Классический</h2>
+                    <span class="hero__house-area">98 м²</span>
+                </div>
+                <p class="hero__house-description">
+                    Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.
+                </p>
+                <div class="hero__specs">
+                    <div>
+                        <span class="hero__spec-value">98 м²</span>
+                        <span class="hero__spec-label">Площадь</span>
+                    </div>
+                    <div>
+                        <span class="hero__spec-value">3</span>
+                        <span class="hero__spec-label">Спальни</span>
+                    </div>
+                    <div>
+                        <span class="hero__spec-value">2</span>
+                        <span class="hero__spec-label">Санузлы</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>            <button class="hero__card-btn">
+                Подробнее
+                <span class="hero__card-dot"></span>
+            </button>
+
+    <!-- Стрелки навигации -->
+    <button class="hero__slider-prev" aria-label="Предыдущий">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+    </button>
+    <button class="hero__slider-next" aria-label="Следующий">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
+    </button>
+</div>
 
             <div class="hero__pagination mobile-hidden">
                 <div class="hero__pagination-info">
@@ -901,6 +989,168 @@
             new AboutSlider();
             new MobileMenu(); // Добавляем инициализацию мобильного меню
         });
+        // Слайдер карточек домов
+class HouseCardSlider {
+    constructor() {
+        this.sliderContainer = document.querySelector('.hero__slider');
+        this.cards = document.querySelectorAll('.hero__card');
+        this.prevBtn = document.querySelector('.hero__slider-prev');
+        this.nextBtn = document.querySelector('.hero__slider-next');
+        this.currentIndex = 0;
+        this.totalSlides = this.cards.length;
+        
+        // Данные для карточек
+        this.housesData = [
+            {
+                title: 'Семейный',
+                area: '76 м²',
+                description: 'Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.',
+                square: '76 м²',
+                bedrooms: '3',
+                bathrooms: '1',
+                img: 'assets/img/Семейный дом.png'
+            },
+            {
+                title: 'Современный',
+                area: '124 м²',
+                description: 'Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.',
+                square: '124 м²',
+                bedrooms: '4',
+                bathrooms: '2',
+                img: 'assets/img/Современный дом.png'
+            },
+            {
+                title: 'Классический',
+                area: '98 м²',
+                description: 'Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.',
+                square: '98 м²',
+                bedrooms: '3',
+                bathrooms: '2',
+                img: 'assets/img/Классический дом.png'
+            }
+        ];
+        
+        this.init();
+    }
+    
+    init() {
+        if (this.cards.length === 0) return;
+        
+        // Обновляем позиции карточек
+        this.updateCards();
+        
+        // Добавляем обработчики на кнопки навигации
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+        }
+        
+        // Добавляем обработчики на карточки для переключения
+        this.cards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                // Если клик не по кнопке "Подробнее"
+                if (!e.target.closest('.hero__card-btn')) {
+                    this.goToSlide(index);
+                }
+            });
+            
+            // Кнопка "Подробнее" - привязана к данным активного слайда
+            const btn = card.querySelector('.hero__card-btn');
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Показываем данные активного слайда, а не той карточки, на которой кнопка
+                    const activeHouse = this.housesData[this.currentIndex];
+                    console.log('Подробнее о доме:', activeHouse.title);
+                    alert(`Подробнее о доме "${activeHouse.title}"\n\nПлощадь: ${activeHouse.square}\nСпальни: ${activeHouse.bedrooms}\nСанузлы: ${activeHouse.bathrooms}\n\n${activeHouse.description}`);
+                    // Здесь можно добавить переход на страницу деталей
+                    // window.location.href = `/house/${this.currentIndex}`;
+                });
+            }
+        });
+        
+        // Обновляем содержимое карточек из данных (на случай, если нужно обновить)
+        this.updateCardsContent();
+    }
+    
+    updateCardsContent() {
+        // Обновляем содержимое каждой карточки
+        this.cards.forEach((card, index) => {
+            const house = this.housesData[index];
+            if (!house) return;
+            
+            const img = card.querySelector('.hero__video-placeholder img');
+            const title = card.querySelector('.hero__house-title');
+            const area = card.querySelector('.hero__house-area');
+            const description = card.querySelector('.hero__house-description');
+            const specValues = card.querySelectorAll('.hero__spec-value');
+            
+            if (img) img.src = house.img;
+            if (title) title.textContent = house.title;
+            if (area) area.textContent = house.area;
+            if (description) description.textContent = house.description;
+            if (specValues.length >= 3) {
+                specValues[0].textContent = house.square;
+                specValues[1].textContent = house.bedrooms;
+                specValues[2].textContent = house.bathrooms;
+            }
+        });
+    }
+    
+    updateCards() {
+        this.cards.forEach((card, index) => {
+            // Убираем все классы
+            card.classList.remove('hero__card--active', 'hero__card--next', 'hero__card--prev');
+            
+            // Вычисляем относительную позицию
+            let relativeIndex = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
+            
+            if (relativeIndex === 0) {
+                card.classList.add('hero__card--active');
+                // Активная карточка получает правильный z-index и видимость
+                card.style.opacity = '';
+                card.style.visibility = '';
+            } else if (relativeIndex === 1) {
+                card.classList.add('hero__card--next');
+                card.style.opacity = '';
+                card.style.visibility = '';
+            } else if (relativeIndex === this.totalSlides - 1) {
+                card.classList.add('hero__card--prev');
+                card.style.opacity = '';
+                card.style.visibility = '';
+            } else {
+                // Скрываем остальные карточки
+                card.style.opacity = '0';
+                card.style.visibility = 'hidden';
+                card.style.pointerEvents = 'none';
+            }
+        });
+    }
+    
+    goToSlide(index) {
+        if (index === this.currentIndex) return;
+        this.currentIndex = index;
+        this.updateCards();
+    }
+    
+    nextSlide() {
+        const newIndex = (this.currentIndex + 1) % this.totalSlides;
+        this.goToSlide(newIndex);
+    }
+    
+    prevSlide() {
+        const newIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+        this.goToSlide(newIndex);
+    }
+}
+
+// Инициализация слайдера карточек после загрузки
+document.addEventListener('DOMContentLoaded', () => {
+    // Инициализируем слайдер карточек домов
+    new HouseCardSlider();
+});
     </script>
     <!-- <script src="assets/js/global-cursor.js"></script> -->
 </body>

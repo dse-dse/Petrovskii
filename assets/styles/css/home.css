@@ -343,34 +343,151 @@ body {
     }
 }
 
-.hero__card {
+/* ========== СЛАЙДЕР КАРТОЧЕК ========== */
+.hero__slider-container {
     position: absolute;
-    right: 80px;
+    right: 180px;
     top: 50%;
     transform: translateY(-50%);
-    width: 30%;
+    width: 340px;
+    z-index: 20;
 }
 
+.hero__slider {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+/* Базовая карточка */
+.hero__card {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Активная карточка (сверху, оригинальный размер) */
+.hero__card--active {
+    z-index: 10;
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+.hero__card--active .hero__card-inner {
+    background-color: rgba(255, 255, 255, 0.23);
+    backdrop-filter: blur(10px);
+}
+
+/* Следующая карточка (ниже, ШИРИНА БОЛЬШЕ, высота меньше) */
+.hero__card--next {
+    z-index: 5;
+    transform: translateY(-50%);
+    /* opacity: 0.7; */
+    width: 110%;
+    left: -5%;
+}
+
+.hero__card--next .hero__card-inner {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    transform: scaleY(0.92);
+    padding: 20px;
+}
+
+.hero__card--next .hero__video-placeholder {
+    height: 130px;
+    margin-bottom: 18px;
+}
+
+.hero__card--next .hero__house-title {
+    font-size: 20px;
+}
+
+.hero__card--next .hero__spec-value {
+    font-size: 20px;
+}
+
+/* Предыдущая карточка (еще ниже, ШИРИНА ЕЩЕ БОЛЬШЕ, высота меньше) */
+.hero__card--prev {
+    z-index: 4;
+    transform: translateY(-50%);
+    /* opacity: 0.5; */
+    width: 120%;
+    left: -10%;
+}
+
+.hero__card--prev .hero__card-inner {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transform: scaleY(0.85);
+    padding: 16px;
+}
+
+.hero__card--prev .hero__video-placeholder {
+    height: 110px;
+    margin-bottom: 12px;
+}
+
+.hero__card--prev .hero__house-title {
+    font-size: 18px;
+}
+
+.hero__card--prev .hero__house-description {
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+.hero__card--prev .hero__specs {
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.hero__card--prev .hero__spec-value {
+    font-size: 16px;
+}
+
+.hero__card--prev .hero__card-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Скрываем неактивные карточки */
+.hero__card:not(.hero__card--active):not(.hero__card--next):not(.hero__card--prev) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%) scale(0.8);
+    pointer-events: none;
+}
+
+/* Элементы внутри карточек */
 .hero__card-inner {
     padding: 24px;
     border-radius: 40px;
     background-color: rgba(255, 255, 255, 0.23);
-    width: 60%;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 .hero__video-placeholder {
     width: 100%;
     height: 152px;
-    background-image: url(/assets/img/Семейный\ дом.png);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0);
-    font-size: 14px;
-    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero__video-placeholder img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .hero__house-header {
@@ -378,16 +495,21 @@ body {
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
 .hero__house-title {
     font-size: 24px;
     font-weight: 700;
     color: white;
+    margin: 0;
+    transition: all 0.3s ease;
 }
 
 .hero__house-area {
     color: #A5B1D2;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .hero__house-description {
@@ -395,12 +517,14 @@ body {
     line-height: 1.6;
     color: #B8C5E9;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
 .hero__specs {
     display: flex;
     gap: 30px;
     margin-bottom: 25px;
+    transition: all 0.3s ease;
 }
 
 .hero__specs div {
@@ -412,6 +536,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: white;
+    transition: all 0.3s ease;
 }
 
 .hero__spec-label {
@@ -420,6 +545,7 @@ body {
     line-height: 1.4;
 }
 
+/* Кнопка "Подробнее" - общий стиль */
 .hero__card-btn {
     background: rgba(255, 255, 255, 0.23);
     border: none;
@@ -433,12 +559,14 @@ body {
     align-items: center;
     gap: 10px;
     margin-top: 10px;
+    width: 50%;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
 .hero__card-btn:hover {
     background: rgba(255, 255, 255, 0.384);
     transform: translateY(-2px);
-    transition: all 0.2s ease;
 }
 
 .hero__card-dot {
@@ -448,6 +576,47 @@ body {
     border-radius: 50%;
     display: inline-block;
     margin-left: 10px;
+}
+
+/* Кнопки навигации слайдера */
+.hero__slider-prev,
+.hero__slider-next {
+    position: absolute;
+    bottom: -60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+    z-index: 30;
+}
+
+.hero__slider-prev {
+    /* right: 60px; */
+}
+
+.hero__slider-next {
+    left: 50px;
+}
+
+.hero__slider-prev:hover,
+.hero__slider-next:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+    .hero__slider-container {
+        display: none;
+    }
 }
 
 .hero__pagination {
@@ -2241,7 +2410,7 @@ img {
 
 /* Исправление для контейнеров */
 section, div, header, footer {
-    max-width: 100%;
+    /* max-width: 100%; */
     box-sizing: border-box;
 }
 
