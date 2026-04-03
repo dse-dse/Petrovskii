@@ -20,6 +20,11 @@
 </head>
 
 <body>
+    <!-- Модальное окно для фото на весь экран -->
+<div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img id="modalImage" src="" alt="Полноэкранное фото">
+</div>
     <header class="header">
         <!-- Левый блок с информацией о расстоянии -->
         <div class="header-left">
@@ -180,34 +185,57 @@
         </div>
 
         <div class="projects-list">
-            <div class="project">
-                <img src="assets/img/Уютный дом.png" alt="" />
-                <div class="project-desc">
-                    <div class="project-desc-row">
-                        <h3>Уютный дом</h3>
-                        <span>134 м<sup>2</sup></span>
-                    </div>
-                    <p>
-                        Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой.
-                        Благодаря одному уровню все
-                        помещения легко доступны, что создает особую комфортную атмосферу. Панорамные окна наполняют
-                        пространство светом, а просторная терраса расширяет жилую зону на улицу.
-                    </p>
-                </div>
-                <div class="project-button">
-                    <button class="cost-btn">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                                fill="#272A2E" />
-                        </svg>
-                        <span>Узнать цену</span>
-                    </button>
-                </div>
-            </div>
+          <div class="project">
+    <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Уютный дом.png" alt="Уютный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Уютный дом.png" alt="Фото 0" data-image="assets/img/Уютный дом.png">
+            <img class="thumbnail" src="assets/img/уют1.png" alt="Фото 1" data-image="assets/img/уют1.png">
+            <img class="thumbnail" src="assets/img/уют2.png" alt="Фото 2" data-image="assets/img/уют2.png">
+            <img class="thumbnail" src="assets/img/уют3.png" alt="Фото 3" data-image="assets/img/уют3.png">
+            <img class="thumbnail" src="assets/img/уют4.png" alt="Фото 4" data-image="assets/img/уют4.png">
+            <img class="thumbnail" src="assets/img/уют5.png" alt="Фото 5" data-image="assets/img/уют5.png">
+            <img class="thumbnail" src="assets/img/уют6.png" alt="Фото 6" data-image="assets/img/уют6.png">
+            <img class="thumbnail" src="assets/img/уют7.png" alt="Фото 7" data-image="assets/img/уют7.png">
+        </div>
+    </div>
+    <div class="project-desc">
+        <div class="project-desc-row">
+            <h3>Уютный дом</h3>
+            <span>134 м<sup>2</sup></span>
+        </div>
+        <p>
+            Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой.
+            Благодаря одному уровню все помещения легко доступны, что создает особую комфортную атмосферу. Панорамные окна наполняют
+            пространство светом, а просторная терраса расширяет жилую зону на улицу.
+        </p>
+    </div>
+    <div class="project-button">
+        <button class="cost-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                    fill="#272A2E" />
+            </svg>
+            <span>Узнать цену</span>
+        </button>
+    </div>
+</div>
 
             <div class="project">
-                <img src="assets/img/Комфортный дом.png" alt="" />
+                 <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Комфортный дом.png" alt="Комфортный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Комфортный дом.png" alt="Фото 0" data-image="assets/img/Комфортный дом.png">
+            <img class="thumbnail active" src="assets/img/ком1.png" alt="Фото 1" data-image="assets/img/Ком1.png">
+            <img class="thumbnail active" src="assets/img/ком2.png" alt="Фото 2" data-image="assets/img/Ком2.png">
+            <img class="thumbnail active" src="assets/img/ком3.png" alt="Фото 3" data-image="assets/img/Ком3.png">
+            <img class="thumbnail active" src="assets/img/ком4.png" alt="Фото 4" data-image="assets/img/Ком4.png">
+            <img class="thumbnail active" src="assets/img/ком5.png" alt="Фото 5" data-image="assets/img/Ком5.png">
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Комфортный дом</h3>
@@ -232,7 +260,20 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/img/Оптимальный дом.png" alt="" />
+                    <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Оптимальный дом.png" alt="Оптимальный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Оптимальный дом.png" alt="Фото 0" data-image="assets/img/Оптимальный дом.png">
+            <img class="thumbnail active" src="assets/img/опт1.png" alt="Фото 1" data-image="assets/img/опт1.png">
+            <img class="thumbnail active" src="assets/img/опт2.png" alt="Фото 2" data-image="assets/img/опт2.png">
+            <img class="thumbnail active" src="assets/img/опт3.png" alt="Фото 3" data-image="assets/img/опт3.png">
+            <img class="thumbnail active" src="assets/img/опт4.png" alt="Фото 4" data-image="assets/img/опт4.png">
+            <img class="thumbnail active" src="assets/img/опт5.png" alt="Фото 5" data-image="assets/img/опт5.png">
+           
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Оптимальный дом</h3>
@@ -256,7 +297,21 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/img/Удобный дом.png" alt="" />
+                      <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Удобный дом.png" alt="Удобный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Удобный дом.png" alt="Фото 0" data-image="assets/img/Удобный дом.png">
+            <img class="thumbnail active" src="assets/img/удо1.png" alt="Фото 1" data-image="assets/img/удо1.png">
+            <img class="thumbnail active" src="assets/img/удо2.png" alt="Фото 2" data-image="assets/img/удо2.png">
+            <img class="thumbnail active" src="assets/img/удо3.png" alt="Фото 3" data-image="assets/img/удо3.png">
+            <img class="thumbnail active" src="assets/img/удо4.png" alt="Фото 4" data-image="assets/img/удо4.png">
+            <img class="thumbnail active" src="assets/img/удо5.png" alt="Фото 5" data-image="assets/img/удо5.png">
+       
+           
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Удобный дом</h3>
@@ -280,7 +335,24 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/img/Семейный дом.png" alt="" />
+                        <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Семейный дом.png" alt="Семейный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Семейный дом.png" alt="Фото 0" data-image="assets/img/Семейный дом.png">
+            <img class="thumbnail active" src="assets/img/сем1.png" alt="Фото 1" data-image="assets/img/сем1.png">
+            <img class="thumbnail active" src="assets/img/сем2.png" alt="Фото 2" data-image="assets/img/сем2.png">
+            <img class="thumbnail active" src="assets/img/сем3.png" alt="Фото 3" data-image="assets/img/сем3.png">
+            <img class="thumbnail active" src="assets/img/сем4.png" alt="Фото 4" data-image="assets/img/сем4.png">
+            <img class="thumbnail active" src="assets/img/сем5.png" alt="Фото 5" data-image="assets/img/сем5.png">
+            <img class="thumbnail active" src="assets/img/сем6.png" alt="Фото 6" data-image="assets/img/сем6.png">
+            <img class="thumbnail active" src="assets/img/сем7.png" alt="Фото 7" data-image="assets/img/сем7.png">
+          
+       
+        
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Семейный дом</h3>
@@ -305,7 +377,25 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/img/Стильный дом.png" alt="" />
+
+                   <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0" data-image="assets/img/Стильный дом.png">
+            <img class="thumbnail active" src="assets/img/сти1.png" alt="Фото 1" data-image="assets/img/сти1.png">
+            <img class="thumbnail active" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
+            <img class="thumbnail active" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
+            <img class="thumbnail active" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
+            <img class="thumbnail active" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
+
+   
+          
+       
+        
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Стильный дом</h3>
@@ -329,7 +419,27 @@
                 </div>
             </div>
             <div class="project">
-                <img src="assets/img/Загородный дом.png" alt="" />
+
+                       <div class="project-image-container">
+        <img class="main-project-image" src="assets/img/Загородный дом.png" alt="Загородный дом" />
+        <div class="thumbnail-list">
+            <img class="thumbnail active" src="assets/img/Загородный дом.png" alt="Фото 0" data-image="assets/img/Загородный дом.png">
+            <img class="thumbnail active" src="assets/img/заг1.png" alt="Фото 1" data-image="assets/img/заг1.png">
+            <img class="thumbnail active" src="assets/img/заг2.png" alt="Фото 2" data-image="assets/img/заг2.png">
+            <img class="thumbnail active" src="assets/img/заг3.png" alt="Фото 3" data-image="assets/img/заг3.png">
+            <img class="thumbnail active" src="assets/img/заг4.png" alt="Фото 4" data-image="assets/img/заг4.png">
+            <img class="thumbnail active" src="assets/img/заг5.png" alt="Фото 5" data-image="assets/img/заг5.png">
+            <img class="thumbnail active" src="assets/img/заг6.png" alt="Фото 6" data-image="assets/img/заг6.png">
+       
+
+   
+          
+       
+        
+
+           
+        </div>
+    </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Загородный дом</h3>
@@ -528,6 +638,138 @@
             }
         }
     </script>
+   <script>
+    // Функционал смены изображений для всех проектов (только для ПК)
+    document.addEventListener('DOMContentLoaded', function() {
+        function initProjectGalleries() {
+            const projects = document.querySelectorAll('.project');
+            
+            projects.forEach(project => {
+                const mainImage = project.querySelector('.main-project-image');
+                const thumbnails = project.querySelectorAll('.thumbnail');
+                
+                if (mainImage && thumbnails.length > 0) {
+                    // Удаляем старые обработчики, чтобы не дублировать
+                    thumbnails.forEach(thumb => {
+                        thumb.removeEventListener('click', thumb.clickHandler);
+                        
+                        // Создаем новый обработчик
+                        thumb.clickHandler = function() {
+                            const newImageSrc = this.getAttribute('data-image');
+                            if (newImageSrc) {
+                                mainImage.src = newImageSrc;
+                                
+                                // Обновляем активный класс
+                                thumbnails.forEach(t => t.classList.remove('active'));
+                                this.classList.add('active');
+                            }
+                        };
+                        
+                        thumb.addEventListener('click', thumb.clickHandler);
+                    });
+                }
+            });
+        }
+        
+        // Инициализируем галлереи
+        initProjectGalleries();
+        
+        // Следим за изменением размера окна
+        window.addEventListener('resize', function() {
+            const projects = document.querySelectorAll('.project');
+            
+            if (window.innerWidth <= 768) {
+                // На мобильной версии скрываем миниатюры
+                projects.forEach(project => {
+                    const thumbList = project.querySelector('.thumbnail-list');
+                    if (thumbList) {
+                        thumbList.style.display = 'none';
+                    }
+                });
+            } else {
+                // На ПК показываем миниатюры
+                projects.forEach(project => {
+                    const thumbList = project.querySelector('.thumbnail-list');
+                    if (thumbList) {
+                        thumbList.style.display = 'flex';
+                    }
+                });
+            }
+        });
+        
+        // Инициализация при загрузке
+        if (window.innerWidth <= 768) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                const thumbList = project.querySelector('.thumbnail-list');
+                if (thumbList) {
+                    thumbList.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
+<script>
+  // Функционал для открытия фото на весь экран (высокое качество)
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    
+    // Функция открытия модального окна
+    function openModal(imageSrc) {
+        // Создаем временную переменную для高清 изображения
+        let highQualitySrc = imageSrc;
+        
+        // Если изображение имеет расширение, заменяем на оригинальное качество
+        if (imageSrc.includes('.png')) {
+            highQualitySrc = imageSrc.replace('.png', '.png');
+        }
+        if (imageSrc.includes('.jpg') || imageSrc.includes('.jpeg')) {
+            highQualitySrc = imageSrc;
+        }
+        
+        modalImage.src = highQualitySrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Функция закрытия модального окна
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        modalImage.src = '';
+    }
+    
+    // Обработчик клика на главное изображение
+    const mainImages = document.querySelectorAll('.main-project-image');
+    mainImages.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openModal(this.src);
+        });
+    });
+    
+    // Закрытие по клику на крестик
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Закрытие по клику на фон
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Закрытие по клавише ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+});
+</script>
 </body>
 
 </html>
