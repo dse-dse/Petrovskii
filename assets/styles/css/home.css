@@ -1111,7 +1111,8 @@ body {
 
 /* ==================== БЛОК 2: About ==================== */
 .about {
-    height: 100vh;
+    padding-top: 50px;
+    /* height: 100vh; */
     background: #ECEEF7;
     display: flex;
     flex-direction: column;
@@ -1538,7 +1539,8 @@ body {
 
 /* ==================== БЛОК 3: Details ==================== */
 .details {
-    min-height: 210vh;
+    /* min-height: 210vh; */
+    padding-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
