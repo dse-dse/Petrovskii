@@ -231,12 +231,15 @@
             </div>
 
         </div>
-    </div>            <button class="hero__card-btn">
-                Подробнее
-                <span class="hero__card-dot"></span>
-            </button>
-
-
+    </div>          
+    <!-- Соединительная линия и брелок-кнопка -->
+    <div class="hero__card-tether">
+        <div class="hero__tether-line"></div>
+        <button class="hero__card-btn">
+            Подробнее
+            <span class="hero__card-dot"></span>
+        </button>
+    </div>
 </div>
 
             <div class="hero__pagination mobile-hidden">
@@ -358,7 +361,7 @@
                 </div>
             </div>
         </div>
-        <img class="about__image" src="assets/img/Rectangle 35.png" alt="Пример дома">
+
     </section>
 
     <!-- Блок 3: Детали (Details) -->
@@ -485,6 +488,17 @@
                                 + 7 (922) 632-39-00
                             </p>
                         </div>
+                        <div class="sec-desc">
+                            <p>
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                        fill="#2C2F37" />
+                                </svg>
+                                + 7 (993) 930-03-49
+                            </p>
+                        </div>
                     </div>
 
                     <div class="contact-section">
@@ -497,7 +511,7 @@
                                         d="M13.125 0H1.875C1.37788 0.000541441 0.901278 0.201851 0.549762 0.559758C0.198247 0.917665 0.000531772 1.40293 0 1.90909V10.0909C0.000531772 10.5971 0.198247 11.0823 0.549762 11.4402C0.901278 11.7981 1.37788 11.9995 1.875 12H13.125C13.6221 11.9995 14.0987 11.7981 14.4502 11.4402C14.8018 11.0823 14.9995 10.5971 15 10.0909V1.90909C14.9995 1.40293 14.8018 0.917665 14.4502 0.559758C14.0987 0.201851 13.6221 0.000541441 13.125 0ZM12.6502 3.15784L7.82879 6.97602C7.73478 7.05044 7.61909 7.09084 7.5 7.09084C7.38091 7.09084 7.26522 7.05044 7.17121 6.97602L2.34978 3.15784C2.29313 3.11428 2.24555 3.0597 2.2098 2.99726C2.17405 2.93482 2.15085 2.86576 2.14153 2.79411C2.13222 2.72246 2.13699 2.64964 2.15556 2.57988C2.17413 2.51012 2.20613 2.44481 2.2497 2.38776C2.29327 2.3307 2.34754 2.28302 2.40937 2.24751C2.47119 2.21199 2.53933 2.18934 2.60983 2.18087C2.68032 2.17239 2.75177 2.17827 2.82002 2.19816C2.88826 2.21804 2.95195 2.25154 3.00737 2.2967L7.5 5.85443L11.9926 2.2967C12.105 2.21033 12.2462 2.17244 12.3857 2.19124C12.5253 2.21005 12.652 2.28402 12.7384 2.39718C12.8248 2.51033 12.864 2.65357 12.8475 2.79592C12.831 2.93826 12.7601 3.06828 12.6502 3.15784Z"
                                         fill="#2C2F37" />
                                 </svg>
-                                petrovka2.gmail.com
+                                petrovka2@bk.ru
                             </p>
                         </div>
                     </div>
@@ -986,10 +1000,13 @@ class HouseCardSlider {
         this.cards = document.querySelectorAll('.hero__card');
         this.prevBtn = document.querySelector('.hero__slider-prev');
         this.nextBtn = document.querySelector('.hero__slider-next');
+        this.tetherBtn = document.querySelector('.hero__card-tether .hero__card-btn');
+        this.tetherLine = document.querySelector('.hero__tether-line');
+        this.tetherContainer = document.querySelector('.hero__card-tether');
         this.currentIndex = 0;
         this.totalSlides = this.cards.length;
+        this.isAnimating = false;
         
-        // Данные для карточек
         this.housesData = [
             {
                 title: 'Семейный',
@@ -1026,10 +1043,9 @@ class HouseCardSlider {
     init() {
         if (this.cards.length === 0) return;
         
-        // Обновляем позиции карточек
+        this.setFixedHeights();
         this.updateCards();
         
-        // Добавляем обработчики на кнопки навигации
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.prevSlide());
         }
@@ -1037,36 +1053,108 @@ class HouseCardSlider {
             this.nextBtn.addEventListener('click', () => this.nextSlide());
         }
         
-        // Добавляем обработчики на карточки для переключения
+        if (this.tetherBtn) {
+            this.tetherBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeHouse = this.housesData[this.currentIndex];
+                console.log('Подробнее о доме:', activeHouse.title);
+                alert(`Подробнее о доме "${activeHouse.title}"\n\nПлощадь: ${activeHouse.square}\nСпальни: ${activeHouse.bedrooms}\nСанузлы: ${activeHouse.bathrooms}\n\n${activeHouse.description}`);
+            });
+        }
+        
         this.cards.forEach((card, index) => {
             card.addEventListener('click', (e) => {
-                // Если клик не по кнопке "Подробнее"
                 if (!e.target.closest('.hero__card-btn')) {
                     this.goToSlide(index);
                 }
             });
-            
-            // Кнопка "Подробнее" - привязана к данным активного слайда
-            const btn = card.querySelector('.hero__card-btn');
-            if (btn) {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    // Показываем данные активного слайда, а не той карточки, на которой кнопка
-                    const activeHouse = this.housesData[this.currentIndex];
-                    console.log('Подробнее о доме:', activeHouse.title);
-                    alert(`Подробнее о доме "${activeHouse.title}"\n\nПлощадь: ${activeHouse.square}\nСпальни: ${activeHouse.bedrooms}\nСанузлы: ${activeHouse.bathrooms}\n\n${activeHouse.description}`);
-                    // Здесь можно добавить переход на страницу деталей
-                    // window.location.href = `/house/${this.currentIndex}`;
-                });
+        });
+        
+        this.updateCardsContent();
+        
+        setTimeout(() => this.updateTetherConnection(), 100);
+        
+        window.addEventListener('resize', () => {
+            this.setFixedHeights();
+            this.updateTetherConnection();
+        });
+    }
+    
+    setFixedHeights() {
+        let maxHeight = 0;
+        
+        this.cards.forEach(card => {
+            const inner = card.querySelector('.hero__card-inner');
+            if (inner) {
+                const originalDisplay = card.style.display;
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.visibility = 'visible';
+                
+                const height = inner.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
+                
+                card.style.display = originalDisplay;
+                card.style.opacity = '';
+                card.style.visibility = '';
             }
         });
         
-        // Обновляем содержимое карточек из данных (на случай, если нужно обновить)
-        this.updateCardsContent();
+        if (maxHeight > 0) {
+            this.cards.forEach(card => {
+                card.style.height = `${maxHeight}px`;
+                const inner = card.querySelector('.hero__card-inner');
+                if (inner) {
+                    inner.style.height = '100%';
+                }
+            });
+        }
+    }
+    
+    updateTetherConnection() {
+        if (!this.tetherContainer) return;
+        
+        const activeCard = document.querySelector('.hero__card--active');
+        
+        if (activeCard) {
+            const cardRect = activeCard.getBoundingClientRect();
+            const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
+            const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
+            
+            const cardRight = cardRect.right - containerRect.left;
+            let leftPosition = cardRight - buttonWidth;
+            
+            const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
+            leftPosition = Math.min(Math.max(leftPosition, 0), maxLeft);
+            
+            // Убираем left, используем right для позиционирования
+            this.tetherContainer.style.position = 'absolute';
+            this.tetherContainer.style.right = 'auto';
+            // this.tetherContainer.style.left = `${leftPosition}px`;
+            
+            if (this.tetherLine) {
+                this.tetherLine.style.animation = 'none';
+                this.tetherLine.offsetHeight;
+                this.tetherLine.style.animation = 'lineAppear 0.4s ease';
+                
+                // Добавляем скругление краев на время анимации
+                this.tetherLine.style.borderRadius = '50px';
+                setTimeout(() => {
+                    if (this.tetherLine) {
+                        this.tetherLine.style.borderRadius = '0px';
+                    }
+                }, 400);
+            }
+            
+            if (this.tetherBtn) {
+                this.tetherBtn.style.animation = 'none';
+                this.tetherBtn.offsetHeight;
+                this.tetherBtn.style.animation = 'btnAppear 0.1s ease';
+            }
+        }
     }
     
     updateCardsContent() {
-        // Обновляем содержимое каждой карточки
         this.cards.forEach((card, index) => {
             const house = this.housesData[index];
             if (!house) return;
@@ -1077,7 +1165,7 @@ class HouseCardSlider {
             const description = card.querySelector('.hero__house-description');
             const specValues = card.querySelectorAll('.hero__spec-value');
             
-            if (img) img.src = house.img;
+            if (img && img.src !== house.img) img.src = house.img;
             if (title) title.textContent = house.title;
             if (area) area.textContent = house.area;
             if (description) description.textContent = house.description;
@@ -1090,37 +1178,110 @@ class HouseCardSlider {
     }
     
     updateCards() {
+        if (this.isAnimating) return;
+        this.isAnimating = true;
+        
         this.cards.forEach((card, index) => {
-            // Убираем все классы
             card.classList.remove('hero__card--active', 'hero__card--next', 'hero__card--prev');
             
-            // Вычисляем относительную позицию
             let relativeIndex = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
             
             if (relativeIndex === 0) {
                 card.classList.add('hero__card--active');
-                // Активная карточка получает правильный z-index и видимость
                 card.style.opacity = '';
                 card.style.visibility = '';
+                card.style.pointerEvents = '';
             } else if (relativeIndex === 1) {
                 card.classList.add('hero__card--next');
                 card.style.opacity = '';
                 card.style.visibility = '';
+                card.style.pointerEvents = '';
             } else if (relativeIndex === this.totalSlides - 1) {
                 card.classList.add('hero__card--prev');
                 card.style.opacity = '';
                 card.style.visibility = '';
+                card.style.pointerEvents = '';
             } else {
-                // Скрываем остальные карточки
                 card.style.opacity = '0';
                 card.style.visibility = 'hidden';
                 card.style.pointerEvents = 'none';
             }
         });
+        
+        this.animateTetherToNewPosition();
+        
+        setTimeout(() => {
+            this.isAnimating = false;
+        }, 500);
+    }
+    
+    animateTetherToNewPosition() {
+        if (!this.tetherContainer) return;
+        
+        const activeCard = document.querySelector('.hero__card--active');
+        
+        if (activeCard) {
+            const cardRect = activeCard.getBoundingClientRect();
+            const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
+            const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
+            
+            const cardRight = cardRect.right - containerRect.left;
+            let newLeft = cardRight - buttonWidth;
+            const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
+            newLeft = Math.min(Math.max(newLeft, 0), maxLeft);
+            
+            // Плавная анимация перемещения
+            this.tetherContainer.style.transition = 'left 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            // this.tetherContainer.style.left = `${newLeft}px`;
+            
+            // Анимация полоски с скруглением краев
+            if (this.tetherLine) {
+                this.tetherLine.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                this.tetherLine.style.transform = 'scaleX(0.8)';
+                this.tetherLine.style.borderRadius = '50px'; // Скругление на время анимации
+                
+                setTimeout(() => {
+                    if (this.tetherLine) {
+                        this.tetherLine.style.transform = 'scaleX(1)';
+                    }
+                }, 200);
+                
+                setTimeout(() => {
+                    if (this.tetherLine) {
+                        this.tetherLine.style.borderRadius = '0px'; // Возвращаем обратно
+                    }
+                }, 500);
+            }
+            
+            if (this.tetherBtn) {
+                this.tetherBtn.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                this.tetherBtn.style.transform = 'translateY(5px)';
+                
+                setTimeout(() => {
+                    if (this.tetherBtn) {
+                        this.tetherBtn.style.transform = 'translateY(0)';
+                    }
+                }, 200);
+            }
+            
+            setTimeout(() => {
+                if (this.tetherContainer) {
+                    this.tetherContainer.style.transition = '';
+                }
+                if (this.tetherLine) {
+                    this.tetherLine.style.transition = '';
+                    this.tetherLine.style.transform = '';
+                }
+                if (this.tetherBtn) {
+                    this.tetherBtn.style.transition = '';
+                    this.tetherBtn.style.transform = '';
+                }
+            }, 500);
+        }
     }
     
     goToSlide(index) {
-        if (index === this.currentIndex) return;
+        if (index === this.currentIndex || this.isAnimating) return;
         this.currentIndex = index;
         this.updateCards();
     }
@@ -1136,9 +1297,7 @@ class HouseCardSlider {
     }
 }
 
-// Инициализация слайдера карточек после загрузки
 document.addEventListener('DOMContentLoaded', () => {
-    // Инициализируем слайдер карточек домов
     new HouseCardSlider();
 });
     </script>
