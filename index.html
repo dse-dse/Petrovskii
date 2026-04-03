@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+    <!-- Модальное окно для фото на весь экран -->
+<div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img id="modalImage" src="" alt="Полноэкранное фото">
+</div>
     <!-- Блок 1: Герой (Hero) -->
     <section class="hero">
         <header class="hero__header">
@@ -368,105 +374,79 @@
     <section class="details">
         <img class="details__image" src="assets/img/Rectangle 25.png" alt="">
 
-        <section class="projects-block-3">
-            <div class="projects-block-3__header">
-                <h1 class="projects-block-3__title">
-                    <p class="projects-block-3__count">9 проектов всего</p>
-                    НАШИ ПРОЕКТЫ
-                </h1>
-
-                <div class="projects-block-3__brand mobile-hidden">
-                    <div style="margin-bottom: 5px;" class="projects-block-3__stars">
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                                fill="#262830" />
-                        </svg>
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                                fill="#262830" />
-                        </svg>
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                                fill="#262830" />
-                        </svg>
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                                fill="#262830" />
-                        </svg>
-                    </div>
-                    <div class="projects-block-3__logo">ПЕТРОВСКИЙ 2</div>
-                </div>
+     <section class="content-block-3">
+    <!-- Проект 1: Стильный дом -->
+    <div class="house-card house-card--small project-gallery" data-project="stylish">
+        <div class="project-image-container">
+            <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
+            <div class="thumbnail-list">
+                <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0" data-image="assets/img/Стильный дом.png">
+                <img class="thumbnail" src="assets/img/сти1.png" alt="Фото 1" data-image="assets/img/сти1.png">
+                <img class="thumbnail" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
+                <img class="thumbnail" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
+                <img class="thumbnail" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
+                <img class="thumbnail" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
+         
             </div>
+        </div>
+        <div class="house-card__title">
+            <h1 class="house-card__name">Стильный</h1>
+            <p class="house-card__area">64 м²</p>
+        </div>
+        <p class="house-card__description">
+            Компактный одноэтажный дом в современном стиле<br>
+            с лаконичным фасадом и светлой отделкой.<br><br>
+            Панорамные окна наполняют пространство<br>
+            светом, а просторная терраса расширяет жилую зону на улицу
+        </p>
+        <button class="house-card__btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                    fill="#272A2E" />
+            </svg>
+            <p>Узнать цену</p>
+        </button>
+    </div>
 
-            <div class="projects-block-3__actions">
-                <button class="projects-block-3__btn projects-block-3__btn--primary">
-                    <!-- SVG скрыт на мобилке -->
-                    <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                            fill="#F0F6FF" />
-                    </svg>
-                    <p>Связаться с нами</p>
-                </button>
-                <button class="projects-block-3__btn projects-block-3__btn--outline">
-                    <p>Все проекты</p>
-                </button>
+    <!-- Проект 2: Загородный дом -->
+    <div class="house-card house-card--large project-gallery" data-project="country">
+        <div class="project-image-container">
+            <img class="main-project-image" src="assets/img/Rectangle 32.png" alt="Загородный дом" />
+            <div class="thumbnail-list">
+                <img class="thumbnail active" src="assets/img/Rectangle 32.png" alt="Фото 0" data-image="assets/img/Rectangle 32.png">
+                <img class="thumbnail" src="assets/img/заг1.png" alt="Фото 2" data-image="assets/img/заг1.png">
+                <img class="thumbnail" src="assets/img/заг2.png" alt="Фото 2" data-image="assets/img/заг2.png">
+                <img class="thumbnail" src="assets/img/заг3.png" alt="Фото 3" data-image="assets/img/заг3.png">
+                <img class="thumbnail" src="assets/img/заг4.png" alt="Фото 4" data-image="assets/img/заг4.png">
+                <img class="thumbnail" src="assets/img/заг5.png" alt="Фото 5" data-image="assets/img/заг5.png">
+                <img class="thumbnail" src="assets/img/заг6.png" alt="Фото 6" data-image="assets/img/заг6.png">
+          
             </div>
-        </section>
+        </div>
+        <div class="house-card__title">
+            <h1 class="house-card__name">Загородный</h1>
+            <p class="house-card__area">105 м²</p>
+        </div>
+        <p class="house-card__description">
+            Рациональная планировка, большие окна и отдельный входной<br>
+            узел обеспечивают удобство для семьи.<br><br>
+            Идеальный формат для постоянного проживания в тишине и окружении природы
+        </p>
+        <button class="house-card__btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                    fill="#272A2E" />
+            </svg>
+            <p>Узнать цену</p>
+        </button>
+    </div>
+</section>
 
         <hr class="details__divider">
 
-        <section class="content-block-3">
-            <div class="house-card house-card--small">
-                <img class="house-card__image" src="assets/img/Rectangle 28.png" alt="">
-                <div class="house-card__title">
-                    <h1 class="house-card__name">Стильный</h1>
-                    <p class="house-card__area">64 м²</p>
-                </div>
-                <p class="house-card__description">
-                    Компактный одноэтажный дом в современном стиле<br>
-                    с лаконичным фасадом и светлой отделкой.<br><br>
-                    Панорамные окна наполняют пространство<br>
-                    светом, а просторная терраса расширяет жилую зону на улицу
-                </p>
-                <button class="house-card__btn">
-                    <!-- SVG НЕ скрыт на мобилке -->
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                            fill="#272A2E" />
-                    </svg>
-                    <p>Узнать цену</p>
-                </button>
-            </div>
-
-            <div class="house-card house-card--large">
-                <img class="house-card__image" src="assets/img/Rectangle 32.png" alt="">
-                <div class="house-card__title">
-                    <h1 class="house-card__name">Загородный</h1>
-                    <p class="house-card__area">105 м²</p>
-                </div>
-                <p class="house-card__description">
-                    Рациональная планировка, большие окна и отдельный входной<br>
-                    узел обеспечивают удобство для семьи.<br><br>
-                    Идеальный формат для постоянного проживания в тишине и окружении природы
-                </p>
-                <button class="house-card__btn">
-                    <!-- SVG НЕ скрыт на мобилке -->
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                            fill="#272A2E" />
-                    </svg>
-                    <p>Узнать цену</p>
-                </button>
-            </div>
-        </section>
+     
 
         <section class="contact-form">
             <div class="contact-text">
@@ -1302,6 +1282,74 @@ document.addEventListener('DOMContentLoaded', () => {
 });
     </script>
     <!-- <script src="assets/js/global-cursor.js"></script> -->
+     <script>
+// Функционал смены изображений для галлерей проектов
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    
+    // Функция открытия модального окна
+    function openModal(imageSrc) {
+        modalImage.src = imageSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Функция закрытия модального окна
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        modalImage.src = '';
+    }
+    
+    // Инициализация галлерей для всех проектов
+    const projectGalleries = document.querySelectorAll('.project-gallery');
+    
+    projectGalleries.forEach(gallery => {
+        const mainImage = gallery.querySelector('.main-project-image');
+        const thumbnails = gallery.querySelectorAll('.thumbnail');
+        
+        if (mainImage && thumbnails.length > 0) {
+            // Клик на главное фото - открытие модального окна
+            mainImage.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openModal(this.src);
+            });
+            
+            // Клик на миниатюры - смена главного фото
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const newImageSrc = this.getAttribute('data-image');
+                    if (newImageSrc) {
+                        mainImage.src = newImageSrc;
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+        }
+    });
+    
+    // Закрытие модального окна
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+});
+</script>
 </body>
 
 </html>
