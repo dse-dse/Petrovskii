@@ -991,27 +991,39 @@ class HouseCardSlider {
         
         this.housesData = [
             {
+                id: 0,
                 title: 'Семейный',
+                fullTitle: 'Семейный дом',
                 area: '116 м²',
+                fullArea: '131 м²',
                 description: 'Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.',
+                fullDescription: 'Вместительный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Продуманное зонирование на одном этаже создает идеальное пространство для жизни и отдыха. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
                 square: '116 м²',
                 bedrooms: '3',
                 bathrooms: '1',
                 img: 'assets/img/Семейный дом.png'
             },
             {
+                id: 1,
                 title: 'Удобный',
+                fullTitle: 'Удобный дом',
                 area: '118 м²',
+                fullArea: '118 м²',
                 description: 'Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.',
+                fullDescription: 'Функциональный одноэтажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Отсутствие лестниц делает проживание максимально комфортным для всей семьи. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
                 square: '118 м²',
                 bedrooms: '3',
                 bathrooms: '1',
                 img: 'assets/img/Удобный дом.png'
             },
             {
+                id: 2,
                 title: 'Уютный',
+                fullTitle: 'Уютный дом',
                 area: '134 м²',
+                fullArea: '134 м²',
                 description: 'Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.',
+                fullDescription: 'Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Благодаря одному уровню все помещения легко доступны, что создает особую комфортную атмосферу. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
                 square: '134 м²',
                 bedrooms: '5',
                 bathrooms: '2',
@@ -1035,12 +1047,29 @@ class HouseCardSlider {
             this.nextBtn.addEventListener('click', () => this.nextSlide());
         }
         
+        // ИСПРАВЛЕННЫЙ ОБРАБОТЧИК КНОПКИ "ПОДРОБНЕЕ"
         if (this.tetherBtn) {
+            // Удаляем старый обработчик, создаем новый
+            const newBtn = this.tetherBtn.cloneNode(true);
+            this.tetherBtn.parentNode.replaceChild(newBtn, this.tetherBtn);
+            this.tetherBtn = newBtn;
+            
             this.tetherBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 e.stopPropagation();
+                
+                // Получаем данные текущего активного дома
                 const activeHouse = this.housesData[this.currentIndex];
-                console.log('Подробнее о доме:', activeHouse.title);
-                alert(`Подробнее о доме "${activeHouse.title}"\n\nПлощадь: ${activeHouse.square}\nСпальни: ${activeHouse.bedrooms}\nСанузлы: ${activeHouse.bathrooms}\n\n${activeHouse.description}`);
+                
+                if (activeHouse) {
+                    // Сохраняем данные в localStorage
+                    localStorage.setItem('selectedHouse', JSON.stringify(activeHouse));
+                    
+                    // Перенаправляем на страницу projects.html
+                    window.location.href = 'projects.html';
+                } else {
+                    console.error('Ошибка: данные дома не найдены');
+                }
             });
         }
         

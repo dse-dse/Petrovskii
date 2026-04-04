@@ -780,6 +780,71 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Получаем данные о выбранном доме из localStorage
+    const selectedHouseData = localStorage.getItem('selectedHouse');
+    
+    if (selectedHouseData) {
+        const house = JSON.parse(selectedHouseData);
+        
+        // Находим все блоки с описаниями проектов
+        const projectBlocks = document.querySelectorAll('.project-desc');
+        
+        if (projectBlocks.length > 0) {
+            // Скрываем все блоки
+            projectBlocks.forEach(block => {
+                block.style.display = 'none';
+            });
+            
+            // Ищем блок с соответствующим заголовком
+            let targetBlock = null;
+            
+            for (let block of projectBlocks) {
+                const titleElement = block.querySelector('.project-desc-row h3');
+                if (titleElement && titleElement.textContent === house.fullTitle) {
+                    targetBlock = block;
+                    break;
+                }
+            }
+            
+            // Если нашли по заголовку - показываем
+            if (targetBlock) {
+                targetBlock.style.display = 'block';
+                
+                // Обновляем данные для точного соответствия
+                const areaSpan = targetBlock.querySelector('.project-desc-row span');
+                const description = targetBlock.querySelector('p');
+                
+                if (areaSpan && house.fullArea) {
+                    areaSpan.innerHTML = house.fullArea.replace('м²', 'м<sup>2</sup>');
+                }
+                
+                if (description && house.fullDescription) {
+                    description.textContent = house.fullDescription;
+                }
+            } 
+            // Если не нашли по заголовку, показываем по индексу
+            else if (house.id !== undefined && projectBlocks[house.id]) {
+                projectBlocks[house.id].style.display = 'block';
+            }
+            // Если всё равно не нашли, показываем первый блок
+            else {
+                projectBlocks[0].style.display = 'block';
+            }
+        }
+        
+        // Опционально: очищаем localStorage после использования
+        // localStorage.removeItem('selectedHouse');
+    } else {
+        // Если нет данных, показываем первый блок
+        const projectBlocks = document.querySelectorAll('.project-desc');
+        if (projectBlocks.length > 0) {
+            projectBlocks.forEach((block, index) => {
+                block.style.display = index === 0 ? 'block' : 'none';
+            });
+        }
+    }
+});
 });
 </script>
 </body>
