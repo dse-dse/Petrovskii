@@ -21,10 +21,10 @@
 
 <body>
     <!-- Модальное окно для фото на весь экран -->
-<div id="imageModal" class="modal">
-    <span class="modal-close">&times;</span>
-    <img id="modalImage" src="" alt="Полноэкранное фото">
-</div>
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Полноэкранное фото">
+    </div>
     <header class="header">
         <!-- Левый блок с информацией о расстоянии -->
         <div class="header-left">
@@ -186,58 +186,65 @@
         </div>
 
         <div class="projects-list">
-          <div class="project">
-    <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Уютный дом.png" alt="Уютный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Уютный дом.png" alt="Фото 0" data-image="assets/img/Уютный дом.png">
-            <img class="thumbnail" src="assets/img/уют1.png" alt="Фото 1" data-image="assets/img/уют1.png">
-            <img class="thumbnail" src="assets/img/уют2.png" alt="Фото 2" data-image="assets/img/уют2.png">
-            <img class="thumbnail" src="assets/img/уют3.png" alt="Фото 3" data-image="assets/img/уют3.png">
-            <img class="thumbnail" src="assets/img/уют4.png" alt="Фото 4" data-image="assets/img/уют4.png">
-            <img class="thumbnail" src="assets/img/уют5.png" alt="Фото 5" data-image="assets/img/уют5.png">
-            <img class="thumbnail" src="assets/img/уют6.png" alt="Фото 6" data-image="assets/img/уют6.png">
-            <img class="thumbnail" src="assets/img/уют7.png" alt="Фото 7" data-image="assets/img/уют7.png">
-        </div>
-    </div>
-    <div class="project-desc">
-        <div class="project-desc-row">
-            <h3>Уютный дом</h3>
-            <span>134 м<sup>2</sup></span>
-        </div>
-        <p>
-            Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой.
-            Благодаря одному уровню все помещения легко доступны, что создает особую комфортную атмосферу. Панорамные окна наполняют
-            пространство светом, а просторная терраса расширяет жилую зону на улицу.
-        </p>
-    </div>
-    <div class="project-button">
-   
-        <a style="text-decoration: none; color: #272A2E;;" href="tel:+79226323900" class="cost-btn">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                    fill="#272A2E" />
-            </svg>
-            <span>Узнать цену</span>
-        </a>
-    </div>
-</div>
+            <div id="uyutnyy" class="project">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Уютный дом.png" alt="Уютный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Уютный дом.png" alt="Фото 0"
+                            data-image="assets/img/Уютный дом.png">
+                        <img class="thumbnail" src="assets/img/уют1.png" alt="Фото 1" data-image="assets/img/уют1.png">
+                        <img class="thumbnail" src="assets/img/уют2.png" alt="Фото 2" data-image="assets/img/уют2.png">
+                        <img class="thumbnail" src="assets/img/уют3.png" alt="Фото 3" data-image="assets/img/уют3.png">
+                        <img class="thumbnail" src="assets/img/уют4.png" alt="Фото 4" data-image="assets/img/уют4.png">
+                        <img class="thumbnail" src="assets/img/уют5.png" alt="Фото 5" data-image="assets/img/уют5.png">
+                        <img class="thumbnail" src="assets/img/уют6.png" alt="Фото 6" data-image="assets/img/уют6.png">
+                        <img class="thumbnail" src="assets/img/уют7.png" alt="Фото 7" data-image="assets/img/уют7.png">
+                    </div>
+                </div>
+                <div class="project-desc">
+                    <div class="project-desc-row">
+                        <h3>Уютный дом</h3>
+                        <span>134 м<sup>2</sup></span>
+                    </div>
+                    <p>
+                        Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой.
+                        Благодаря одному уровню все помещения легко доступны, что создает особую комфортную атмосферу.
+                        Панорамные окна наполняют
+                        пространство светом, а просторная терраса расширяет жилую зону на улицу.
+                    </p>
+                </div>
+                <div class="project-button">
+                    <button class="cost-btn">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                fill="#272A2E" />
+                        </svg>
+                        <span>Узнать цену</span>
+                    </button>
+                </div>
+            </div>
 
             <div class="project">
-                 <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Комфортный дом.png" alt="Комфортный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Комфортный дом.png" alt="Фото 0" data-image="assets/img/Комфортный дом.png">
-            <img class="thumbnail active" src="assets/img/ком1.png" alt="Фото 1" data-image="assets/img/Ком1.png">
-            <img class="thumbnail active" src="assets/img/ком2.png" alt="Фото 2" data-image="assets/img/Ком2.png">
-            <img class="thumbnail active" src="assets/img/ком3.png" alt="Фото 3" data-image="assets/img/Ком3.png">
-            <img class="thumbnail active" src="assets/img/ком4.png" alt="Фото 4" data-image="assets/img/Ком4.png">
-            <img class="thumbnail active" src="assets/img/ком5.png" alt="Фото 5" data-image="assets/img/Ком5.png">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Комфортный дом.png" alt="Комфортный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Комфортный дом.png" alt="Фото 0"
+                            data-image="assets/img/Комфортный дом.png">
+                        <img class="thumbnail active" src="assets/img/ком1.png" alt="Фото 1"
+                            data-image="assets/img/Ком1.png">
+                        <img class="thumbnail active" src="assets/img/ком2.png" alt="Фото 2"
+                            data-image="assets/img/Ком2.png">
+                        <img class="thumbnail active" src="assets/img/ком3.png" alt="Фото 3"
+                            data-image="assets/img/Ком3.png">
+                        <img class="thumbnail active" src="assets/img/ком4.png" alt="Фото 4"
+                            data-image="assets/img/Ком4.png">
+                        <img class="thumbnail active" src="assets/img/ком5.png" alt="Фото 5"
+                            data-image="assets/img/Ком5.png">
 
-           
-        </div>
-    </div>
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Комфортный дом</h3>
@@ -262,20 +269,26 @@
                 </div>
             </div>
             <div class="project">
-                    <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Оптимальный дом.png" alt="Оптимальный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Оптимальный дом.png" alt="Фото 0" data-image="assets/img/Оптимальный дом.png">
-            <img class="thumbnail active" src="assets/img/опт1.png" alt="Фото 1" data-image="assets/img/опт1.png">
-            <img class="thumbnail active" src="assets/img/опт2.png" alt="Фото 2" data-image="assets/img/опт2.png">
-            <img class="thumbnail active" src="assets/img/опт3.png" alt="Фото 3" data-image="assets/img/опт3.png">
-            <img class="thumbnail active" src="assets/img/опт4.png" alt="Фото 4" data-image="assets/img/опт4.png">
-            <img class="thumbnail active" src="assets/img/опт5.png" alt="Фото 5" data-image="assets/img/опт5.png">
-           
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Оптимальный дом.png" alt="Оптимальный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Оптимальный дом.png" alt="Фото 0"
+                            data-image="assets/img/Оптимальный дом.png">
+                        <img class="thumbnail active" src="assets/img/опт1.png" alt="Фото 1"
+                            data-image="assets/img/опт1.png">
+                        <img class="thumbnail active" src="assets/img/опт2.png" alt="Фото 2"
+                            data-image="assets/img/опт2.png">
+                        <img class="thumbnail active" src="assets/img/опт3.png" alt="Фото 3"
+                            data-image="assets/img/опт3.png">
+                        <img class="thumbnail active" src="assets/img/опт4.png" alt="Фото 4"
+                            data-image="assets/img/опт4.png">
+                        <img class="thumbnail active" src="assets/img/опт5.png" alt="Фото 5"
+                            data-image="assets/img/опт5.png">
 
-           
-        </div>
-    </div>
+
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Оптимальный дом</h3>
@@ -298,22 +311,28 @@
                     </a>
                 </div>
             </div>
-            <div class="project">
-                      <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Удобный дом.png" alt="Удобный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Удобный дом.png" alt="Фото 0" data-image="assets/img/Удобный дом.png">
-            <img class="thumbnail active" src="assets/img/удо1.png" alt="Фото 1" data-image="assets/img/удо1.png">
-            <img class="thumbnail active" src="assets/img/удо2.png" alt="Фото 2" data-image="assets/img/удо2.png">
-            <img class="thumbnail active" src="assets/img/удо3.png" alt="Фото 3" data-image="assets/img/удо3.png">
-            <img class="thumbnail active" src="assets/img/удо4.png" alt="Фото 4" data-image="assets/img/удо4.png">
-            <img class="thumbnail active" src="assets/img/удо5.png" alt="Фото 5" data-image="assets/img/удо5.png">
-       
-           
+            <div id="udobnyy" class="project">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Удобный дом.png" alt="Удобный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Удобный дом.png" alt="Фото 0"
+                            data-image="assets/img/Удобный дом.png">
+                        <img class="thumbnail active" src="assets/img/удо1.png" alt="Фото 1"
+                            data-image="assets/img/удо1.png">
+                        <img class="thumbnail active" src="assets/img/удо2.png" alt="Фото 2"
+                            data-image="assets/img/удо2.png">
+                        <img class="thumbnail active" src="assets/img/удо3.png" alt="Фото 3"
+                            data-image="assets/img/удо3.png">
+                        <img class="thumbnail active" src="assets/img/удо4.png" alt="Фото 4"
+                            data-image="assets/img/удо4.png">
+                        <img class="thumbnail active" src="assets/img/удо5.png" alt="Фото 5"
+                            data-image="assets/img/удо5.png">
 
-           
-        </div>
-    </div>
+
+
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Удобный дом</h3>
@@ -336,25 +355,33 @@
                     </a>
                 </div>
             </div>
-            <div class="project">
-                        <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Семейный дом.png" alt="Семейный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Семейный дом.png" alt="Фото 0" data-image="assets/img/Семейный дом.png">
-            <img class="thumbnail active" src="assets/img/сем1.png" alt="Фото 1" data-image="assets/img/сем1.png">
-            <img class="thumbnail active" src="assets/img/сем2.png" alt="Фото 2" data-image="assets/img/сем2.png">
-            <img class="thumbnail active" src="assets/img/сем3.png" alt="Фото 3" data-image="assets/img/сем3.png">
-            <img class="thumbnail active" src="assets/img/сем4.png" alt="Фото 4" data-image="assets/img/сем4.png">
-            <img class="thumbnail active" src="assets/img/сем5.png" alt="Фото 5" data-image="assets/img/сем5.png">
-            <img class="thumbnail active" src="assets/img/сем6.png" alt="Фото 6" data-image="assets/img/сем6.png">
-            <img class="thumbnail active" src="assets/img/сем7.png" alt="Фото 7" data-image="assets/img/сем7.png">
-          
-       
-        
+            <div id="semeynyy" class="project">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Семейный дом.png" alt="Семейный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Семейный дом.png" alt="Фото 0"
+                            data-image="assets/img/Семейный дом.png">
+                        <img class="thumbnail active" src="assets/img/сем1.png" alt="Фото 1"
+                            data-image="assets/img/сем1.png">
+                        <img class="thumbnail active" src="assets/img/сем2.png" alt="Фото 2"
+                            data-image="assets/img/сем2.png">
+                        <img class="thumbnail active" src="assets/img/сем3.png" alt="Фото 3"
+                            data-image="assets/img/сем3.png">
+                        <img class="thumbnail active" src="assets/img/сем4.png" alt="Фото 4"
+                            data-image="assets/img/сем4.png">
+                        <img class="thumbnail active" src="assets/img/сем5.png" alt="Фото 5"
+                            data-image="assets/img/сем5.png">
+                        <img class="thumbnail active" src="assets/img/сем6.png" alt="Фото 6"
+                            data-image="assets/img/сем6.png">
+                        <img class="thumbnail active" src="assets/img/сем7.png" alt="Фото 7"
+                            data-image="assets/img/сем7.png">
 
-           
-        </div>
-    </div>
+
+
+
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Семейный дом</h3>
@@ -380,24 +407,30 @@
             </div>
             <div class="project">
 
-                   <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0" data-image="assets/img/Стильный дом.png">
-            <img class="thumbnail active" src="assets/img/сти1.png" alt="Фото 1" data-image="assets/img/сти1.png">
-            <img class="thumbnail active" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
-            <img class="thumbnail active" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
-            <img class="thumbnail active" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
-            <img class="thumbnail active" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0"
+                            data-image="assets/img/Стильный дом.png">
+                        <img class="thumbnail active" src="assets/img/сти1.png" alt="Фото 1"
+                            data-image="assets/img/сти1.png">
+                        <img class="thumbnail active" src="assets/img/сти2.png" alt="Фото 2"
+                            data-image="assets/img/сти2.png">
+                        <img class="thumbnail active" src="assets/img/сти3.png" alt="Фото 3"
+                            data-image="assets/img/сти3.png">
+                        <img class="thumbnail active" src="assets/img/сти4.png" alt="Фото 4"
+                            data-image="assets/img/сти4.png">
+                        <img class="thumbnail active" src="assets/img/сти5.png" alt="Фото 5"
+                            data-image="assets/img/сти5.png">
 
-   
-          
-       
-        
 
-           
-        </div>
-    </div>
+
+
+
+
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Стильный дом</h3>
@@ -422,26 +455,33 @@
             </div>
             <div class="project">
 
-                       <div class="project-image-container">
-        <img class="main-project-image" src="assets/img/Загородный дом.png" alt="Загородный дом" />
-        <div class="thumbnail-list">
-            <img class="thumbnail active" src="assets/img/Загородный дом.png" alt="Фото 0" data-image="assets/img/Загородный дом.png">
-            <img class="thumbnail active" src="assets/img/заг1.png" alt="Фото 1" data-image="assets/img/заг1.png">
-            <img class="thumbnail active" src="assets/img/заг2.png" alt="Фото 2" data-image="assets/img/заг2.png">
-            <img class="thumbnail active" src="assets/img/заг3.png" alt="Фото 3" data-image="assets/img/заг3.png">
-            <img class="thumbnail active" src="assets/img/заг4.png" alt="Фото 4" data-image="assets/img/заг4.png">
-            <img class="thumbnail active" src="assets/img/заг5.png" alt="Фото 5" data-image="assets/img/заг5.png">
-            <img class="thumbnail active" src="assets/img/заг6.png" alt="Фото 6" data-image="assets/img/заг6.png">
-       
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Загородный дом.png" alt="Загородный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Загородный дом.png" alt="Фото 0"
+                            data-image="assets/img/Загородный дом.png">
+                        <img class="thumbnail active" src="assets/img/заг1.png" alt="Фото 1"
+                            data-image="assets/img/заг1.png">
+                        <img class="thumbnail active" src="assets/img/заг2.png" alt="Фото 2"
+                            data-image="assets/img/заг2.png">
+                        <img class="thumbnail active" src="assets/img/заг3.png" alt="Фото 3"
+                            data-image="assets/img/заг3.png">
+                        <img class="thumbnail active" src="assets/img/заг4.png" alt="Фото 4"
+                            data-image="assets/img/заг4.png">
+                        <img class="thumbnail active" src="assets/img/заг5.png" alt="Фото 5"
+                            data-image="assets/img/заг5.png">
+                        <img class="thumbnail active" src="assets/img/заг6.png" alt="Фото 6"
+                            data-image="assets/img/заг6.png">
 
-   
-          
-       
-        
 
-           
-        </div>
-    </div>
+
+
+
+
+
+
+                    </div>
+                </div>
                 <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Загородный дом</h3>
@@ -468,86 +508,99 @@
             </div>
         </div>
     </section>
-  <!-- Контактная форма -->
-<section id="contact" class="contact-form">
-    <div class="contact-text">
-        <h1>СВЯЖИТЕСЬ С <br> НАМИ — НАЧНЁМ <br> ВАШ ПРОЕКТ УЖЕ СЕГОДНЯ</h1>
-    </div>
+    <section class="details">
+        <section class="contact-form">
+            <div class="contact-text">
+                <h1>СВЯЖИТЕСЬ С <br> НАМИ — НАЧНЁМ <br> ВАШ ПРОЕКТ УЖЕ СЕГОДНЯ</h1>
+            </div>
 
-    <div class="contact-desc">
-        <div style="padding-bottom: 48px;" class="contact-row">
-            <div class="contact-section">
-                <div class="sec-desc"><span>Телефон</span></div>
-                <div class="sec-desc">
-                    <p>
+            <div class="contact-desc">
+                <div style="padding-bottom: 48px;" class="contact-row">
+                    <div class="contact-section">
+                        <div class="sec-desc"><span> Телефон</span></div>
+                        <div class="sec-desc">
+                            <p><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                        fill="#2C2F37" />
+                                </svg>
+                                + 7 (922) 632-39-00
+                            </p>
+                        </div>
+                        <div class="sec-desc">
+                            <p><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                        fill="#2C2F37" />
+                                </svg>
+                                + 7 (993) 930-03-49
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-section">
+                        <div class="sec-desc"><span>Эл. почта</span></div>
+                        <div class="sec-desc">
+                            <p><svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.125 0H1.875C1.37788 0.000541441 0.901278 0.201851 0.549762 0.559758C0.198247 0.917665 0.000531772 1.40293 0 1.90909V10.0909C0.000531772 10.5971 0.198247 11.0823 0.549762 11.4402C0.901278 11.7981 1.37788 11.9995 1.875 12H13.125C13.6221 11.9995 14.0987 11.7981 14.4502 11.4402C14.8018 11.0823 14.9995 10.5971 15 10.0909V1.90909C14.9995 1.40293 14.8018 0.917665 14.4502 0.559758C14.0987 0.201851 13.6221 0.000541441 13.125 0ZM12.6502 3.15784L7.82879 6.97602C7.73478 7.05044 7.61909 7.09084 7.5 7.09084C7.38091 7.09084 7.26522 7.05044 7.17121 6.97602L2.34978 3.15784C2.29313 3.11428 2.24555 3.0597 2.2098 2.99726C2.17405 2.93482 2.15085 2.86576 2.14153 2.79411C2.13222 2.72246 2.13699 2.64964 2.15556 2.57988C2.17413 2.51012 2.20613 2.44481 2.2497 2.38776C2.29327 2.3307 2.34754 2.28302 2.40937 2.24751C2.47119 2.21199 2.53933 2.18934 2.60983 2.18087C2.68032 2.17239 2.75177 2.17827 2.82002 2.19816C2.88826 2.21804 2.95195 2.25154 3.00737 2.2967L7.5 5.85443L11.9926 2.2967C12.105 2.21033 12.2462 2.17244 12.3857 2.19124C12.5253 2.21005 12.652 2.28402 12.7384 2.39718C12.8248 2.51033 12.864 2.65357 12.8475 2.79592C12.831 2.93826 12.7601 3.06828 12.6502 3.15784Z"
+                                        fill="#2C2F37" />
+                                </svg>
+                                petrovka2@bk.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-bottom: 76px;" class="contact-row">
+                    <div class="contact-section">
+                        <div class="sec-desc"><span>Офис</span></div>
+                        <div class="sec-desc">
+                            <p><svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.24686 15.919L6.24857 15.9181L6.25286 15.915L6.26571 15.9048L6.31629 15.867C6.35971 15.8341 6.42114 15.7861 6.50057 15.723C6.65829 15.5977 6.882 15.4132 7.149 15.1763C7.84989 14.555 8.50527 13.8806 9.10971 13.1585C10.5274 11.458 12 9.0313 12 6.25613C12 4.59832 11.3683 3.00717 10.2437 1.83382C9.6879 1.25305 9.0268 0.792033 8.29849 0.477308C7.57017 0.162584 6.78902 0.000368273 6 0C5.21101 0.000310056 4.42988 0.162456 3.70156 0.477103C2.97325 0.791751 2.31214 1.25269 1.75629 1.83337C0.630729 3.00949 -0.000615818 4.59954 4.5074e-07 6.25657C4.5074e-07 9.0313 1.47257 11.458 2.89029 13.1585C3.49473 13.8806 4.15011 14.555 4.851 15.1763C5.11843 15.4132 5.34171 15.5977 5.49943 15.723C5.5768 15.7848 5.65495 15.8455 5.73386 15.9052L5.74757 15.915L5.75143 15.9181L5.75314 15.919C5.901 16.027 6.099 16.027 6.24686 15.919ZM8.14286 6.22235C8.14286 6.81173 7.91709 7.37698 7.51523 7.79373C7.11337 8.21049 6.56832 8.44462 6 8.44462C5.43168 8.44462 4.88663 8.21049 4.48477 7.79373C4.08291 7.37698 3.85714 6.81173 3.85714 6.22235C3.85714 5.63297 4.08291 5.06773 4.48477 4.65097C4.88663 4.23421 5.43168 4.00008 6 4.00008C6.56832 4.00008 7.11337 4.23421 7.51523 4.65097C7.91709 5.06773 8.14286 5.63297 8.14286 6.22235Z"
+                                        fill="#2C2F37" />
+                                </svg>
+
+                                г. Челябинск, ул. Энгельса 79А</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-bottom: 32px;  border-bottom: 1px solid rgba(94, 114, 145, 0.22);"
+                    class="contact-row">
+                    <span>Ответим на вопросы, подберём решение и сопроводим на <br> каждом этапе —
+                        от первой консультации до реализации.</span>
+                </div>
+                <div class="contact-row-mobile">
+                    <span>Ответим на вопросы, подберём решение и сопроводим на <br> каждом этапе —
+                        от первой консультации до реализации.</span>
+                </div>
+
+                <div style="padding-top: 32px; justify-content: space-between; padding-bottom: 64px;"
+                    class="contact-row">
+                    <button class="contact-btn-dark">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#2C2F37"/>
-                        </svg>
-                        + 7 (922) 632-39-00
-                    </p>
-                </div>
-                <div class="sec-desc">
-                    <p>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#2C2F37"/>
-                        </svg>
-                        + 7 (993) 930-03-49
-                    </p>
-                </div>
-            </div>
-
-            <div class="contact-section">
-                <div class="sec-desc"><span>Эл. почта</span></div>
-                <div class="sec-desc">
-                    <p>
-                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.125 0H1.875C1.37788 0.000541441 0.901278 0.201851 0.549762 0.559758C0.198247 0.917665 0.000531772 1.40293 0 1.90909V10.0909C0.000531772 10.5971 0.198247 11.0823 0.549762 11.4402C0.901278 11.7981 1.37788 11.9995 1.875 12H13.125C13.6221 11.9995 14.0987 11.7981 14.4502 11.4402C14.8018 11.0823 14.9995 10.5971 15 10.0909V1.90909C14.9995 1.40293 14.8018 0.917665 14.4502 0.559758C14.0987 0.201851 13.6221 0.000541441 13.125 0ZM12.6502 3.15784L7.82879 6.97602C7.73478 7.05044 7.61909 7.09084 7.5 7.09084C7.38091 7.09084 7.26522 7.05044 7.17121 6.97602L2.34978 3.15784C2.29313 3.11428 2.24555 3.0597 2.2098 2.99726C2.17405 2.93482 2.15085 2.86576 2.14153 2.79411C2.13222 2.72246 2.13699 2.64964 2.15556 2.57988C2.17413 2.51012 2.20613 2.44481 2.2497 2.38776C2.29327 2.3307 2.34754 2.28302 2.40937 2.24751C2.47119 2.21199 2.53933 2.18934 2.60983 2.18087C2.68032 2.17239 2.75177 2.17827 2.82002 2.19816C2.88826 2.21804 2.95195 2.25154 3.00737 2.2967L7.5 5.85443L11.9926 2.2967C12.105 2.21033 12.2462 2.17244 12.3857 2.19124C12.5253 2.21005 12.652 2.28402 12.7384 2.39718C12.8248 2.51033 12.864 2.65357 12.8475 2.79592C12.831 2.93826 12.7601 3.06828 12.6502 3.15784Z" fill="#2C2F37"/>
-                        </svg>
-                        petrovka2@bk.ru
-                    </p>
+                            <path
+                                d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                                fill="#FFFFFF" />
+                        </svg>Связаться с нами
+                    </button>
+                    <div class="help-icons">
+                        <a href="">
+                            <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z"
+                                    fill="currentColor" />
+                            </svg> </a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div style="padding-bottom: 76px;" class="contact-row">
-            <div class="contact-section">
-                <div class="sec-desc"><span>Офис</span></div>
-                <div class="sec-desc">
-                    <p>
-                        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.24686 15.919L6.24857 15.9181L6.25286 15.915L6.26571 15.9048L6.31629 15.867C6.35971 15.8341 6.42114 15.7861 6.50057 15.723C6.65829 15.5977 6.882 15.4132 7.149 15.1763C7.84989 14.555 8.50527 13.8806 9.10971 13.1585C10.5274 11.458 12 9.0313 12 6.25613C12 4.59832 11.3683 3.00717 10.2437 1.83382C9.6879 1.25305 9.0268 0.792033 8.29849 0.477308C7.57017 0.162584 6.78902 0.000368273 6 0C5.21101 0.000310056 4.42988 0.162456 3.70156 0.477103C2.97325 0.791751 2.31214 1.25269 1.75629 1.83337C0.630729 3.00949 -0.000615818 4.59954 4.5074e-07 6.25657C4.5074e-07 9.0313 1.47257 11.458 2.89029 13.1585C3.49473 13.8806 4.15011 14.555 4.851 15.1763C5.11843 15.4132 5.34171 15.5977 5.49943 15.723C5.5768 15.7848 5.65495 15.8455 5.73386 15.9052L5.74757 15.915L5.75143 15.9181L5.75314 15.919C5.901 16.027 6.099 16.027 6.24686 15.919ZM8.14286 6.22235C8.14286 6.81173 7.91709 7.37698 7.51523 7.79373C7.11337 8.21049 6.56832 8.44462 6 8.44462C5.43168 8.44462 4.88663 8.21049 4.48477 7.79373C4.08291 7.37698 3.85714 6.81173 3.85714 6.22235C3.85714 5.63297 4.08291 5.06773 4.48477 4.65097C4.88663 4.23421 5.43168 4.00008 6 4.00008C6.56832 4.00008 7.11337 4.23421 7.51523 4.65097C7.91709 5.06773 8.14286 5.63297 8.14286 6.22235Z" fill="#2C2F37"/>
-                        </svg>
-                        г. Челябинск, ул. Энгельса 79А
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div style="padding-bottom: 32px; border-bottom: 1px solid rgba(94, 114, 145, 0.22);" class="contact-row">
-            <span>Ответим на вопросы, подберём решение и сопроводим на <br> каждом этапе — от первой консультации до реализации.</span>
-        </div>
-
-        <div class="contact-row-mobile">
-            <span>Ответим на вопросы, подберём решение и сопроводим на <br> каждом этапе — от первой консультации до реализации.</span>
-        </div>
-
-        <div style="padding-top: 32px; justify-content: space-between; padding-bottom: 64px;" class="contact-row">
-            <a style="text-decoration: none;" href="tel:+79226323900" class="projects-block-3__btn projects-block-3__btn--primary">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#F0F6FF"/>
-                </svg>
-                <p style="padding: 0px; color: white;">Связаться с нами</p>
-            </a>
-            <div style="display: flex; gap: 24px;" class="help-icons">
-                <a href="#">
-                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z" fill="#26283056"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </section>
     <!-- Футер -->
     <footer class="footer">
         <hr>
@@ -643,138 +696,332 @@
             }
         }
     </script>
-   <script>
-    // Функционал смены изображений для всех проектов (только для ПК)
-    document.addEventListener('DOMContentLoaded', function() {
-        function initProjectGalleries() {
-            const projects = document.querySelectorAll('.project');
-            
-            projects.forEach(project => {
-                const mainImage = project.querySelector('.main-project-image');
-                const thumbnails = project.querySelectorAll('.thumbnail');
-                
-                if (mainImage && thumbnails.length > 0) {
-                    // Удаляем старые обработчики, чтобы не дублировать
-                    thumbnails.forEach(thumb => {
-                        thumb.removeEventListener('click', thumb.clickHandler);
-                        
-                        // Создаем новый обработчик
-                        thumb.clickHandler = function() {
-                            const newImageSrc = this.getAttribute('data-image');
-                            if (newImageSrc) {
-                                mainImage.src = newImageSrc;
-                                
-                                // Обновляем активный класс
-                                thumbnails.forEach(t => t.classList.remove('active'));
-                                this.classList.add('active');
-                            }
-                        };
-                        
-                        thumb.addEventListener('click', thumb.clickHandler);
+    <script>
+        // Функционал смены изображений для всех проектов (только для ПК)
+        document.addEventListener('DOMContentLoaded', function () {
+            function initProjectGalleries() {
+                const projects = document.querySelectorAll('.project');
+
+                projects.forEach(project => {
+                    const mainImage = project.querySelector('.main-project-image');
+                    const thumbnails = project.querySelectorAll('.thumbnail');
+
+                    if (mainImage && thumbnails.length > 0) {
+                        // Удаляем старые обработчики, чтобы не дублировать
+                        thumbnails.forEach(thumb => {
+                            thumb.removeEventListener('click', thumb.clickHandler);
+
+                            // Создаем новый обработчик
+                            thumb.clickHandler = function () {
+                                const newImageSrc = this.getAttribute('data-image');
+                                if (newImageSrc) {
+                                    mainImage.src = newImageSrc;
+
+                                    // Обновляем активный класс
+                                    thumbnails.forEach(t => t.classList.remove('active'));
+                                    this.classList.add('active');
+                                }
+                            };
+
+                            thumb.addEventListener('click', thumb.clickHandler);
+                        });
+                    }
+                });
+            }
+
+            // Инициализируем галлереи
+            initProjectGalleries();
+
+            // Следим за изменением размера окна
+            window.addEventListener('resize', function () {
+                const projects = document.querySelectorAll('.project');
+
+                if (window.innerWidth <= 768) {
+                    // На мобильной версии скрываем миниатюры
+                    projects.forEach(project => {
+                        const thumbList = project.querySelector('.thumbnail-list');
+                        if (thumbList) {
+                            thumbList.style.display = 'none';
+                        }
+                    });
+                } else {
+                    // На ПК показываем миниатюры
+                    projects.forEach(project => {
+                        const thumbList = project.querySelector('.thumbnail-list');
+                        if (thumbList) {
+                            thumbList.style.display = 'flex';
+                        }
                     });
                 }
             });
-        }
-        
-        // Инициализируем галлереи
-        initProjectGalleries();
-        
-        // Следим за изменением размера окна
-        window.addEventListener('resize', function() {
-            const projects = document.querySelectorAll('.project');
-            
+
+            // Инициализация при загрузке
             if (window.innerWidth <= 768) {
-                // На мобильной версии скрываем миниатюры
+                const projects = document.querySelectorAll('.project');
                 projects.forEach(project => {
                     const thumbList = project.querySelector('.thumbnail-list');
                     if (thumbList) {
                         thumbList.style.display = 'none';
                     }
                 });
-            } else {
-                // На ПК показываем миниатюры
-                projects.forEach(project => {
-                    const thumbList = project.querySelector('.thumbnail-list');
-                    if (thumbList) {
-                        thumbList.style.display = 'flex';
-                    }
-                });
             }
         });
-        
-        // Инициализация при загрузке
-        if (window.innerWidth <= 768) {
-            const projects = document.querySelectorAll('.project');
-            projects.forEach(project => {
-                const thumbList = project.querySelector('.thumbnail-list');
-                if (thumbList) {
-                    thumbList.style.display = 'none';
+    </script>
+    <script>
+        // Функционал для открытия фото на весь экран (высокое качество)
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+
+            // Функция открытия модального окна
+            function openModal(imageSrc) {
+                // Создаем временную переменную для高清 изображения
+                let highQualitySrc = imageSrc;
+
+                // Если изображение имеет расширение, заменяем на оригинальное качество
+                if (imageSrc.includes('.png')) {
+                    highQualitySrc = imageSrc.replace('.png', '.png');
+                }
+                if (imageSrc.includes('.jpg') || imageSrc.includes('.jpeg')) {
+                    highQualitySrc = imageSrc;
+                }
+
+                modalImage.src = highQualitySrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Функция закрытия модального окна
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalImage.src = '';
+            }
+
+            // Обработчик клика на главное изображение
+            const mainImages = document.querySelectorAll('.main-project-image');
+            mainImages.forEach(img => {
+                img.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    openModal(this.src);
+                });
+            });
+
+            // Закрытие по клику на крестик
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            // Закрытие по клику на фон
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
                 }
             });
-        }
-    });
-</script>
-<script>
-  // Функционал для открытия фото на весь экран (высокое качество)
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.modal-close');
-    
-    // Функция открытия модального окна
-    function openModal(imageSrc) {
-        // Создаем временную переменную для高清 изображения
-        let highQualitySrc = imageSrc;
-        
-        // Если изображение имеет расширение, заменяем на оригинальное качество
-        if (imageSrc.includes('.png')) {
-            highQualitySrc = imageSrc.replace('.png', '.png');
-        }
-        if (imageSrc.includes('.jpg') || imageSrc.includes('.jpeg')) {
-            highQualitySrc = imageSrc;
-        }
-        
-        modalImage.src = highQualitySrc;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    // Функция закрытия модального окна
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-        modalImage.src = '';
-    }
-    
-    // Обработчик клика на главное изображение
-    const mainImages = document.querySelectorAll('.main-project-image');
-    mainImages.forEach(img => {
-        img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openModal(this.src);
+
+            // Закрытие по клавише ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                // Получаем данные о выбранном доме из localStorage
+                const selectedHouseData = localStorage.getItem('selectedHouse');
+
+                if (selectedHouseData) {
+                    const house = JSON.parse(selectedHouseData);
+
+                    // Находим все блоки с описаниями проектов
+                    const projectBlocks = document.querySelectorAll('.project-desc');
+
+                    if (projectBlocks.length > 0) {
+                        // Скрываем все блоки
+                        projectBlocks.forEach(block => {
+                            block.style.display = 'none';
+                        });
+
+                        // Ищем блок с соответствующим заголовком
+                        let targetBlock = null;
+
+                        for (let block of projectBlocks) {
+                            const titleElement = block.querySelector('.project-desc-row h3');
+                            if (titleElement && titleElement.textContent === house.fullTitle) {
+                                targetBlock = block;
+                                break;
+                            }
+                        }
+
+                        // Если нашли по заголовку - показываем
+                        if (targetBlock) {
+                            targetBlock.style.display = 'block';
+
+                            // Обновляем данные для точного соответствия
+                            const areaSpan = targetBlock.querySelector('.project-desc-row span');
+                            const description = targetBlock.querySelector('p');
+
+                            if (areaSpan && house.fullArea) {
+                                areaSpan.innerHTML = house.fullArea.replace('м²', 'м<sup>2</sup>');
+                            }
+
+                            if (description && house.fullDescription) {
+                                description.textContent = house.fullDescription;
+                            }
+
+                            // ПЛАВНАЯ ПРОКРУТКА К НУЖНОЙ КАРТОЧКЕ
+                            setTimeout(() => {
+                                targetBlock.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start',
+                                    inline: 'nearest'
+                                });
+
+                                // Добавляем подсветку для привлечения внимания
+                                targetBlock.style.transition = 'background-color 0.5s ease';
+                                targetBlock.style.backgroundColor = 'rgba(199, 148, 88, 0.1)';
+                                setTimeout(() => {
+                                    if (targetBlock) {
+                                        targetBlock.style.backgroundColor = '';
+                                    }
+                                }, 1000);
+                            }, 100);
+                        }
+                        // Если не нашли по заголовку, показываем по индексу
+                        else if (house.id !== undefined && projectBlocks[house.id]) {
+                            projectBlocks[house.id].style.display = 'block';
+
+                            // Прокрутка по индексу
+                            setTimeout(() => {
+                                projectBlocks[house.id].scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start',
+                                    inline: 'nearest'
+                                });
+
+                                // Подсветка
+                                projectBlocks[house.id].style.transition = 'background-color 0.5s ease';
+                                projectBlocks[house.id].style.backgroundColor = 'rgba(199, 148, 88, 0.1)';
+                                setTimeout(() => {
+                                    if (projectBlocks[house.id]) {
+                                        projectBlocks[house.id].style.backgroundColor = '';
+                                    }
+                                }, 1000);
+                            }, 100);
+                        }
+                        // Если всё равно не нашли, показываем первый блок
+                        else {
+                            projectBlocks[0].style.display = 'block';
+                        }
+                    }
+
+                    // Очищаем localStorage после использования (чтобы при обновлении страницы не прыгало)
+                    localStorage.removeItem('selectedHouse');
+                } else {
+                    // Если нет данных, показываем первый блок без прокрутки
+                    const projectBlocks = document.querySelectorAll('.project-desc');
+                    if (projectBlocks.length > 0) {
+                        projectBlocks.forEach((block, index) => {
+                            block.style.display = index === 0 ? 'block' : 'none';
+                        });
+                    }
+                }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                // Проверяем наличие якоря в URL
+                const hash = window.location.hash.substring(1); // убираем символ #
+
+                if (hash) {
+                    // Ищем элемент с таким ID
+                    const targetElement = document.getElementById(hash);
+
+                    if (targetElement) {
+                        // Скрываем все блоки
+                        const allBlocks = document.querySelectorAll('.project-desc');
+                        allBlocks.forEach(block => {
+                            block.style.display = 'none';
+                        });
+
+                        // Показываем нужный блок
+                        targetElement.style.display = 'block';
+
+                        // Плавная прокрутка к элементу
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+
+                            // Эффект подсветки
+                            targetElement.style.transition = 'background-color 0.5s ease';
+                            targetElement.style.backgroundColor = 'rgba(199, 148, 88, 0.1)';
+                            setTimeout(() => {
+                                if (targetElement) {
+                                    targetElement.style.backgroundColor = '';
+                                }
+                            }, 1000);
+                        }, 100);
+                    }
+                } else {
+                    // Если нет якоря, показываем первый блок
+                    const projectBlocks = document.querySelectorAll('.project-desc');
+                    if (projectBlocks.length > 0) {
+                        projectBlocks.forEach((block, index) => {
+                            block.style.display = index === 0 ? 'block' : 'none';
+                        });
+                    }
+                }
+            });
         });
-    });
-    
-    // Закрытие по клику на крестик
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Закрытие по клику на фон
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Закрытие по клавише ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-});
-</script>
+    </script>
+    <script>
+        // Ждем полной загрузки страницы
+        window.addEventListener('load', function () {
+            console.log('Страница projects.html загружена');
+
+            // Проверяем наличие якоря в URL
+            const hash = window.location.hash.substring(1);
+            console.log('Якорь из URL:', hash);
+
+            if (hash) {
+                // Ищем элемент с таким ID
+                const targetElement = document.getElementById(hash);
+                console.log('Найденный элемент:', targetElement);
+
+                if (targetElement) {
+                    // НЕ СКРЫВАЕМ другие блоки, просто прокручиваем к нужному
+
+                    // Плавная прокрутка к элементу
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                        console.log('Скролл выполнен к элементу');
+
+                        // Эффект подсветки
+                        targetElement.style.transition = 'background-color 0.8s ease';
+                        targetElement.style.backgroundColor = 'rgba(199, 148, 88, 0.2)';
+                        targetElement.style.borderRadius = '20px'; // Добавляем скругление
+
+                        setTimeout(() => {
+                            if (targetElement) {
+                                targetElement.style.backgroundColor = '';
+                                targetElement.style.borderRadius = '';
+
+                            }
+                        }, 1000);
+                    }, 200);
+                } else {
+                    console.log('Элемент с ID "' + hash + '" не найден');
+                }
+            } else {
+                console.log('Нет якоря в URL');
+            }
+        });
+    </script>
 </body>
 
 </html>

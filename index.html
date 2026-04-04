@@ -17,10 +17,10 @@
 <body>
 
     <!-- Модальное окно для фото на весь экран -->
-<div id="imageModal" class="modal">
-    <span class="modal-close">&times;</span>
-    <img id="modalImage" src="" alt="Полноэкранное фото">
-</div>
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Полноэкранное фото">
+    </div>
     <!-- Блок 1: Герой (Hero) -->
     <section class="hero">
         <header class="hero__header">
@@ -147,108 +147,117 @@
             </div>
 
             <!-- Слайдер карточек домов -->
-<div  class="hero__slider-container">
-    <div class="hero__slider">
-        <!-- Слайд 1 - Семейный -->
-        <div class="hero__card hero__card--active" data-slide="0">
-            <div class="hero__card-inner">
-                <div class="hero__video-placeholder">
-                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Семейный дом.png" alt="Семейный дом">
+            <div class="hero__slider-container">
+                <div class="hero__slider">
+                    <!-- Слайд 1 - Семейный -->
+                    <div class="hero__card hero__card--active" data-slide="0">
+                        <div class="hero__card-inner">
+                            <div class="pol"></div>
+                            <div class="hero__video-placeholder">
+                                <img style="height: 100%; width: 100%; object-fit: cover;"
+                                    src="assets/img/Семейный дом.png" alt="Семейный дом">
+                            </div>
+                            <div class="hero__house-header">
+                                <h2 class="hero__house-title">Семейный</h2>
+                                <span class="hero__house-area">76 м²</span>
+                            </div>
+                            <p class="hero__house-description">
+                                Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу.
+                                Идеально для семьи с детьми.
+                            </p>
+                            <div class="hero__specs">
+                                <div>
+                                    <span class="hero__spec-value">76 м²</span>
+                                    <span class="hero__spec-label">Площадь</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">3</span>
+                                    <span class="hero__spec-label">Спальни</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">1</span>
+                                    <span class="hero__spec-label">Санузлы</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 2 - Современный -->
+                    <div class="hero__card hero__card--next" data-slide="1">
+                        <div class="hero__card-inner">
+                            <div class="pol"></div>
+                            <div class="hero__video-placeholder">
+                                <img style="height: 100%; width: 100%; object-fit: cover;"
+                                    src="assets/img/Удобный дом.png" alt="Удобный дом">
+                            </div>
+                            <div class="hero__house-header">
+                                <h2 class="hero__house-title">Удобный</h2>
+                                <span class="hero__house-area">118 м²</span>
+                            </div>
+                            <p class="hero__house-description">
+                                Минимализм и функциональность. Панорамное остекление, просторные помещения и современные
+                                технологии.
+                            </p>
+                            <div class="hero__specs">
+                                <div>
+                                    <span class="hero__spec-value">118 м²</span>
+                                    <span class="hero__spec-label">Площадь</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">3</span>
+                                    <span class="hero__spec-label">Спальни</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">1</span>
+                                    <span class="hero__spec-label">Санузлы</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Слайд 3 - Классический -->
+                    <div class="hero__card hero__card--prev" data-slide="2">
+                        <div class="hero__card-inner">
+                            <div class="pol"></div>
+                            <div class="hero__video-placeholder">
+                                <img style="height: 100%; width: 100%; object-fit: cover;"
+                                    src="assets/img/Уютный дом.png" alt="Уютный дом">
+                            </div>
+                            <div class="hero__house-header">
+                                <h2 class="hero__house-title">Уютный</h2>
+                                <span class="hero__house-area">135 м²</span>
+                            </div>
+                            <p class="hero__house-description">
+                                Элегантный дизайн с элементами классики. Качественные материалы и продуманная
+                                планировка.
+                            </p>
+                            <div class="hero__specs">
+                                <div>
+                                    <span class="hero__spec-value">135 м²</span>
+                                    <span class="hero__spec-label">Площадь</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">5</span>
+                                    <span class="hero__spec-label">Спальни</span>
+                                </div>
+                                <div>
+                                    <span class="hero__spec-value">2</span>
+                                    <span class="hero__spec-label">Санузлы</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="hero__house-header">
-                    <h2 class="hero__house-title">Семейный</h2>
-                    <span class="hero__house-area">76 м²</span>
-                </div>
-                <p class="hero__house-description">
-                    Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.
-                </p>
-                <div class="hero__specs">
-                    <div>
-                        <span class="hero__spec-value">76 м²</span>
-                        <span class="hero__spec-label">Площадь</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">3</span>
-                        <span class="hero__spec-label">Спальни</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">1</span>
-                        <span class="hero__spec-label">Санузлы</span>
-                    </div>
+                <!-- Соединительная линия и брелок-кнопка -->
+                <div class="hero__card-tether">
+                    <div class="hero__tether-line"></div>
+                    <button class="hero__card-btn">
+                        Подробнее
+                        <span class="hero__card-dot"></span>
+                    </button>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 2 - Современный -->
-        <div class="hero__card hero__card--next" data-slide="1">
-            <div class="hero__card-inner">
-                <div class="hero__video-placeholder">
-                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Удобный дом.png" alt="Удобный дом">
-                </div>
-                <div class="hero__house-header">
-                    <h2 class="hero__house-title">Удобный</h2>
-                    <span class="hero__house-area">118 м²</span>
-                </div>
-                <p class="hero__house-description">
-                    Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.
-                </p>
-                <div class="hero__specs">
-                    <div>
-                        <span class="hero__spec-value">118 м²</span>
-                        <span class="hero__spec-label">Площадь</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">3</span>
-                        <span class="hero__spec-label">Спальни</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">1</span>
-                        <span class="hero__spec-label">Санузлы</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Слайд 3 - Классический -->
-        <div class="hero__card hero__card--prev" data-slide="2">
-            <div class="hero__card-inner">
-                <div class="hero__video-placeholder">
-                    <img style="height: 100%; width: 100%; object-fit: cover;" src="assets/img/Уютный дом.png" alt="Уютный дом">
-                </div>
-                <div class="hero__house-header">
-                    <h2 class="hero__house-title">Уютный</h2>
-                    <span class="hero__house-area">135 м²</span>
-                </div>
-                <p class="hero__house-description">
-                    Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.
-                </p>
-                <div class="hero__specs">
-                    <div>
-                        <span class="hero__spec-value">135 м²</span>
-                        <span class="hero__spec-label">Площадь</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">5</span>
-                        <span class="hero__spec-label">Спальни</span>
-                    </div>
-                    <div>
-                        <span class="hero__spec-value">2</span>
-                        <span class="hero__spec-label">Санузлы</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>          
-    <!-- Соединительная линия и брелок-кнопка -->
-    <div class="hero__card-tether">
-        <div class="hero__tether-line"></div>
-        <button class="hero__card-btn">
-            Подробнее
-            <span class="hero__card-dot"></span>
-        </button>
-    </div>
-</div>
 
             <div class="hero__pagination mobile-hidden">
                 <div class="hero__pagination-info">
@@ -377,79 +386,86 @@
     <section class="details">
         <img class="details__image" src="assets/img/Rectangle 25.png" alt="">
 
-     <section class="content-block-3">
-    <!-- Проект 1: Стильный дом -->
-    <div class="house-card house-card--small project-gallery" data-project="stylish">
-        <div class="project-image-container">
-            <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
-            <div class="thumbnail-list">
-                <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0" data-image="assets/img/Стильный дом.png">
-                <img class="thumbnail" src="assets/img/сти1.png" alt="Фото 1" data-image="assets/img/сти1.png">
-                <img class="thumbnail" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
-                <img class="thumbnail" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
-                <img class="thumbnail" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
-                <img class="thumbnail" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
-         
+        <section class="content-block-3">
+            <!-- Проект 1: Стильный дом -->
+            <div class="house-card house-card--small project-gallery" data-project="stylish">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Стильный дом.png" alt="Стильный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Стильный дом.png" alt="Фото 0"
+                            data-image="assets/img/Стильный дом.png">
+                        <img class="thumbnail" src="assets/img/сти1.png" alt="Фото 1" data-image="assets/img/сти1.png">
+                        <img class="thumbnail" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
+                        <img class="thumbnail" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
+                        <img class="thumbnail" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
+                        <img class="thumbnail" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
+
+                    </div>
+                </div>
+                <div class="house-card__title">
+                    <h1 class="house-card__name">Стильный</h1>
+                    <p class="house-card__area">64 м²</p>
+                </div>
+                <p class="house-card__description">
+                    Компактный одноэтажный дом в современном стиле<br>
+                    с лаконичным фасадом и светлой отделкой.<br><br>
+                    Панорамные окна наполняют пространство<br>
+                    светом, а просторная терраса расширяет жилую зону на улицу
+                </p>
+                <button class="house-card__btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                            fill="#272A2E" />
+                    </svg>
+                    <p>Узнать цену</p>
+                </button>
             </div>
-        </div>
-        <div class="house-card__title">
-            <h1 class="house-card__name">Стильный</h1>
-            <p class="house-card__area">64 м²</p>
-        </div>
-        <p class="house-card__description">
-            Компактный одноэтажный дом в современном стиле<br>
-            с лаконичным фасадом и светлой отделкой.<br><br>
-            Панорамные окна наполняют пространство<br>
-            светом, а просторная терраса расширяет жилую зону на улицу
-        </p><a style="text-decoration: none;" href="tel:+79226323900">
-        <button class="house-card__btn">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                    fill="#272A2E" />
-            </svg>
-            <p>Узнать цену</p>
-        </button></a>
-    </div>
 
-    <!-- Проект 2: Загородный дом -->
-    <div class="house-card house-card--large project-gallery" data-project="country">
-        <div class="project-image-container">
-            <img class="main-project-image" src="assets/img/Rectangle 32.png" alt="Загородный дом" />
-            <div class="thumbnail-list">
-                <img class="thumbnail active" src="assets/img/Rectangle 32.png" alt="Фото 0" data-image="assets/img/Rectangle 32.png">
-                <img class="thumbnail" src="assets/img/загб 1.png" alt="Фото 2" data-image="assets/img/загб 1.png">
-                <img class="thumbnail" src="assets/img/загб 2.png" alt="Фото 2" data-image="assets/img/загб 2.png">
-                <img class="thumbnail" src="assets/img/загб 3.png" alt="Фото 3" data-image="assets/img/загб 3.png">
-                <img class="thumbnail" src="assets/img/загб 4.png" alt="Фото 4" data-image="assets/img/загб 4.png">
-                <img class="thumbnail" src="assets/img/загб 5.png" alt="Фото 5" data-image="assets/img/загб 5.png">
-                <img class="thumbnail" src="assets/img/загб 6.png" alt="Фото 6" data-image="assets/img/загб 6.png">
-          
+            <!-- Проект 2: Загородный дом -->
+            <div class="house-card house-card--large project-gallery" data-project="country">
+                <div class="project-image-container">
+                    <img class="main-project-image" src="assets/img/Rectangle 32.png" alt="Загородный дом" />
+                    <div class="thumbnail-list">
+                        <img class="thumbnail active" src="assets/img/Rectangle 32.png" alt="Фото 0"
+                            data-image="assets/img/Rectangle 32.png">
+                        <img class="thumbnail" src="assets/img/загб 1.png" alt="Фото 2"
+                            data-image="assets/img/загб 1.png">
+                        <img class="thumbnail" src="assets/img/загб 2.png" alt="Фото 2"
+                            data-image="assets/img/загб 2.png">
+                        <img class="thumbnail" src="assets/img/загб 3.png" alt="Фото 3"
+                            data-image="assets/img/загб 3.png">
+                        <img class="thumbnail" src="assets/img/загб 4.png" alt="Фото 4"
+                            data-image="assets/img/загб 4.png">
+                        <img class="thumbnail" src="assets/img/загб 5.png" alt="Фото 5"
+                            data-image="assets/img/загб 5.png">
+                        <img class="thumbnail" src="assets/img/загб 6.png" alt="Фото 6"
+                            data-image="assets/img/загб 6.png">
+
+                    </div>
+                </div>
+                <div class="house-card__title">
+                    <h1 class="house-card__name">Загородный</h1>
+                    <p class="house-card__area">105 м²</p>
+                </div>
+                <p class="house-card__description">
+                    Рациональная планировка, большие окна и отдельный входной<br>
+                    узел обеспечивают удобство для семьи.<br><br>
+                    Идеальный формат для постоянного проживания в тишине и окружении природы
+                </p>
+                <button class="house-card__btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
+                            fill="#272A2E" />
+                    </svg>
+                    <p>Узнать цену</p>
+                </button>
             </div>
-        </div>
-        <div class="house-card__title">
-            <h1 class="house-card__name">Загородный</h1>
-            <p class="house-card__area">105 м²</p>
-        </div>
-        <p class="house-card__description">
-            Рациональная планировка, большие окна и отдельный входной<br>
-            узел обеспечивают удобство для семьи.<br><br>
-            Идеальный формат для постоянного проживания в тишине и окружении природы
-        </p>
-        <a style="text-decoration: none;" href="tel:+79226323900">
-        <button class="house-card__btn">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
-                    fill="#272A2E" />
-            </svg>
-            <p>Узнать цену</p>
-        </button></a>
-    </div>
-</section>
+        </section>
 
 
-     
+
 
         <section id="contact" class="contact-form">
             <div class="contact-text">
@@ -531,15 +547,17 @@
                                 fill="#F0F6FF" />
                         </svg>
                         <p style="padding: 0px; color: white;">Связаться с нами</p>
-                    </button></a>
-                    <div style="display: flex; gap: 24px;" class="help-icons">
+                    </button>
+                    <div class="help-icons">
                         <a href="">
                             <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z"
-                                    fill="#26283056" />
-                            </svg> </a>
+                                    fill="currentColor" />
+                            </svg> </a><a href="">
+
+                        </a>
                     </div>
                 </div>
             </div>
@@ -586,7 +604,7 @@
                     'assets/img/image 5.png',
                     'assets/img/image 6.png',
                     'assets/img/image 7.jpg'
-                    
+
                 ];
 
                 this.currentSlide = 0;
@@ -977,382 +995,411 @@
             new MobileMenu(); // Добавляем инициализацию мобильного меню
         });
         // Слайдер карточек домов
-class HouseCardSlider {
-    constructor() {
-        this.sliderContainer = document.querySelector('.hero__slider');
-        this.cards = document.querySelectorAll('.hero__card');
-        this.prevBtn = document.querySelector('.hero__slider-prev');
-        this.nextBtn = document.querySelector('.hero__slider-next');
-        this.tetherBtn = document.querySelector('.hero__card-tether .hero__card-btn');
-        this.tetherLine = document.querySelector('.hero__tether-line');
-        this.tetherContainer = document.querySelector('.hero__card-tether');
-        this.currentIndex = 0;
-        this.totalSlides = this.cards.length;
-        this.isAnimating = false;
-        
-        this.housesData = [
-            {
-                title: 'Семейный',
-                area: '116 м²',
-                description: 'Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.',
-                square: '116 м²',
-                bedrooms: '3',
-                bathrooms: '1',
-                img: 'assets/img/Семейный дом.png'
-            },
-            {
-                title: 'Удобный',
-                area: '118 м²',
-                description: 'Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.',
-                square: '118 м²',
-                bedrooms: '3',
-                bathrooms: '1',
-                img: 'assets/img/Удобный дом.png'
-            },
-            {
-                title: 'Уютный',
-                area: '134 м²',
-                description: 'Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.',
-                square: '134 м²',
-                bedrooms: '5',
-                bathrooms: '2',
-                img: 'assets/img/Уютный дом.png'
-            }
-        ];
-        
-        this.init();
-    }
-    
-    init() {
-        if (this.cards.length === 0) return;
-        
-        this.setFixedHeights();
-        this.updateCards();
-        
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.prevSlide());
-        }
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.nextSlide());
-        }
-        
-        if (this.tetherBtn) {
-            this.tetherBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const activeHouse = this.housesData[this.currentIndex];
-                console.log('Подробнее о доме:', activeHouse.title);
-                alert(`Подробнее о доме "${activeHouse.title}"\n\nПлощадь: ${activeHouse.square}\nСпальни: ${activeHouse.bedrooms}\nСанузлы: ${activeHouse.bathrooms}\n\n${activeHouse.description}`);
-            });
-        }
-        
-        this.cards.forEach((card, index) => {
-            card.addEventListener('click', (e) => {
-                if (!e.target.closest('.hero__card-btn')) {
-                    this.goToSlide(index);
-                }
-            });
-        });
-        
-        this.updateCardsContent();
-        
-        setTimeout(() => this.updateTetherConnection(), 100);
-        
-        window.addEventListener('resize', () => {
-            this.setFixedHeights();
-            this.updateTetherConnection();
-        });
-    }
-    
-    setFixedHeights() {
-        let maxHeight = 0;
-        
-        this.cards.forEach(card => {
-            const inner = card.querySelector('.hero__card-inner');
-            if (inner) {
-                const originalDisplay = card.style.display;
-                card.style.display = 'block';
-                card.style.opacity = '0';
-                card.style.visibility = 'visible';
-                
-                const height = inner.offsetHeight;
-                if (height > maxHeight) maxHeight = height;
-                
-                card.style.display = originalDisplay;
-                card.style.opacity = '';
-                card.style.visibility = '';
-            }
-        });
-        
-        if (maxHeight > 0) {
-            this.cards.forEach(card => {
-                card.style.height = `${maxHeight}px`;
-                const inner = card.querySelector('.hero__card-inner');
-                if (inner) {
-                    inner.style.height = '100%';
-                }
-            });
-        }
-    }
-    
-    updateTetherConnection() {
-        if (!this.tetherContainer) return;
-        
-        const activeCard = document.querySelector('.hero__card--active');
-        
-        if (activeCard) {
-            const cardRect = activeCard.getBoundingClientRect();
-            const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
-            const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
-            
-            const cardRight = cardRect.right - containerRect.left;
-            let leftPosition = cardRight - buttonWidth;
-            
-            const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
-            leftPosition = Math.min(Math.max(leftPosition, 0), maxLeft);
-            
-            // Убираем left, используем right для позиционирования
-            this.tetherContainer.style.position = 'absolute';
-            this.tetherContainer.style.right = 'auto';
-            // this.tetherContainer.style.left = `${leftPosition}px`;
-            
-            if (this.tetherLine) {
-                this.tetherLine.style.animation = 'none';
-                this.tetherLine.offsetHeight;
-                this.tetherLine.style.animation = 'lineAppear 0.4s ease';
-                
-                // Добавляем скругление краев на время анимации
-                this.tetherLine.style.borderRadius = '50px';
-                setTimeout(() => {
-                    if (this.tetherLine) {
-                        this.tetherLine.style.borderRadius = '0px';
-                    }
-                }, 400);
-            }
-            
-            if (this.tetherBtn) {
-                this.tetherBtn.style.animation = 'none';
-                this.tetherBtn.offsetHeight;
-                this.tetherBtn.style.animation = 'btnAppear 0.1s ease';
-            }
-        }
-    }
-    
-    updateCardsContent() {
-        this.cards.forEach((card, index) => {
-            const house = this.housesData[index];
-            if (!house) return;
-            
-            const img = card.querySelector('.hero__video-placeholder img');
-            const title = card.querySelector('.hero__house-title');
-            const area = card.querySelector('.hero__house-area');
-            const description = card.querySelector('.hero__house-description');
-            const specValues = card.querySelectorAll('.hero__spec-value');
-            
-            if (img && img.src !== house.img) img.src = house.img;
-            if (title) title.textContent = house.title;
-            if (area) area.textContent = house.area;
-            if (description) description.textContent = house.description;
-            if (specValues.length >= 3) {
-                specValues[0].textContent = house.square;
-                specValues[1].textContent = house.bedrooms;
-                specValues[2].textContent = house.bathrooms;
-            }
-        });
-    }
-    
-    updateCards() {
-        if (this.isAnimating) return;
-        this.isAnimating = true;
-        
-        this.cards.forEach((card, index) => {
-            card.classList.remove('hero__card--active', 'hero__card--next', 'hero__card--prev');
-            
-            let relativeIndex = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
-            
-            if (relativeIndex === 0) {
-                card.classList.add('hero__card--active');
-                card.style.opacity = '';
-                card.style.visibility = '';
-                card.style.pointerEvents = '';
-            } else if (relativeIndex === 1) {
-                card.classList.add('hero__card--next');
-                card.style.opacity = '';
-                card.style.visibility = '';
-                card.style.pointerEvents = '';
-            } else if (relativeIndex === this.totalSlides - 1) {
-                card.classList.add('hero__card--prev');
-                card.style.opacity = '';
-                card.style.visibility = '';
-                card.style.pointerEvents = '';
-            } else {
-                card.style.opacity = '0';
-                card.style.visibility = 'hidden';
-                card.style.pointerEvents = 'none';
-            }
-        });
-        
-        this.animateTetherToNewPosition();
-        
-        setTimeout(() => {
-            this.isAnimating = false;
-        }, 500);
-    }
-    
-    animateTetherToNewPosition() {
-        if (!this.tetherContainer) return;
-        
-        const activeCard = document.querySelector('.hero__card--active');
-        
-        if (activeCard) {
-            const cardRect = activeCard.getBoundingClientRect();
-            const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
-            const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
-            
-            const cardRight = cardRect.right - containerRect.left;
-            let newLeft = cardRight - buttonWidth;
-            const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
-            newLeft = Math.min(Math.max(newLeft, 0), maxLeft);
-            
-            // Плавная анимация перемещения
-            this.tetherContainer.style.transition = 'left 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-            // this.tetherContainer.style.left = `${newLeft}px`;
-            
-            // Анимация полоски с скруглением краев
-            if (this.tetherLine) {
-                this.tetherLine.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-                this.tetherLine.style.transform = 'scaleX(0.8)';
-                this.tetherLine.style.borderRadius = '50px'; // Скругление на время анимации
-                
-                setTimeout(() => {
-                    if (this.tetherLine) {
-                        this.tetherLine.style.transform = 'scaleX(1)';
-                    }
-                }, 200);
-                
-                setTimeout(() => {
-                    if (this.tetherLine) {
-                        this.tetherLine.style.borderRadius = '0px'; // Возвращаем обратно
-                    }
-                }, 500);
-            }
-            
-            if (this.tetherBtn) {
-                this.tetherBtn.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-                this.tetherBtn.style.transform = 'translateY(5px)';
-                
-                setTimeout(() => {
-                    if (this.tetherBtn) {
-                        this.tetherBtn.style.transform = 'translateY(0)';
-                    }
-                }, 200);
-            }
-            
-            setTimeout(() => {
-                if (this.tetherContainer) {
-                    this.tetherContainer.style.transition = '';
-                }
-                if (this.tetherLine) {
-                    this.tetherLine.style.transition = '';
-                    this.tetherLine.style.transform = '';
-                }
-                if (this.tetherBtn) {
-                    this.tetherBtn.style.transition = '';
-                    this.tetherBtn.style.transform = '';
-                }
-            }, 500);
-        }
-    }
-    
-    goToSlide(index) {
-        if (index === this.currentIndex || this.isAnimating) return;
-        this.currentIndex = index;
-        this.updateCards();
-    }
-    
-    nextSlide() {
-        const newIndex = (this.currentIndex + 1) % this.totalSlides;
-        this.goToSlide(newIndex);
-    }
-    
-    prevSlide() {
-        const newIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-        this.goToSlide(newIndex);
-    }
-}
+        class HouseCardSlider {
+            constructor() {
+                this.sliderContainer = document.querySelector('.hero__slider');
+                this.cards = document.querySelectorAll('.hero__card');
+                this.prevBtn = document.querySelector('.hero__slider-prev');
+                this.nextBtn = document.querySelector('.hero__slider-next');
+                this.tetherBtn = document.querySelector('.hero__card-tether .hero__card-btn');
+                this.tetherLine = document.querySelector('.hero__tether-line');
+                this.tetherContainer = document.querySelector('.hero__card-tether');
+                this.currentIndex = 0;
+                this.totalSlides = this.cards.length;
+                this.isAnimating = false;
 
-document.addEventListener('DOMContentLoaded', () => {
-    new HouseCardSlider();
-});
-    </script>
-    <!-- <script src="assets/js/global-cursor.js"></script> -->
-     <script>
-// Функционал смены изображений для галлерей проектов
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.modal-close');
-    
-    // Функция открытия модального окна
-    function openModal(imageSrc) {
-        modalImage.src = imageSrc;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    // Функция закрытия модального окна
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-        modalImage.src = '';
-    }
-    
-    // Инициализация галлерей для всех проектов
-    const projectGalleries = document.querySelectorAll('.project-gallery');
-    
-    projectGalleries.forEach(gallery => {
-        const mainImage = gallery.querySelector('.main-project-image');
-        const thumbnails = gallery.querySelectorAll('.thumbnail');
-        
-        if (mainImage && thumbnails.length > 0) {
-            // Клик на главное фото - открытие модального окна
-            mainImage.addEventListener('click', function(e) {
-                e.stopPropagation();
-                openModal(this.src);
-            });
-            
-            // Клик на миниатюры - смена главного фото
-            thumbnails.forEach(thumb => {
-                thumb.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const newImageSrc = this.getAttribute('data-image');
-                    if (newImageSrc) {
-                        mainImage.src = newImageSrc;
-                        thumbnails.forEach(t => t.classList.remove('active'));
-                        this.classList.add('active');
+                this.housesData = [
+                    {
+                        id: 0,
+                        title: 'Семейный',
+                        fullTitle: 'Семейный дом',
+                        area: '116 м²',
+                        fullArea: '131 м²',
+                        description: 'Уютный дом с продуманным зонированием. Просторная кухня-гостиная с выходом на террасу. Идеально для семьи с детьми.',
+                        fullDescription: 'Вместительный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Продуманное зонирование на одном этаже создает идеальное пространство для жизни и отдыха. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
+                        square: '116 м²',
+                        bedrooms: '3',
+                        bathrooms: '1',
+                        img: 'assets/img/Семейный дом.png'
+                    },
+                    {
+                        id: 1,
+                        title: 'Удобный',
+                        fullTitle: 'Удобный дом',
+                        area: '118 м²',
+                        fullArea: '118 м²',
+                        description: 'Минимализм и функциональность. Панорамное остекление, просторные помещения и современные технологии.',
+                        fullDescription: 'Функциональный одноэтажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Отсутствие лестниц делает проживание максимально комфортным для всей семьи. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
+                        square: '118 м²',
+                        bedrooms: '3',
+                        bathrooms: '1',
+                        img: 'assets/img/Удобный дом.png'
+                    },
+                    {
+                        id: 2,
+                        title: 'Уютный',
+                        fullTitle: 'Уютный дом',
+                        area: '134 м²',
+                        fullArea: '134 м²',
+                        description: 'Элегантный дизайн с элементами классики. Качественные материалы и продуманная планировка.',
+                        fullDescription: 'Просторный двух этажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Благодаря одному уровню все помещения легко доступны, что создает особую комфортную атмосферу. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу.',
+                        square: '134 м²',
+                        bedrooms: '5',
+                        bathrooms: '2',
+                        img: 'assets/img/Уютный дом.png'
+                    }
+                ];
+
+                this.init();
+            }
+
+            init() {
+                if (this.cards.length === 0) return;
+
+                this.setFixedHeights();
+                this.updateCards();
+
+                if (this.prevBtn) {
+                    this.prevBtn.addEventListener('click', () => this.prevSlide());
+                }
+                if (this.nextBtn) {
+                    this.nextBtn.addEventListener('click', () => this.nextSlide());
+                }
+
+                // ИСПРАВЛЕННЫЙ ОБРАБОТЧИК КНОПКИ "ПОДРОБНЕЕ"
+                if (this.tetherBtn) {
+                    // Удаляем старый обработчик, создаем новый
+                    const newBtn = this.tetherBtn.cloneNode(true);
+                    this.tetherBtn.parentNode.replaceChild(newBtn, this.tetherBtn);
+                    this.tetherBtn = newBtn;
+
+                    this.tetherBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const activeHouse = this.housesData[this.currentIndex];
+
+                        if (activeHouse) {
+                            // Создаем ID для якоря (транслит)
+                            let anchorId = '';
+                            if (activeHouse.title === 'Семейный') anchorId = 'semeynyy';
+                            else if (activeHouse.title === 'Удобный') anchorId = 'udobnyy';
+                            else if (activeHouse.title === 'Уютный') anchorId = 'uyutnyy';
+
+                            // Переходим на страницу с якорем
+                            window.location.href = `projects.html#${anchorId}`;
+                        }
+                    });
+                }
+
+                this.cards.forEach((card, index) => {
+                    card.addEventListener('click', (e) => {
+                        if (!e.target.closest('.hero__card-btn')) {
+                            this.goToSlide(index);
+                        }
+                    });
+                });
+
+                this.updateCardsContent();
+
+                setTimeout(() => this.updateTetherConnection(), 100);
+
+                window.addEventListener('resize', () => {
+                    this.setFixedHeights();
+                    this.updateTetherConnection();
+                });
+            }
+
+            setFixedHeights() {
+                let maxHeight = 0;
+
+                this.cards.forEach(card => {
+                    const inner = card.querySelector('.hero__card-inner');
+                    if (inner) {
+                        const originalDisplay = card.style.display;
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        card.style.visibility = 'visible';
+
+                        const height = inner.offsetHeight;
+                        if (height > maxHeight) maxHeight = height;
+
+                        card.style.display = originalDisplay;
+                        card.style.opacity = '';
+                        card.style.visibility = '';
                     }
                 });
+
+                if (maxHeight > 0) {
+                    this.cards.forEach(card => {
+                        card.style.height = `${maxHeight}px`;
+                        const inner = card.querySelector('.hero__card-inner');
+                        if (inner) {
+                            inner.style.height = '100%';
+                        }
+                    });
+                }
+            }
+
+            updateTetherConnection() {
+                if (!this.tetherContainer) return;
+
+                const activeCard = document.querySelector('.hero__card--active');
+
+                if (activeCard) {
+                    const cardRect = activeCard.getBoundingClientRect();
+                    const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
+                    const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
+
+                    const cardRight = cardRect.right - containerRect.left;
+                    let leftPosition = cardRight - buttonWidth;
+
+                    const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
+                    leftPosition = Math.min(Math.max(leftPosition, 0), maxLeft);
+
+                    // Убираем left, используем right для позиционирования
+                    this.tetherContainer.style.position = 'absolute';
+                    this.tetherContainer.style.right = 'auto';
+                    // this.tetherContainer.style.left = `${leftPosition}px`;
+
+                    if (this.tetherLine) {
+                        this.tetherLine.style.animation = 'none';
+                        this.tetherLine.offsetHeight;
+                        this.tetherLine.style.animation = 'lineAppear 0.4s ease';
+
+                        // Добавляем скругление краев на время анимации
+                        this.tetherLine.style.borderRadius = '50px';
+                        setTimeout(() => {
+                            if (this.tetherLine) {
+                                this.tetherLine.style.borderRadius = '0px';
+                            }
+                        }, 400);
+                    }
+
+                    if (this.tetherBtn) {
+                        this.tetherBtn.style.animation = 'none';
+                        this.tetherBtn.offsetHeight;
+                        this.tetherBtn.style.animation = 'btnAppear 0.1s ease';
+                    }
+                }
+            }
+
+            updateCardsContent() {
+                this.cards.forEach((card, index) => {
+                    const house = this.housesData[index];
+                    if (!house) return;
+
+                    const img = card.querySelector('.hero__video-placeholder img');
+                    const title = card.querySelector('.hero__house-title');
+                    const area = card.querySelector('.hero__house-area');
+                    const description = card.querySelector('.hero__house-description');
+                    const specValues = card.querySelectorAll('.hero__spec-value');
+
+                    if (img && img.src !== house.img) img.src = house.img;
+                    if (title) title.textContent = house.title;
+                    if (area) area.textContent = house.area;
+                    if (description) description.textContent = house.description;
+                    if (specValues.length >= 3) {
+                        specValues[0].textContent = house.square;
+                        specValues[1].textContent = house.bedrooms;
+                        specValues[2].textContent = house.bathrooms;
+                    }
+                });
+            }
+
+            updateCards() {
+                if (this.isAnimating) return;
+                this.isAnimating = true;
+
+                this.cards.forEach((card, index) => {
+                    card.classList.remove('hero__card--active', 'hero__card--next', 'hero__card--prev');
+
+                    let relativeIndex = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
+
+                    if (relativeIndex === 0) {
+                        card.classList.add('hero__card--active');
+                        card.style.opacity = '';
+                        card.style.visibility = '';
+                        card.style.pointerEvents = '';
+                    } else if (relativeIndex === 1) {
+                        card.classList.add('hero__card--next');
+                        card.style.opacity = '';
+                        card.style.visibility = '';
+                        card.style.pointerEvents = '';
+                    } else if (relativeIndex === this.totalSlides - 1) {
+                        card.classList.add('hero__card--prev');
+                        card.style.opacity = '';
+                        card.style.visibility = '';
+                        card.style.pointerEvents = '';
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.visibility = 'hidden';
+                        card.style.pointerEvents = 'none';
+                    }
+                });
+
+                this.animateTetherToNewPosition();
+
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 500);
+            }
+
+            animateTetherToNewPosition() {
+                if (!this.tetherContainer) return;
+
+                const activeCard = document.querySelector('.hero__card--active');
+
+                if (activeCard) {
+                    const cardRect = activeCard.getBoundingClientRect();
+                    const containerRect = this.sliderContainer.parentElement.getBoundingClientRect();
+                    const buttonWidth = this.tetherBtn ? this.tetherBtn.offsetWidth : 180;
+
+                    const cardRight = cardRect.right - containerRect.left;
+                    let newLeft = cardRight - buttonWidth;
+                    const maxLeft = containerRect.width - this.tetherContainer.offsetWidth;
+                    newLeft = Math.min(Math.max(newLeft, 0), maxLeft);
+
+                    // Плавная анимация перемещения
+                    this.tetherContainer.style.transition = 'left 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                    // this.tetherContainer.style.left = `${newLeft}px`;
+
+                    // Анимация полоски с скруглением краев
+                    if (this.tetherLine) {
+                        this.tetherLine.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                        this.tetherLine.style.transform = 'scaleX(0.8)';
+                        this.tetherLine.style.borderRadius = '50px'; // Скругление на время анимации
+
+                        setTimeout(() => {
+                            if (this.tetherLine) {
+                                this.tetherLine.style.transform = 'scaleX(1)';
+                            }
+                        }, 200);
+
+                        setTimeout(() => {
+                            if (this.tetherLine) {
+                                this.tetherLine.style.borderRadius = '0px'; // Возвращаем обратно
+                            }
+                        }, 500);
+                    }
+
+                    if (this.tetherBtn) {
+                        this.tetherBtn.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                        this.tetherBtn.style.transform = 'translateY(5px)';
+
+                        setTimeout(() => {
+                            if (this.tetherBtn) {
+                                this.tetherBtn.style.transform = 'translateY(0)';
+                            }
+                        }, 200);
+                    }
+
+                    setTimeout(() => {
+                        if (this.tetherContainer) {
+                            this.tetherContainer.style.transition = '';
+                        }
+                        if (this.tetherLine) {
+                            this.tetherLine.style.transition = '';
+                            this.tetherLine.style.transform = '';
+                        }
+                        if (this.tetherBtn) {
+                            this.tetherBtn.style.transition = '';
+                            this.tetherBtn.style.transform = '';
+                        }
+                    }, 500);
+                }
+            }
+
+            goToSlide(index) {
+                if (index === this.currentIndex || this.isAnimating) return;
+                this.currentIndex = index;
+                this.updateCards();
+            }
+
+            nextSlide() {
+                const newIndex = (this.currentIndex + 1) % this.totalSlides;
+                this.goToSlide(newIndex);
+            }
+
+            prevSlide() {
+                const newIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+                this.goToSlide(newIndex);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new HouseCardSlider();
+        });
+    </script>
+    <!-- <script src="assets/js/global-cursor.js"></script> -->
+    <script>
+        // Функционал смены изображений для галлерей проектов
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.modal-close');
+
+            // Функция открытия модального окна
+            function openModal(imageSrc) {
+                modalImage.src = imageSrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Функция закрытия модального окна
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalImage.src = '';
+            }
+
+            // Инициализация галлерей для всех проектов
+            const projectGalleries = document.querySelectorAll('.project-gallery');
+
+            projectGalleries.forEach(gallery => {
+                const mainImage = gallery.querySelector('.main-project-image');
+                const thumbnails = gallery.querySelectorAll('.thumbnail');
+
+                if (mainImage && thumbnails.length > 0) {
+                    // Клик на главное фото - открытие модального окна
+                    mainImage.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        openModal(this.src);
+                    });
+
+                    // Клик на миниатюры - смена главного фото
+                    thumbnails.forEach(thumb => {
+                        thumb.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            const newImageSrc = this.getAttribute('data-image');
+                            if (newImageSrc) {
+                                mainImage.src = newImageSrc;
+                                thumbnails.forEach(t => t.classList.remove('active'));
+                                this.classList.add('active');
+                            }
+                        });
+                    });
+                }
             });
-        }
-    });
-    
-    // Закрытие модального окна
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-});
-</script>
+
+            // Закрытие модального окна
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
