@@ -37,6 +37,7 @@
             </div>
 
             <div class="hero__brand">
+               
                 <div class="hero__social">
                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -59,12 +60,12 @@
                             fill="#F0F6FF" />
                     </svg>
                 </div>
-                <div class="hero__logo">ПЕТРОВСКИЙ 2</div>
+                <div class="hero__logo"><a href="index.html">ПЕТРОВСКИЙ 2</a></div>
                 <nav class="hero__nav mobile-hidden">
-                    <a href="index.html">КЛИЕНТАМ</a>
-                    <a href="#">О СОЮЗЕ</a>
+                    <a href="#faq">КЛИЕНТАМ</a>
+                    <a href="#client">О СОЮЗЕ</a>
                     <a href="projects.html">ПРОЕКТЫ </a>
-                    <a href="#">КОНТАКТЫ</a>
+                    <a href="#contact">КОНТАКТЫ</a>
                 </nav>
             </div>
 
@@ -95,21 +96,21 @@
                     <span style="display: flex; width: 50%; margin-left: auto;"></span>
                 </button>
             </div>
-        </header>
 
+        </header>
+        
         <div class="hero__main">
             <div class="hero__tag hero__tag--right mobile-hidden">
                 <span>ОТ СК ООО “МОНТАЖРЕМОНТ”</span>
                 <span>В посёлке «ПЕТРОВСКИЙ 2»</span>
             </div>
-
             <!-- Мобильная пагинация сверху -->
             <div class="hero__mobile-pagination">
                 <span class="hero__big-number-mobile" id="currentSlideNumberMobile">01</span>
                 <span class="hero__pagination-number-mobile" id="totalSlidesMobile">/ 04</span>
             </div>
 
-            <div class="hero__content">
+            <div   class="hero__content">
                 <p class="hero__subtitle">СТРОИТЕЛЬСТВО ДОМОВ В ЧЕЛЯБИНСКЕ И ОБЛАСТИ</p>
                 <h1 class="hero__title">ВАШ ИДЕАЛЬНЫЙ<br>БАЛАНС ПРИРОДЫ<br><span>И КОМФОРТА</span></h1>
 
@@ -130,6 +131,7 @@
                 </div>
 
                 <div class="hero__actions">
+                    <a style="text-decoration: none; color: #0B0F1C; " href="tel:+79226323900">
                     <button class="hero__btn hero__btn--primary">
                         <!-- SVG скрыт на мобилке -->
                         <svg class="mobile-hidden" width="14" height="14" viewBox="0 0 14 14" fill="none"
@@ -138,14 +140,14 @@
                                 d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
                                 fill="#272A2E" />
                         </svg>
-                        <p>Связаться</p>
-                    </button>
-                    <button class="hero__btn hero__btn--outline">Наши проекты</button>
+                         <p> Связаться</p>
+                    </button></a>
+                 <a href="projects.html">   <button class="hero__btn hero__btn--outline"> Наши проекты</button></a> 
                 </div>
             </div>
 
             <!-- Слайдер карточек домов -->
-<div class="hero__slider-container">
+<div  class="hero__slider-container">
     <div class="hero__slider">
         <!-- Слайд 1 - Семейный -->
         <div class="hero__card hero__card--active" data-slide="0">
@@ -265,7 +267,7 @@
     </section>
 
     <!-- Блок 2: О компании (About) -->
-    <section class="about">
+    <section id="faq" class="about">
         <div class="about__header">
             <div class="about__location">
                 <!-- SVG виден на мобилке над текстом -->
@@ -303,12 +305,13 @@
                 Жизнь в собственном доме больше не требует компромиссов с привычным уровнем сервиса и уюта.
             </p>
             <div class="about__actions">
+                <a style="text-decoration: none;" href="tel:+79226323900">
                 <button class="about__btn about__btn--primary">
                     <!-- SVG скрыт на мобилке -->
                     <img class="mobile-hidden" src="assets/svg/Vector (6).svg" alt="">
                     Подобрать дом
-                </button>
-                <button class="about__btn about__btn--text">Посмотреть работы</button>
+                </button></a>
+               <a href="projects.html"><button class="about__btn about__btn--text">Посмотреть работы</button></a> 
             </div>
         </div>
 
@@ -398,7 +401,7 @@
             с лаконичным фасадом и светлой отделкой.<br><br>
             Панорамные окна наполняют пространство<br>
             светом, а просторная терраса расширяет жилую зону на улицу
-        </p>
+        </p><a style="text-decoration: none;" href="tel:+79226323900">
         <button class="house-card__btn">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -406,7 +409,7 @@
                     fill="#272A2E" />
             </svg>
             <p>Узнать цену</p>
-        </button>
+        </button></a>
     </div>
 
     <!-- Проект 2: Загородный дом -->
@@ -433,6 +436,7 @@
             узел обеспечивают удобство для семьи.<br><br>
             Идеальный формат для постоянного проживания в тишине и окружении природы
         </p>
+        <a style="text-decoration: none;" href="tel:+79226323900">
         <button class="house-card__btn">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -440,14 +444,14 @@
                     fill="#272A2E" />
             </svg>
             <p>Узнать цену</p>
-        </button>
+        </button></a>
     </div>
 </section>
 
 
      
 
-        <section class="contact-form">
+        <section id="contact" class="contact-form">
             <div class="contact-text">
                 <h1>СВЯЖИТЕСЬ С <br> НАМИ — НАЧНЁМ <br> ВАШ ПРОЕКТ УЖЕ СЕГОДНЯ</h1>
             </div>
@@ -518,6 +522,7 @@
                 </div>
                 <div style="padding-top: 32px; justify-content: space-between; padding-bottom: 64px;"
                     class="contact-row">
+                    <a style="text-decoration: none;" href="tel:+79226323900">
                     <button class="projects-block-3__btn projects-block-3__btn--primary">
                         <!-- SVG НЕ скрыт на мобилке -->
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -526,7 +531,7 @@
                                 fill="#F0F6FF" />
                         </svg>
                         <p style="padding: 0px; color: white;">Связаться с нами</p>
-                    </button>
+                    </button></a>
                     <div style="display: flex; gap: 24px;" class="help-icons">
                         <a href="">
                             <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
@@ -546,10 +551,10 @@
         <hr>
         <div></div>
         <nav class="footer__nav">
-            <a href="index.html">КЛИЕНТАМ </a>
-            <a href="#">О СОЮЗЕ</a>
+            <a href="index.html#faq">КЛИЕНТАМ </a>
+            <a href="index.html">О СОЮЗЕ</a>
             <a href="projects.html">ПРОЕКТЫ</a>
-            <a href="#">КОНТАКТЫ</a>
+            <a href="#contact">КОНТАКТЫ</a>
         </nav>
         <div class="footer__help">
             <span>Нужна помощь?</span>
@@ -921,10 +926,10 @@
                 const nav = document.createElement('nav');
                 nav.className = 'hero__mobile-nav';
                 const navLinks = [
-                    { text: 'КЛИЕНТАМ', href: 'index.html' },
-                    { text: 'О СОЮЗЕ', href: '#' },
+                    { text: 'КЛИЕНТАМ', href: 'index.html#faq' },
+                    { text: 'О СОЮЗЕ', href: 'index.html' },
                     { text: 'ПРОЕКТЫ', href: 'projects.html' },
-                    { text: 'КОНТАКТЫ', href: '#' }
+                    { text: 'КОНТАКТЫ', href: '#contact' }
                 ];
 
                 navLinks.forEach(link => {

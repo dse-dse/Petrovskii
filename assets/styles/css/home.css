@@ -6,7 +6,9 @@
     letter-spacing: -0.02em;
     transition: transform 0.3s ease;
 }
-
+html {
+scroll-behavior: smooth;
+}
 body {
     background-color: #0B0F1C;
     overflow-x: hidden;
@@ -28,7 +30,10 @@ body {
     width: 100%;
     max-width: 100vw;
 }
-
+.hero__logo a{
+    text-decoration: none;
+     color: #F0F6FF;
+}
 .hero::before {
     display: none;
 }

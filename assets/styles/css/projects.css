@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     letter-spacing: -0.02em;
-      transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 body {
@@ -20,17 +20,20 @@ body {
     padding: 0 60px;
     position: relative;
     border-bottom: 1px solid rgba(94, 114, 145, 0.22);
-     flex-wrap: nowrap; 
+    flex-wrap: nowrap; 
     min-width: 0;
-    
 }
-
+.logo a{
+    text-decoration: none;
+     color: #2c2f37;
+}
 /* Левый блок с информацией о расстоянии */
 .header-left {
     width: 33%;
     display: flex;
     flex-direction: column;
 }
+
 .distance-block {
     display: flex;
     flex-direction: column;
@@ -87,13 +90,11 @@ body {
     font-weight: 600;
     font-size: 16px;
     line-height: 16px;
-
     letter-spacing: -0.02em;
-
     color: #2c2f37;
-
     margin-bottom: 10px;
 }
+
 .nav-menu {
     display: flex;
     gap: 40px;
@@ -101,7 +102,6 @@ body {
 
 .nav-menu a {
     align-items: center;
-
     display: flex;
     font-size: 13px;
     color: #737c8a;
@@ -143,7 +143,6 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    
 }
 
 .help-info p {
@@ -157,15 +156,18 @@ body {
     align-items: center;
     gap: 15px;
 }
+
 .help-icons a {
     color: #737c8a;
-        display: flex;
+    display: flex;
     align-items: center;
 }
+
 .help-icons a:hover {
     color: #2c2f37;
     transition: color 0.3s;
 }
+
 .help-info p:hover {
     color: #2c2f37;
     transition: color 0.3s;
@@ -177,192 +179,166 @@ body {
     opacity: 0.7;
 }
 
-.projects{
+.projects {
     margin: 40px 80px 0px 80px;
 }
-.logo-projects{
-gap: 32px;
-    display: flex;
 
+.logo-projects {
+    gap: 32px;
+    display: flex;
 }
-.projects-count{
+
+.projects-count {
     display: flex;
     flex-direction: column;
     margin-bottom: 24px;
-}.projects-count p{
-
-
-
-font-weight: 600;
-font-size: 14px;
-line-height: 14px;
-
-
-text-transform: uppercase;
-
-color: #737C8A;
-
-opacity: 0.44;
-
 }
-.projects-count-body{
+
+.projects-count p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #737C8A;
+    opacity: 0.44;
+}
+
+.projects-count-body {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
- 
 }
-.projects-count-body h1{
 
-font-weight: 600;
-font-size: 56px;
-line-height: 56px;
-/* identical to box height, or 100% */
-letter-spacing: -0.04em;
-
-color: #040506;
-white-space: normal; /* ИЗМЕНЕНО: разрешаем перенос текста */
-        word-break: break-word; /* ДОБАВЛЕНО: гарантирует перенос длинных слов */
-        max-width: 100%;
-
-
+.projects-count-body h1 {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -0.04em;
+    color: #040506;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
 }
-.contact-btn-dark{
-flex-shrink: 0;
-width: 239px;
-height: 61px;
-background: #000000;
-border-radius: 64px;
 
-gap: 16px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 14px;
-text-align: center;
-align-items: center;
-justify-content: center;
-display: flex;
-flex-direction: row;
-border: none;
-
-color: #ffffff;
+.contact-btn-dark {
+    flex-shrink: 0;
+    width: 239px;
+    height: 61px;
+    background: #000000;
+    border-radius: 64px;
+    gap: 16px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
 }
-.contact-btn-dark svg{
+
+.contact-btn-dark svg {
     fill: #ffffff;
 }
-.logo-projects .logo-container{
+
+.logo-projects .logo-container {
     display: flex;
     justify-content: flex-end;
     white-space: nowrap;
-    
-}
-.projects-header{
-  border-bottom: 1px solid rgba(94, 114, 145, 0.22);
-  padding-bottom: 48px;
 }
 
-.call-me{
+.projects-header {
+    border-bottom: 1px solid rgba(94, 114, 145, 0.22);
+    padding-bottom: 48px;
+}
+
+.call-me {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-
-    padding:0px 48px 48px 48px  ;
+    padding: 0px 48px 48px 48px;
     height: 298px;
-       margin: 40px 80px 32px 80px;
-       background-image: url(../../img/call\ me.png);
-       border-radius: 32px;
-      background-repeat: no-repeat;
-      background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
+    margin: 40px 80px 32px 80px;
+    background-image: url(../../img/call\ me.png);
+    border-radius: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-
-.call-me-body{
+.call-me-body {
     display: flex;
     flex-direction: column;
-gap: 24px;
+    gap: 24px;
 }
 
-
-.call-me-body p{
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 14px;
-/* identical to box height, or 100% */
-letter-spacing: -0.02em;
-
-color: #C0C6D8;
-
-
+.call-me-body p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: #C0C6D8;
 }
-.contact-row-mobile{
+
+.contact-row-mobile {
     display: none;
 }
-.call-me-body h3{
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 40px;
-/* or 100% */
-letter-spacing: -0.04em;
-
-color: #F0F6FF;
-
-
-
-
+.call-me-body h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.04em;
+    color: #F0F6FF;
 }
 
-
-.call-me-btn-light{
-
+.call-me-btn-light {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-width: 189px;
-height: 61px;
-background: rgba(240, 246, 255, 0.08);
-border: 1.5px solid #F0F6FF;
-box-shadow: inset 0px -2px 16px rgba(255, 255, 255, 0.25);
-backdrop-filter: blur(2px);
+    width: 189px;
+    height: 61px;
+    background: rgba(240, 246, 255, 0.08);
+    border: 1.5px solid #F0F6FF;
+    box-shadow: inset 0px -2px 16px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 64px;
+    gap: 16px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: #F0F6FF;
+    cursor: pointer;
+}
 
-border-radius: 64px;
-gap:16px;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 14px;
-/* identical to box height, or 100% */
-letter-spacing: -0.02em;
-
-color: #F0F6FF;
-
-
-}.call-me-btn-light svg{
+.call-me-btn-light svg {
     fill: #ffffff;
 }
 
-
-.projects-list{
-        margin: 0px 80px 0px 80px;
-display: grid;
-grid-template-rows: 1fr 1fr;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 16px;
+.projects-list {
+    margin: 0px 80px 0px 80px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
 }
-.project-desc-row{
+
+.project-desc-row {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -370,181 +346,191 @@ gap: 16px;
     padding-top: 28px;
 }
 
-.project-desc-row h3{
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 24px;
-/* identical to box height, or 100% */
-letter-spacing: -0.04em;
-
-color: #1A1C1F;
-
-
+.project-desc-row h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #1A1C1F;
 }
 
-.project-desc-row span{
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 24px;
-/* identical to box height, or 100% */
-letter-spacing: -0.04em;
-
-color: #272A2E;
-
-opacity: 0.4;
-
+.project-desc-row span {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #272A2E;
+    opacity: 0.4;
 }
-.cost-btn{
+
+.cost-btn {
     gap: 16px;
- justify-content: center;
+    justify-content: center;
     align-items: center;
-display: flex;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 14px;
-/* identical to box height, or 100% */
-letter-spacing: -0.02em;
-
-color: #272A2E;
-background: none;
-
-box-sizing: border-box;
-
-width: 200px;
-height: 61px;
-
-
-border: 1.5px solid rgba(39, 42, 46, 0.5); 
-border-radius: 64px;
-
+    display: flex;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: #272A2E;
+    background: none;
+    box-sizing: border-box;
+    width: 200px;
+    height: 61px;
+    border: 1.5px solid rgba(39, 42, 46, 0.5);
+    border-radius: 64px;
+    cursor: pointer;
 }
-.project-button{
+
+.project-button {
     padding-top: 24px;
 }
-sup{
+
+sup {
     font-size: 13px;
     margin-left: 2px;
 }
 
-.project{
-    padding-bottom:48px ;
-}.project img{
+.project {
+    padding-bottom: 48px;
+}
+
+.project img {
     width: 100%;
     border-radius: 24px;
 }
-.contact-text{
+
+/* ==================== КОНТАКТНАЯ ФОРМА ==================== */
+.contact-text {
     background-image: url(../../img/map2.png);
     background-repeat: no-repeat;
-    
-}.contact-text h1{
-
-
- margin: 56px 0px 0px 80px;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 56px;
-line-height: 56px;
-/* or 100% */
-letter-spacing: -0.04em;
-text-transform: uppercase;
-
-color: #040506;
-
-
 }
-.contact-form{
+
+.contact-text h1 {
+    margin: 56px 0px 0px 80px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #040506;
+    max-width: calc(100% - 160px);
+}
+
+.contact-form {
     gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 600px;
- 
 }
-.contact-row{
+
+.contact-row {
     display: flex;
     flex-direction: row;
     gap: 100px;
-}.contact-row p{
+    flex-wrap: wrap;
+}
+
+.contact-row p {
     padding-top: 21px;
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
     gap: 16px;
-
-
-
-
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 14px;
-/* identical to box height, or 100% */
-letter-spacing: -0.02em;
-
-color: #2C2F37;
-
-
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+    color: #2C2F37;
 }
 
-.sec-desc span{
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 24px;
-/* identical to box height, or 100% */
-letter-spacing: -0.04em;
-
-color: #262830;
-
-opacity: 0.4;
-
+.sec-desc span {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #262830;
+    opacity: 0.4;
 }
-.contact-desc{
+
+.contact-desc {
     display: flex;
     margin-right: 80px;
     flex-direction: column;
     justify-content: center;
 }
+
+.projects-block-3__btn--primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 233px;
+    height: 61px;
+    background: #000000;
+    border: none;
+    border-radius: 64px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+}
+
+.projects-block-3__btn--primary svg path {
+    fill: #F0F6FF;
+}
+
+.projects-block-3__btn--primary p {
+    color: #FFFFFF;
+    padding: 0;
+}
+
+.projects-block-3__btn--primary:hover {
+    background: #1a1a1a;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
 /* ==================== FOOTER ==================== */
 .footer {
-
     width: 100%;
     height: 100px;
     background-color: #ECEEF7;
     backdrop-filter: blur(10px);
-    color: #000000; /* Изменен цвет текста по умолчанию на черный */
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Затемнена граница */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Навигация в футере теперь по центру */
 .footer__nav {
     display: flex;
     gap: 40px;
-    /* Центрирование внутри flex-контейнера .footer */
-    margin: 0 auto; /* Добавлено для центрирования */
-    position: absolute; /* Абсолютное позиционирование для точного центрирования */
+    margin: 0 auto;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .footer__nav a {
-    color: #000000; /* Черный цвет для ссылок */
+    color: #000000;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -554,26 +540,24 @@ opacity: 0.4;
 }
 
 .footer__nav a svg {
-    stroke: #000000; /* Черный цвет для стрелок в ссылках */
+    stroke: #000000;
 }
 
 .footer__nav a:hover {
-    color: #555555; /* Серый при наведении */
+    color: #555555;
 }
 
 .footer__help {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* Оставляем справа */
 }
 
 .footer__help span {
     font-size: 13px;
-    color: #000000; /* Черный текст */
+    color: #000000;
 }
 
-/* Контейнер для иконок помощи в футере */
 .footer__help-icons {
     display: flex;
     gap: 15px;
@@ -581,22 +565,22 @@ opacity: 0.4;
 
 .footer__help-icons svg {
     opacity: 0.7;
-    /* Убираем старый filter, меняем цвет через fill */
     filter: none;
 }
 
 .footer__help-icons svg path {
-    fill: #000000; /* Черный цвет для иконок */
+    fill: #000000;
 }
 
 .footer__help-icons a:hover svg {
     opacity: 1;
 }
+
 /* ==================== АДАПТИВ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) ==================== */
 @media screen and (max-width: 1024px) {
     .header {
         padding: 0 30px;
-      height: 100px;
+        height: 100px;
     }
 
     .header-left,
@@ -605,7 +589,6 @@ opacity: 0.4;
     }
 
     .header-center {
-     
         width: 100%;
         margin-top: 15px;
         margin-bottom: 10px;
@@ -638,7 +621,6 @@ opacity: 0.4;
         height: 250px;
     }
 
-    
     .projects-list {
         margin: 0px 40px 0px 40px;
         grid-template-columns: 1fr 1fr;
@@ -663,7 +645,6 @@ opacity: 0.4;
 
 /* ==================== АДАПТИВ ДЛЯ МОБИЛЬНЫХ (768px и меньше) ==================== */
 @media screen and (max-width: 768px) {
-    /* Хедер: лого слева, бургер справа на одной строке */
     .header {
         padding: 15px 20px;
         flex-direction: row;
@@ -673,17 +654,18 @@ opacity: 0.4;
         gap: 0;
     }
 
-.contact-row span{
-    display: none;
+    .contact-row span {
+        display: none;
+    }
 
-}
-.contact-row-mobile{
-    padding-top: 32px;
-    display: block;
-}
-.contact-section{
-    padding-bottom: 20px;
-}
+    .contact-row-mobile {
+        padding-top: 32px;
+        display: block;
+    }
+
+    .contact-section {
+        padding-bottom: 20px;
+    }
 
     .header-left,
     .header-right,
@@ -694,15 +676,14 @@ opacity: 0.4;
         display: none !important;
     }
 
-    /* Логотип слева */
     .header-center {
         width: auto;
         margin: 0;
         order: 0;
         display: flex;
         justify-content: flex-start;
-         flex: 1;
-         flex-direction: row-reverse;
+        flex: 1;
+        flex-direction: row-reverse;
     }
 
     .logo-container {
@@ -721,13 +702,12 @@ opacity: 0.4;
         text-align: left;
     }
 
-    /* Бургер-меню справа */
     .burger-menu {
         display: flex;
         justify-content: flex-end;
         margin-top: 0;
-          margin-left: auto; /* Добавлено: прижимает к правому краю */
-        flex-shrink: 0; 
+        margin-left: auto;
+        flex-shrink: 0;
     }
 
     .burger-menu svg {
@@ -739,7 +719,6 @@ opacity: 0.4;
         fill: #2C2F37;
     }
 
-    /* Секция проектов */
     .projects {
         margin: 20px 20px 0px 20px;
     }
@@ -755,7 +734,6 @@ opacity: 0.4;
         line-height: 36px;
     }
 
-    /* Убираем лого из блока "НАШИ ПРОЕКТЫ" */
     .logo-projects .logo-container {
         display: none;
     }
@@ -764,7 +742,6 @@ opacity: 0.4;
         gap: 0;
     }
 
-    /* Кнопка строго 200x61 */
     .contact-btn-dark {
         width: 200px !important;
         height: 61px !important;
@@ -775,14 +752,19 @@ opacity: 0.4;
 
     .projects-header {
         padding-bottom: 32px;
-        padding-left: 20px
+        padding-left: 20px;
     }
 
-    /* Блок call-me */
     .call-me {
         margin: 20px 20px 24px 20px;
-        padding: 0px 20px 20px 20px;
-        height: 220px;
+        padding: 0;
+        height: 472px;
+        background-image: url('../../img/callme\ mobile.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 32px;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-end;
@@ -790,19 +772,18 @@ opacity: 0.4;
 
     .call-me-body {
         gap: 12px;
+        max-width: 100%;
+        padding: 0px 20px 30px 20px;
     }
-
-   
-
-    
 
     .call-me-btn-light {
         width: 160px;
         height: 54px;
         font-size: 13px;
+        margin-left: 20px;
+        margin-bottom: 30px;
     }
 
-    /* Сетка проектов */
     .projects-list {
         margin: 0px 20px 0px 20px;
         grid-template-columns: 1fr;
@@ -853,7 +834,7 @@ opacity: 0.4;
         font-size: 14px;
     }
 
-    /* Контактная форма с фоновым изображением БЕЗ затемнения */
+    /* Контактная форма мобильная */
     .contact-form {
         display: block;
         position: relative;
@@ -862,10 +843,11 @@ opacity: 0.4;
         background-position: center;
         background-repeat: no-repeat;
         padding: 40px 0;
-        
+        width: 100%;
+        overflow-x: hidden;
+        height: auto;
     }
 
-    /* Убираем затемнение */
     .contact-form::before {
         display: none;
     }
@@ -874,6 +856,8 @@ opacity: 0.4;
     .contact-desc {
         position: relative;
         z-index: 1;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .contact-text {
@@ -881,6 +865,7 @@ opacity: 0.4;
         min-height: auto;
         display: block;
         margin-bottom: 30px;
+        width: 100%;
     }
 
     .contact-text h1 {
@@ -894,12 +879,16 @@ opacity: 0.4;
 
     .contact-desc {
         margin: 0 20px;
+        max-width: calc(100% - 40px);
+        overflow-x: hidden;
     }
 
     .contact-row {
         flex-direction: column;
         gap: 25px;
         padding-bottom: 25px !important;
+        width: 100%;
+        max-width: 100%;
     }
 
     .contact-row p {
@@ -910,6 +899,8 @@ opacity: 0.4;
         display: flex;
         align-items: center;
         gap: 12px;
+        word-break: break-word;
+        max-width: 100%;
     }
 
     .contact-row p svg {
@@ -921,6 +912,7 @@ opacity: 0.4;
     .contact-row span {
         font-size: 14px;
         line-height: 1.5;
+        word-break: break-word;
     }
 
     .contact-row span br {
@@ -929,6 +921,7 @@ opacity: 0.4;
 
     .sec-desc {
         width: 100%;
+        max-width: 100%;
     }
 
     .sec-desc span {
@@ -938,21 +931,21 @@ opacity: 0.4;
         margin-bottom: 5px;
     }
 
-    /* Разделительная черта */
     .contact-row[style*="border-bottom"] {
         border-bottom: 1px solid rgba(94, 114, 145, 0.22) !important;
         padding-bottom: 25px !important;
+        width: 100%;
     }
 
-    /* Текст "Ответим на вопросы..." */
     .contact-row span {
         font-size: 15px;
         line-height: 1.5;
         color: #2C2F37;
         opacity: 0.9;
+        display: block;
+        width: 100%;
     }
 
-    /* Кнопка связаться с иконкой VK - на одной строке */
     .contact-row:last-child {
         flex-direction: row !important;
         align-items: center;
@@ -961,13 +954,22 @@ opacity: 0.4;
         padding-bottom: 0 !important;
         flex-wrap: nowrap;
         gap: 15px;
+        width: 100%;
     }
 
-    .contact-row:last-child .contact-btn-dark {
-        width: 233px !important;
+    .contact-row:last-child .projects-block-3__btn--primary {
+        width: auto !important;
+        min-width: 200px;
         height: 61px !important;
-        min-width: 233px;
-        flex: 0 0 auto;
+        padding: 0 25px;
+        white-space: nowrap;
+    }
+
+    .contact-row:last-child .projects-block-3__btn--primary p {
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .contact-row:last-child .help-icons {
@@ -985,7 +987,17 @@ opacity: 0.4;
         fill: #2C2F37;
     }
 
-    /* Футер */
+    .contact-row-mobile {
+        padding-top: 32px;
+        display: block;
+        width: 100%;
+    }
+
+    .contact-section {
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
     .footer {
         display: none !important;
         height: auto;
@@ -1065,8 +1077,6 @@ opacity: 0.4;
     
     .contact-row:last-child .contact-btn-dark {
         width: 233px !important;
-       
-
     }
 }
 
@@ -1080,19 +1090,39 @@ opacity: 0.4;
         height: 200px;
     }
 
- 
-
     .contact-text h1 {
         font-size: 24px;
         line-height: 28px;
+        margin: 0 15px 20px 15px;
+    }
+
+    .contact-desc {
+        margin: 0 15px;
     }
 
     .contact-row p {
         font-size: 13px;
+        gap: 8px;
     }
 
     .sec-desc span {
         font-size: 20px;
+        line-height: 20px;
+    }
+
+    .contact-row:last-child {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .contact-row:last-child .projects-block-3__btn--primary {
+        width: 50% !important;
+        min-width: 50%;
+        justify-content: center;
+    }
+
+    .contact-row:last-child .help-icons {
+        justify-content: center;
     }
     
     .project-button {
@@ -1130,7 +1160,8 @@ opacity: 0.4;
 /* Исправление для кнопок - фиксированные размеры */
 .cost-btn,
 .contact-btn-dark,
-.call-me-btn-light {
+.call-me-btn-light,
+.projects-block-3__btn--primary {
     cursor: pointer;
     white-space: nowrap;
     box-sizing: border-box;
@@ -1189,61 +1220,13 @@ img {
 /* Исправление для текста в проектах */
 .project-desc p {
     word-wrap: break-word;
-    /* Вместительный двухэтажный дом в современном стиле с лаконичным фасадом и светлой отделкой. Продуманное зонирование на одном этаже создает идеальное пространство для жизни и отдыха. Панорамные окна наполняют пространство светом, а просторная терраса расширяет жилую зону на улицу. */
-    
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 24px;
-/* or 171% */
-letter-spacing: -0.02em;
-
-color: #2C2F37;
-
-
-}/* Замена фона для call-me блока на мобильных */
-/* ==================== АДАПТИВ ДЛЯ МОБИЛЬНЫХ (768px и меньше) ==================== */
-@media screen and (max-width: 768px) {
-    /* ... (весь остальной код до блока .call-me остается без изменений) ... */
-
-    /* Блок call-me */
-    .call-me {
-        margin: 20px 20px 24px 20px; /* Оставляем внешние отступы как у .projects-list */
-        padding: 0; /* Убираем внутренние отступы у родителя */
-        height: 472px; /* Оставляем высоту */
-        background-image: url('../../img/callme\ mobile.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 32px;
-        display: flex; /* Убедимся, что это flex */
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-end; /* Прижимаем контент к низу */
-    }
-
-    /* Добавляем внутренние отступы контенту, чтобы текст не прилипал к краям */
-    .call-me-body {
-        gap: 12px;
-        max-width: 100%;
-        padding: 0px 20px 30px 20px; /* Переносим сюда отступы от родителя */
-    }
-
-  
-    
-   
-    
-    /* Кнопка теперь будет иметь отступ слева благодаря padding у .call-me-body */
-    .call-me-btn-light {
-        width: 160px;
-        height: 54px;
-        font-size: 13px;
-        margin-left: 20px; /* Добавляем такой же отступ слева, как у текста */
-        margin-bottom: 30px; /* Добавляем отступ снизу, если нужно */
-    }
-
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #2C2F37;
 }
 
 /* Стили для модального окна (фото на весь экран) */
@@ -1287,7 +1270,6 @@ color: #2C2F37;
 .modal-close:hover {
     transform: scale(1.1);
 }
-
 
 /* Стили для галлереи проектов (только для ПК) */
 @media screen and (min-width: 769px) {
@@ -1366,4 +1348,6 @@ color: #2C2F37;
     .project .thumbnail-list {
         display: none !important;
     }
+}html {
+scroll-behavior: smooth;
 }
