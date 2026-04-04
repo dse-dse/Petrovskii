@@ -1870,7 +1870,7 @@ body {
     gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 600px;
+    /* height: 600px; */
 }
 
 .contact-row {
