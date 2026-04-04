@@ -2790,7 +2790,7 @@ body {
     }
 
     .contact-row:last-child .projects-block-3__btn--primary {
-        width: 50% !important;
+        /* width: 50% !important; */
         min-width: 50%;
         justify-content: center;
 

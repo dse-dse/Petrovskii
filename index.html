@@ -918,76 +918,239 @@
         });
 
         // Бургер-меню для мобильной версии
-        class MobileMenu {
-            constructor() {
-                this.burger = document.querySelector('.hero__burger');
-                this.mobileMenu = document.querySelector('.hero__mobile-menu');
-                this.init();
-            }
+// Бургер-меню для мобильной версии
+class MobileMenu {
+    constructor() {
+        this.burger = document.querySelector('.hero__burger');
+        this.mobileMenu = null;
+        this.overlay = null;
+        this.init();
+    }
 
-            init() {
-                if (!this.burger) return;
-
-                // Создаем мобильное меню, если его нет
-                if (!this.mobileMenu) {
-                    this.createMobileMenu();
-                }
-
-                this.burger.addEventListener('click', () => this.toggleMenu());
-            }
-
-            createMobileMenu() {
-                const menu = document.createElement('div');
-                menu.className = 'hero__mobile-menu';
-
-                // Навигация
-                const nav = document.createElement('nav');
-                nav.className = 'hero__mobile-nav';
-                const navLinks = [
-                    { text: 'КЛИЕНТАМ', href: 'index.html#faq' },
-                    { text: 'О СОЮЗЕ', href: 'index.html' },
-                    { text: 'ПРОЕКТЫ', href: 'projects.html' },
-                    { text: 'КОНТАКТЫ', href: '#contact' }
-                ];
-
-                navLinks.forEach(link => {
-                    const a = document.createElement('a');
-                    a.href = link.href;
-                    a.textContent = link.text;
-                    nav.appendChild(a);
-                });
-
-                // Контакты
-                const contacts = document.createElement('div');
-                contacts.className = 'hero__mobile-contacts';
-                contacts.innerHTML = `
-            <div class="hero__mobile-phone">
-                <svg width="30" height="30" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#F0F6FF"/>
-                </svg>
-                +7 (922) 632-39-00
-            </div>
-            <div class="hero__mobile-social">
-                <svg width="34" height="34" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z" fill="#F0F6FF"/>
-                </svg>
-            </div>
-        `;
-
-                menu.appendChild(nav);
-                menu.appendChild(contacts);
-
-                document.querySelector('.hero').appendChild(menu);
-                this.mobileMenu = menu;
-            }
-
-            toggleMenu() {
-                this.burger.classList.toggle('active');
-                this.mobileMenu.classList.toggle('active');
-                document.body.style.overflow = this.mobileMenu.classList.contains('active') ? 'hidden' : '';
-            }
+    init() {
+        if (!this.burger) {
+            console.log('Бургер не найден');
+            return;
         }
 
+        // Создаем мобильное меню, если его нет
+        if (!document.querySelector('.hero__mobile-menu')) {
+            this.createMobileMenu();
+        } else {
+            this.mobileMenu = document.querySelector('.hero__mobile-menu');
+        }
+        
+        // Создаем оверлей
+        this.createOverlay();
+
+        // Удаляем старые обработчики, чтобы не было дублирования
+        const newBurger = this.burger.cloneNode(true);
+        this.burger.parentNode.replaceChild(newBurger, this.burger);
+        this.burger = newBurger;
+
+        // Обработчик клика по бургеру
+        this.burger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggleMenu();
+        });
+        
+        // Закрытие по клику на оверлей
+        if (this.overlay) {
+            this.overlay.addEventListener('click', () => this.closeMenu());
+        }
+        
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.mobileMenu && this.mobileMenu.classList.contains('active')) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    createOverlay() {
+        // Проверяем, существует ли уже оверлей
+        if (document.querySelector('.hero__menu-overlay')) {
+            this.overlay = document.querySelector('.hero__menu-overlay');
+            return;
+        }
+        
+        this.overlay = document.createElement('div');
+        this.overlay.className = 'hero__menu-overlay';
+        this.overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        `;
+        document.body.appendChild(this.overlay);
+    }
+
+    createMobileMenu() {
+        const menu = document.createElement('div');
+        menu.className = 'hero__mobile-menu';
+        menu.style.cssText = `
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+
+
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            z-index: 99;
+            transition: right 0.3s ease;
+
+            display: flex;
+            flex-direction: column;
+        `;
+
+        // Навигация
+        const nav = document.createElement('nav');
+        nav.className = 'hero__mobile-nav';
+        nav.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        `;
+        
+        const navLinks = [
+            { text: 'КЛИЕНТАМ', href: '#faq' },
+            { text: 'О СОЮЗЕ', href: '#client' },
+            { text: 'ПРОЕКТЫ', href: 'projects.html' },
+            { text: 'КОНТАКТЫ', href: '#contact' }
+        ];
+
+        navLinks.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.textContent = link.text;
+            a.style.cssText = `
+                color: #F0F6FF;
+                text-decoration: none;
+                font-size: 24px;
+                font-weight: 500;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(240, 246, 255, 0.1);
+                transition: opacity 0.3s ease;
+            `;
+            
+            // Добавляем обработчик закрытия при клике на ссылку
+            a.addEventListener('click', (e) => {
+                // Если это якорная ссылка на той же странице
+                if (link.href.startsWith('#')) {
+                    e.preventDefault();
+                    this.closeMenu();
+                    const targetElement = document.querySelector(link.href);
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 300);
+                    }
+                } else {
+                    // Для внешних ссылок просто закрываем меню
+                    this.closeMenu();
+                }
+            });
+            
+            nav.appendChild(a);
+        });
+
+        // Контакты
+        const contacts = document.createElement('div');
+        contacts.className = 'hero__mobile-contacts';
+        contacts.style.cssText = `
+            border-top: 1px solid rgba(240, 246, 255, 0.2);
+            padding-top: 30px;
+            margin-top: auto;
+        `;
+        contacts.innerHTML = `
+            <div class="hero__mobile-phone" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <svg width="22" height="22" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444" fill="#F0F6FF"/>
+                </svg>
+                <a href="tel:+79226323900" style="color: #F0F6FF; text-decoration: none; font-size: 18px;">+7 (922) 632-39-00</a>
+            </div>
+            <div class="hero__mobile-social">
+                <a href="#" style="display: inline-block;">
+                    <svg width="34" height="34" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4584 0H5.5504C1.0656 0 0 1.0664 0 5.5416V10.4504C0 14.9336 1.0584 16 5.5416 16H10.4504C14.9336 16 16 14.9416 16 10.4584V5.5504C16 1.0656 14.9416 0 10.4584 0ZM12.9168 11.416H11.7496C11.308 11.416 11.1752 11.0584 10.3832 10.2664C9.692 9.6 9.4 9.5168 9.2248 9.5168C8.9832 9.5168 8.9168 9.5832 8.9168 9.9168V10.9664C8.9168 11.2504 8.8248 11.4168 8.0832 11.4168C7.3636 11.3679 6.66586 11.149 6.04728 10.7781C5.4287 10.4073 4.90693 9.89491 4.5248 9.2832C3.61788 8.15561 2.98722 6.83156 2.6832 5.4168C2.6832 5.2416 2.7496 5.0832 3.0832 5.0832H4.2504C4.5504 5.0832 4.6584 5.2168 4.7752 5.5248C5.3416 7.192 6.308 8.6416 6.7 8.6416C6.8504 8.6416 6.916 8.5752 6.916 8.2V6.4832C6.8664 5.7 6.4504 5.6336 6.4504 5.3504C6.45574 5.2757 6.48997 5.20603 6.54583 5.15614C6.60169 5.10626 6.67478 5.0801 6.7496 5.0832H8.5832C8.8336 5.0832 8.9168 5.208 8.9168 5.508V7.8248C8.9168 8.0752 9.0248 8.1584 9.1 8.1584C9.2504 8.1584 9.3664 8.0752 9.6416 7.8C10.2327 7.07915 10.7156 6.27606 11.0752 5.416C11.1122 5.31284 11.1818 5.22455 11.2734 5.16449C11.3651 5.10444 11.4739 5.0759 11.5832 5.0832H12.7504C13.1 5.0832 13.1744 5.2584 13.1 5.508C12.6756 6.45876 12.1505 7.36125 11.5336 8.2C11.408 8.392 11.3576 8.492 11.5336 8.7168C11.6496 8.892 12.0584 9.2336 12.3336 9.5584C12.7334 9.95744 13.0655 10.419 13.3168 10.9248C13.4168 11.2496 13.2496 11.416 12.9168 11.416Z" fill="#F0F6FF"/>
+                    </svg>
+                </a>
+            </div>
+        `;
+        
+        // Добавляем обработчик закрытия для телефона
+        const phoneLink = contacts.querySelector('.hero__mobile-phone a');
+        if (phoneLink) {
+            phoneLink.addEventListener('click', () => this.closeMenu());
+        }
+        
+        // Добавляем обработчик закрытия для социальной иконки
+        const socialLink = contacts.querySelector('.hero__mobile-social a');
+        if (socialLink) {
+            socialLink.addEventListener('click', () => this.closeMenu());
+        }
+
+        menu.appendChild(nav);
+        menu.appendChild(contacts);
+
+        document.body.appendChild(menu);
+        this.mobileMenu = menu;
+    }
+
+    openMenu() {
+        if (this.burger) this.burger.classList.add('active');
+        if (this.mobileMenu) {
+            this.mobileMenu.style.right = '0';
+            this.mobileMenu.classList.add('active');
+        }
+        if (this.overlay) {
+            this.overlay.style.opacity = '1';
+            this.overlay.style.visibility = 'visible';
+            this.overlay.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeMenu() {
+        if (this.burger) this.burger.classList.remove('active');
+        if (this.mobileMenu) {
+            this.mobileMenu.style.right = '-100%';
+            this.mobileMenu.classList.remove('active');
+        }
+        if (this.overlay) {
+            this.overlay.style.opacity = '0';
+            this.overlay.style.visibility = 'hidden';
+            this.overlay.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+    }
+
+    toggleMenu() {
+        if (this.mobileMenu && this.mobileMenu.classList.contains('active')) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+}
+
+// Инициализация бургер-меню
+document.addEventListener('DOMContentLoaded', () => {
+    new MobileMenu();
+});
         // Добавляем в DOMContentLoaded
         document.addEventListener('DOMContentLoaded', () => {
             new HeroSlider();
