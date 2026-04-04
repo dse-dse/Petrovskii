@@ -200,7 +200,7 @@
                         <img class="thumbnail" src="assets/img/уют7.png" alt="Фото 7" data-image="assets/img/уют7.png">
                     </div>
                 </div>
-                <div  class="project-desc">
+                <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Уютный дом</h3>
                         <span>134 м<sup>2</sup></span>
@@ -332,7 +332,7 @@
 
                     </div>
                 </div>
-                <div  class="project-desc">
+                <div class="project-desc">
                     <div class="project-desc-row">
                         <h3>Удобный дом</h3>
                         <span>118 м<sup>2</sup></span>
@@ -354,7 +354,7 @@
                     </button>
                 </div>
             </div>
-            <div id="semeynyy"  class="project">
+            <div id="semeynyy" class="project">
                 <div class="project-image-container">
                     <img class="main-project-image" src="assets/img/Семейный дом.png" alt="Семейный дом" />
                     <div class="thumbnail-list">
@@ -974,49 +974,53 @@
             });
         });
     </script>
-<script>
-    // Ждем полной загрузки страницы
-    window.addEventListener('load', function() {
-        console.log('Страница projects.html загружена');
-        
-        // Проверяем наличие якоря в URL
-        const hash = window.location.hash.substring(1);
-        console.log('Якорь из URL:', hash);
-        
-        if (hash) {
-            // Ищем элемент с таким ID
-            const targetElement = document.getElementById(hash);
-            console.log('Найденный элемент:', targetElement);
-            
-            if (targetElement) {
-                // НЕ СКРЫВАЕМ другие блоки, просто прокручиваем к нужному
-                
-                // Плавная прокрутка к элементу
-                setTimeout(() => {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                        inline: 'nearest'
-                    });
-                    console.log('Скролл выполнен к элементу');
-                    
-                    // Эффект подсветки
-                    targetElement.style.transition = 'background-color 0.5s ease';
-                    targetElement.style.backgroundColor = 'rgba(199, 148, 88, 0.2)';
+    <script>
+        // Ждем полной загрузки страницы
+        window.addEventListener('load', function () {
+            console.log('Страница projects.html загружена');
+
+            // Проверяем наличие якоря в URL
+            const hash = window.location.hash.substring(1);
+            console.log('Якорь из URL:', hash);
+
+            if (hash) {
+                // Ищем элемент с таким ID
+                const targetElement = document.getElementById(hash);
+                console.log('Найденный элемент:', targetElement);
+
+                if (targetElement) {
+                    // НЕ СКРЫВАЕМ другие блоки, просто прокручиваем к нужному
+
+                    // Плавная прокрутка к элементу
                     setTimeout(() => {
-                        if (targetElement) {
-                            targetElement.style.backgroundColor = '';
-                        }
-                    }, 1000);
-                }, 200);
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                            inline: 'nearest'
+                        });
+                        console.log('Скролл выполнен к элементу');
+
+                        // Эффект подсветки
+                        targetElement.style.transition = 'background-color 0.8s ease';
+                        targetElement.style.backgroundColor = 'rgba(199, 148, 88, 0.2)';
+                        targetElement.style.borderRadius = '20px'; // Добавляем скругление
+
+                        setTimeout(() => {
+                            if (targetElement) {
+                                targetElement.style.backgroundColor = '';
+                                targetElement.style.borderRadius = '';
+
+                            }
+                        }, 1000);
+                    }, 200);
+                } else {
+                    console.log('Элемент с ID "' + hash + '" не найден');
+                }
             } else {
-                console.log('Элемент с ID "' + hash + '" не найден');
+                console.log('Нет якоря в URL');
             }
-        } else {
-            console.log('Нет якоря в URL');
-        }
-    });
-</script>
+        });
+    </script>
 </body>
 
 </html>
