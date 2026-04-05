@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,24 +38,27 @@
 
         .hero__burger span {
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color: #F0F6FF;
             transition: all 0.3s ease;
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
-        /* Анимация бургера в крестик */
+        /* Анимация бургера в крестик (как в hero-слайдере) */
         .hero__burger.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
+            width: 100% !important;
+            transform: translateY(9px) rotate(135deg);
         }
 
         .hero__burger.active span:nth-child(2) {
+            transform: translateX(-20px);
             opacity: 0;
-            transform: scaleX(0);
         }
 
         .hero__burger.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
+            width: 100% !important;
+            margin-left: 0;
+            transform: translateY(-9px) rotate(-135deg);
         }
 
         /* Мобильное меню */
@@ -82,14 +85,14 @@
         .hero__mobile-nav {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
             margin-bottom: 50px;
         }
 
         .hero__mobile-nav a {
             color: #F0F6FF;
             text-decoration: none;
-            font-size: 28px;
+
             font-weight: 500;
             padding: 12px 0;
             /* border-bottom: 1px solid rgba(240, 246, 255, 0.1); */
@@ -177,8 +180,9 @@
         /* Адаптация для маленьких экранов */
         @media (max-width: 480px) {
             .hero__mobile-menu {
-                width: 85%;
-                padding: 90px 25px 30px;
+                width: 80%;
+                gap: 30px;
+                /* padding: 90px 25px 30px; */
             }
 
             .hero__mobile-nav a {
@@ -213,7 +217,7 @@
             }
         }
 
-        /* Стили для бургер-меню в projects.html */
+        /* Стили для оригинального бургер-меню в projects.html */
         .burger-menu {
             display: none;
             cursor: pointer;
@@ -249,20 +253,21 @@
             margin-left: auto;
         }
 
+        /* Анимация оригинального бургера (крестик с вылетом) */
         .burger-menu.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-            width: 100%;
+            width: 100% !important;
+            transform: translateY(9px) rotate(135deg);
         }
 
         .burger-menu.active span:nth-child(2) {
+            transform: translateX(-20px);
             opacity: 0;
-            transform: scaleX(0);
         }
 
         .burger-menu.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-            width: 100%;
+            width: 100% !important;
             margin-left: 0;
+            transform: translateY(-9px) rotate(-135deg);
         }
 
         @media (max-width: 768px) {
@@ -818,14 +823,14 @@
                 </div>
                 <div style="padding-top: 32px; justify-content: space-between; padding-bottom: 64px;"
                     class="contact-row">
-                    <a style="text-decoration: none;" href="tel:+79226323900" class="contact-btn-dark">
+                    <button class="contact-btn-dark">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.25111 5.65444L8.30978 10.6789C8.85189 10.0512 12.2842 6.37156 14 11.3976C14 11.3976 13.8196 14 10.1158 14C7.497 14 4.78722 10.8593 2.89022 9.06422C1.26467 7.53822 0 5.56422 0 3.76911C0 0.0902224 2.52933 0 2.52933 0C8.30978 1.974 3.25189 5.65444 3.25189 5.65444"
                                 fill="#FFFFFF" />
                         </svg>
                         Связаться с нами
-                    </a>
+                    </button>
                     <div class="help-icons">
                         <a href="https://vk.ru/m.petrovka2" target="_blank">
                             <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
@@ -843,30 +848,8 @@
 
     <!-- Футер -->
     <footer class="footer">
-               <div style="margin-top: 7px;" class="logo-container-footer">
-                <div style="justify-content: center;" class="social-icons">
-                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                            fill="#2C2F37" />
-                    </svg>
-
-                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                            fill="#2C2F37" />
-                    </svg><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                            fill="#2C2F37" />
-                    </svg><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.5259 8L2.1822 5.04135L0 3.05221L2.8745 2.79048L4.00026 0L5.12603 2.78992L8 3.05165L5.8178 5.04079L6.47463 7.99944L4.00026 6.42907L1.5259 8Z"
-                            fill="#2C2F37" />
-                    </svg>
-                </div>
-                <div class="logo"> <a href="index.html">ПЕТРОВСКИЙ 2</a></div>
-            </div> <!-- Пустой div для соблюдения структуры flex -->
+        <hr>
+        <div></div>
         <nav class="footer__nav">
             <a href="index.html#faq">КЛИЕНТАМ</a>
             <a href="index.html">О СОЮЗЕ</a>
@@ -875,7 +858,7 @@
         </nav>
         <div class="footer__help">
             <span>Нужна помощь?</span>
-<div class="footer__help-icons"> <!-- Изменен класс для стилизации -->
+            <div class="footer__help-icons">
                 <a href="https://vk.ru/m.petrovka2" target="_blank"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -959,9 +942,7 @@
             createMobileMenu() {
                 const menu = document.createElement('div');
                 menu.className = 'hero__mobile-menu';
-                menu.style.cssText = `
-
-        `;
+                menu.style.cssText = ``;
 
                 const nav = document.createElement('nav');
                 nav.className = 'hero__mobile-nav';
@@ -986,7 +967,7 @@
                     a.style.cssText = `
                 color: #F0F6FF;
                 text-decoration: none;
-                font-size: 28px;
+
                 font-weight: 500;
                 padding: 12px 0;
                 border-bottom: 1px solid rgba(240, 246, 255, 0.1);
