@@ -923,7 +923,7 @@ sup {
         line-height: 1.5;
         color: #2C2F37;
         opacity: 0.9;
-        display: block;
+        display: none;
         width: 100%;
     }
 
