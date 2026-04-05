@@ -3009,3 +3009,17 @@ section, div, header, footer {
         max-height: 85%;
     }
 }
+.social-icons {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}.logo {
+    font-family: "Montserrat Alternates";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #2c2f37;
+    margin-bottom: 10px;
+}
