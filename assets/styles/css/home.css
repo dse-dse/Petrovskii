@@ -2917,8 +2917,8 @@ section, div, header, footer {
 }
 
 .project-gallery .thumbnail {
-    width: 59px;
-    height: 48px;
+    width: 50px;
+    height: 40px;
     border-radius: 8px;
     cursor: pointer;
     border: 2px solid transparent;
