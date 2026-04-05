@@ -311,21 +311,21 @@ body {
     transition: all 0.2s ease;
 }
 
-.hero__slider-bars {
+/* .hero__slider-bars {
     display: flex;
     gap: 8px;
     margin: 30px 0 40px 0;
     max-width: 400px;
-}
+} */
 
-.hero__slider-bar {
+/* .hero__slider-bar {
     flex: 1;
     height: 2px;
     background: rgba(240, 246, 255, 0.2);
     position: relative;
     cursor: pointer;
     overflow: hidden;
-}
+} */
 
 .hero__slider-progress {
     position: absolute;
@@ -335,10 +335,10 @@ body {
     height: 100%;
     background: #F0F6FF;
 }
-
+/* 
 .hero__slider-bar.active .hero__slider-progress {
     animation: progress 10s linear forwards;
-}
+} */
 
 @keyframes progress {
     from {
@@ -2294,12 +2294,12 @@ body {
     }
 
     /* 4. Полоски слайдера */
-    .hero__slider-bars {
+    /* .hero__slider-bars {
         order: 4;
         margin: 10px 0 0 0;
         max-width: 100%;
         width: 100%;
-    }
+    } */
 
     .hero__tag--right {
         display: none;
@@ -3102,3 +3102,78 @@ section, div, header, footer {
         height: 36px;
     }
 }
+/* Плавная смена фона */
+.hero {
+    transition: background-image 1.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__slider-bar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 4px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+}
+
+.hero__slider-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%; 
+    background: #fff;
+    /* Убираем все переходы отсюда, они будут в классе .active */
+    transition: none; 
+}
+
+/* Когда бар активен, запускаем заполнение */
+.hero__slider-bar.active .hero__slider-progress {
+    width: 100%;
+    /* Время должно совпадать с intervalTime (10s) */
+    transition: width 10s linear; 
+}
+
+/* Если навели на слайдер — останавливаем полоску */
+.hero:hover .hero__slider-bar.active .hero__slider-progress {
+    transition: none;
+    /* Здесь можно добавить фиксацию ширины, если нужна пауза */
+}
+/* Контейнер для полосок */
+.hero__slider-bars {
+    display: flex;
+    gap: 8px;
+    margin: 30px 0 40px 0;
+    width: 100%;       /* Занимает всю доступную ширину */
+    max-width: 400px;  /* Но не больше 400px */
+}
+
+/* Сама полоска (серая подложка) */
+.hero__slider-bar {
+    flex: 1;           /* Распределяет полоски равномерно по ширине */
+    height: 4px;       /* Обязательно задаем высоту */
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Прогресс (белая линия) */
+.hero__slider-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;         /* Изначально пустая */
+    background: #fff;
+    transition: none;  /* Сброс анимации по умолчанию */
+}
+
+/* Анимация при активации через JS */
+.hero__slider-bar.active .hero__slider-progress {
+    width: 100%;
+    transition: width 10s linear; /* 10s должно совпадать с вашим JS intervalTime */
+}
+
