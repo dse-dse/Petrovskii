@@ -1555,7 +1555,6 @@ body {
     }
 }
 .help-icons {
-    width: 24px;
     display: flex;
     align-items: center;
     gap: 15px;
