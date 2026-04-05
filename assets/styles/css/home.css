@@ -3010,6 +3010,9 @@ section, div, header, footer {
         max-width: 95%;
         max-height: 85%;
     }
+    .contact-row span{
+    display: none;
+}
 }
 .social-icons {
     display: flex;
