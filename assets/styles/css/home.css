@@ -2953,7 +2953,6 @@ section, div, header, footer {
 /* На мобильных устройствах скрываем миниатюры */
 @media screen and (max-width: 768px) {
     .project-gallery .thumbnail-list {
-        display: none !important;
     }
 }
 
@@ -3027,4 +3026,79 @@ section, div, header, footer {
     letter-spacing: -0.02em;
     color: #2c2f37;
     margin-bottom: 10px;
+}
+/* Стили для мобильной галереи (как на ПК - миниатюры поверх изображения) */
+@media (max-width: 768px) {
+    .project {
+        position: relative;
+    }
+    
+    .project .project-image-container {
+        position: relative;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #2C2F37;
+    }
+
+    .project .main-project-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+    .project .thumbnail-list {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        z-index: 10;
+        max-width: calc(100% - 32px);
+        pointer-events: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .project .thumbnail {
+        width: 50px;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        flex-shrink: 0;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        background-color: #2C2F37;
+        pointer-events: auto;
+    }
+
+    .project .thumbnail:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .project .thumbnail.active {
+        border-color: #ffffff;
+        opacity: 1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Для очень маленьких экранов (меньше 480px) - чуть уменьшаем миниатюры */
+@media (max-width: 480px) {
+    .project .thumbnail {
+        width: 45px;
+        height: 36px;
+    }
 }
