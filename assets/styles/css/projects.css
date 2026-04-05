@@ -517,6 +517,7 @@ sup {
     display: flex;
     align-items: center;
     gap: 10px;
+      text-wrap: nowrap;
 }
 
 .footer__nav a svg {
@@ -1005,6 +1006,7 @@ sup {
         font-size: 13px;
         font-weight: 500;
         white-space: nowrap;
+      
     }
 
     .footer__help {
@@ -1288,8 +1290,8 @@ img {
     }
 
     .project .thumbnail {
-        width: 59px;
-        height: 48px;
+        width: 41px;
+        height: 34px;
         border-radius: 8px;
         cursor: pointer;
         border: 2px solid transparent;

@@ -382,7 +382,11 @@ body {
     width: 100%;
     height: 450px;
 }
+.contact-row{
 
+    flex-wrap: wrap;
+
+}
 /* Соединительная система (брелок) */
 .hero__card-tether {
     position: absolute;
@@ -1881,7 +1885,6 @@ body {
     display: flex;
     flex-direction: row;
     gap: 100px;
-    flex-wrap: wrap;
 }
 
 .contact-row p {
@@ -1942,7 +1945,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
 }
 
