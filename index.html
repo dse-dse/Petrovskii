@@ -624,8 +624,7 @@ class HeroSlider {
         this.currentSlideSpanMobile = document.getElementById('currentSlideNumberMobile');
         this.totalSlidesSpan = document.querySelector('.hero__pagination-number');
         this.totalSlidesSpanMobile = document.getElementById('totalSlidesMobile');
-        this.totalSlides = this.sliderBars.length;
-
+        
         this.images = [
             'assets/img/image 4.png',
             'assets/img/image 5.png',
@@ -633,9 +632,10 @@ class HeroSlider {
             'assets/img/image 7.jpg'
         ];
 
+        this.totalSlides = this.sliderBars.length;
         this.currentSlide = 0;
-        this.intervalTime = 10000;
-        this.interval = null;
+        this.intervalTime = 10000; // 10 секунд
+        this.timer = null;
 
         this.init();
     }
@@ -643,47 +643,39 @@ class HeroSlider {
     init() {
         if (!this.heroSection) return;
 
-        // Предзагрузка изображений (чтобы не было белого экрана при переключении)
-        this.images.forEach(src => {
+        // Предзагрузка изображений
+        this.images.forEach(src => { 
             const img = new Image();
-            img.src = src;
+            img.src = src; 
         });
 
-        if (this.totalSlidesSpan) {
-            this.totalSlidesSpan.textContent = `/ ${this.totalSlides.toString().padStart(2, '0')}`;
-        }
-        if (this.totalSlidesSpanMobile) {
-            this.totalSlidesSpanMobile.textContent = `/ ${this.totalSlides.toString().padStart(2, '0')}`;
-        }
+        // Инициализация номеров слайдов
+        const totalStr = `/ ${this.totalSlides.toString().padStart(2, '0')}`;
+        if (this.totalSlidesSpan) this.totalSlidesSpan.textContent = totalStr;
+        if (this.totalSlidesSpanMobile) this.totalSlidesSpanMobile.textContent = totalStr;
 
-        this.updateSlide(); // Вызываем сразу для установки первого слайда
-
+        // Клик по полоскам
         this.sliderBars.forEach((bar, index) => {
             bar.addEventListener('click', () => this.goToSlide(index));
         });
 
-        // Пауза при наведении
-        this.heroSection.addEventListener('mouseenter', () => this.pauseSlider());
-        this.heroSection.addEventListener('mouseleave', () => this.startSlider());
+        // Убрали события mouseenter/mouseleave (паузы больше нет)
+
+        // Запуск первого слайда
+        this.updateSlide();
     }
 
     startSlider() {
-        this.pauseSlider();
-        this.interval = setInterval(() => this.nextSlide(), this.intervalTime);
+        this.stopTimer();
+        this.timer = setInterval(() => this.nextSlide(), this.intervalTime);
         this.updateActiveBar();
     }
 
-    pauseSlider() {
-        clearInterval(this.interval);
-        // При паузе можно остановить анимацию полоски (опционально)
-        const activeProgress = document.querySelector('.active .hero__slider-progress');
-        if (activeProgress) activeProgress.style.animationPlayState = 'paused';
-    }
-
-    // Метод возобновления анимации
-    resumeSlider() {
-        const activeProgress = document.querySelector('.active .hero__slider-progress');
-        if (activeProgress) activeProgress.style.animationPlayState = 'running';
+    stopTimer() {
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
+        }
     }
 
     nextSlide() {
@@ -698,9 +690,12 @@ class HeroSlider {
     }
 
     updateSlide() {
-        // Плавная смена фона
-        this.heroSection.style.backgroundImage = `url('${this.images[this.currentSlide]}')`;
+        // Смена картинки (плавность обеспечивается CSS transition в .hero)
+        if (this.heroSection) {
+            this.heroSection.style.backgroundImage = `url('${this.images[this.currentSlide]}')`;
+        }
 
+        // Обновление цифр
         const slideNumber = (this.currentSlide + 1).toString().padStart(2, '0');
         if (this.currentSlideSpan) this.currentSlideSpan.textContent = slideNumber;
         if (this.currentSlideSpanMobile) this.currentSlideSpanMobile.textContent = slideNumber;
@@ -708,38 +703,35 @@ class HeroSlider {
         this.startSlider();
     }
 
-updateActiveBar() {
-    this.sliderBars.forEach((bar, index) => {
-        const progress = bar.querySelector('.hero__slider-progress');
-        if (!progress) return;
+    updateActiveBar() {
+        this.sliderBars.forEach((bar, index) => {
+            const progress = bar.querySelector('.hero__slider-progress');
+            if (!progress) return;
 
-        // 1. Сбрасываем всё в ноль мгновенно
-        bar.classList.remove('active');
-        progress.style.transition = 'none'; 
-        progress.style.width = '0%';
+            // Сброс состояния
+            bar.classList.remove('active');
+            progress.style.transition = 'none';
+            progress.style.width = '0%';
 
-        // 2. Для текущего слайда запускаем заполнение
-        if (index === this.currentSlide) {
-            bar.classList.add('active');
-            
-            // Используем requestAnimationFrame для идеальной синхронизации с монитором
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    progress.style.transition = `width ${this.intervalTime}ms linear`;
-                    progress.style.width = '100%';
-                });
-            });
-        }
-    });
-}
-
-
+            if (index === this.currentSlide) {
+                // Force reflow для перезапуска анимации с 0%
+                void bar.offsetWidth; 
+                
+                bar.classList.add('active');
+                // Запуск заполнения
+                progress.style.transition = `width ${this.intervalTime}ms linear`;
+                progress.style.width = '100%';
+            }
+        });
+    }
 }
 
 // Запуск
 document.addEventListener('DOMContentLoaded', () => {
     new HeroSlider();
 });
+
+
 
         // Слайдер для about секции
         class AboutSlider {
