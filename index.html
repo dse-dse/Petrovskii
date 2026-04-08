@@ -399,7 +399,7 @@
                         <img class="thumbnail" src="assets/img/сти2.png" alt="Фото 2" data-image="assets/img/сти2.png">
                         <img class="thumbnail" src="assets/img/сти3.png" alt="Фото 3" data-image="assets/img/сти3.png">
                         <img class="thumbnail" src="assets/img/сти4.png" alt="Фото 4" data-image="assets/img/сти4.png">
-                        <img class="thumbnail" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png">
+                        <img class="thumbnail" src="assets/img/сти5.png" alt="Фото 5" data-image="assets/img/сти5.png" data-full="assets/img/full/map.png">
 
                     </div>
                 </div>
@@ -1536,73 +1536,188 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     </script>
     <!-- <script src="assets/js/global-cursor.js"></script> -->
-    <script>
-        // Функционал смены изображений для галлерей проектов
-        document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.modal-close');
+    <script>// Функционал смены изображений для галлерей проектов
+// Функционал смены изображений для галлерей проектов
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    
+    // Переменные для зума
+    let scale = 1;
+    let panning = false;
+    let startX = 0;
+    let startY = 0;
+    let translateX = 0;
+    let translateY = 0;
 
-            // Функция открытия модального окна
-            function openModal(imageSrc) {
-                modalImage.src = imageSrc;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+    // Функция открытия модального окна
+    function openModal(imageSrc) {
+        // Сбрасываем трансформации
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+        
+        modalImage.src = imageSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-            // Функция закрытия модального окна
-            function closeModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-                modalImage.src = '';
-            }
+    // Функция обновления трансформации
+    function updateTransform() {
+        modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        modalImage.style.cursor = scale > 1 ? 'zoom-out' : 'zoom-in';
+    }
 
-            // Инициализация галлерей для всех проектов
-            const projectGalleries = document.querySelectorAll('.project-gallery');
+    // Функция закрытия модального окна
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        modalImage.src = '';
+        // Сбрасываем зум
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+    }
 
-            projectGalleries.forEach(gallery => {
-                const mainImage = gallery.querySelector('.main-project-image');
-                const thumbnails = gallery.querySelectorAll('.thumbnail');
+    // Зум при клике на изображение
+    modalImage.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (scale === 1) {
+            // Увеличиваем
+            scale = 2.5;
+            // Центрируем относительно точки клика
+            const rect = modalImage.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            translateX = (0.5 - x) * modalImage.clientWidth * (scale - 1);
+            translateY = (0.5 - y) * modalImage.clientHeight * (scale - 1);
+        } else {
+            // Уменьшаем обратно
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+        }
+        updateTransform();
+    });
 
-                if (mainImage && thumbnails.length > 0) {
-                    // Клик на главное фото - открытие модального окна
-                    mainImage.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        openModal(this.src);
-                    });
+    // Панаромирование при приближенном изображении (перетаскивание мышью)
+    modalImage.addEventListener('mousedown', function (e) {
+        if (scale > 1) {
+            e.preventDefault();
+            panning = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            modalImage.style.cursor = 'grabbing';
+        }
+    });
 
-                    // Клик на миниатюры - смена главного фото
-                    thumbnails.forEach(thumb => {
-                        thumb.addEventListener('click', function (e) {
-                            e.stopPropagation();
-                            const newImageSrc = this.getAttribute('data-image');
-                            if (newImageSrc) {
-                                mainImage.src = newImageSrc;
-                                thumbnails.forEach(t => t.classList.remove('active'));
-                                this.classList.add('active');
-                            }
-                        });
-                    });
+    window.addEventListener('mousemove', function (e) {
+        if (panning && scale > 1) {
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            
+            // Ограничиваем перемещение, чтобы не выходить за края
+            const maxX = (modalImage.clientWidth * (scale - 1)) / 2;
+            const maxY = (modalImage.clientHeight * (scale - 1)) / 2;
+            translateX = Math.min(maxX, Math.max(-maxX, translateX));
+            translateY = Math.min(maxY, Math.max(-maxY, translateY));
+            
+            updateTransform();
+        }
+    });
+
+    window.addEventListener('mouseup', function () {
+        panning = false;
+        if (scale > 1) {
+            modalImage.style.cursor = 'zoom-out';
+        }
+    });
+
+    // Зум колесиком мыши
+    modalImage.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        
+        const delta = e.deltaY > 0 ? -0.1 : 0.1;
+        const newScale = Math.min(3, Math.max(1, scale + delta));
+        
+        if (newScale !== scale) {
+            // Вычисляем точку зума относительно курсора
+            const rect = modalImage.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            
+            // Корректируем панаромирование
+            const deltaScale = newScale / scale;
+            translateX = (translateX - (0.5 - x) * modalImage.clientWidth * (scale - 1)) * deltaScale + (0.5 - x) * modalImage.clientWidth * (newScale - 1);
+            translateY = (translateY - (0.5 - y) * modalImage.clientHeight * (scale - 1)) * deltaScale + (0.5 - y) * modalImage.clientHeight * (newScale - 1);
+            
+            scale = newScale;
+            updateTransform();
+        }
+    });
+
+    // Инициализация галлерей для всех проектов
+    const projectGalleries = document.querySelectorAll('.project-gallery');
+
+    projectGalleries.forEach(gallery => {
+        const mainImage = gallery.querySelector('.main-project-image');
+        const thumbnails = gallery.querySelectorAll('.thumbnail');
+
+        if (mainImage && thumbnails.length > 0) {
+            // Клик на главное фото - открытие модального окна
+            mainImage.addEventListener('click', function (e) {
+                e.stopPropagation();
+                
+                // Находим активную миниатюру
+                const activeThumb = gallery.querySelector('.thumbnail.active');
+                let fullImageSrc = null;
+                
+                if (activeThumb) {
+                    fullImageSrc = activeThumb.getAttribute('data-full') || activeThumb.getAttribute('data-image');
                 }
+                
+                if (!fullImageSrc) {
+                    fullImageSrc = mainImage.src;
+                }
+                
+                openModal(fullImageSrc);
             });
 
-            // Закрытие модального окна
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
-            }
-
-            modal.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
+            // Клик на миниатюры - смена главного фото
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const newImageSrc = this.getAttribute('data-image');
+                    if (newImageSrc) {
+                        mainImage.src = newImageSrc;
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
             });
+        }
+    });
 
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        });
+    // Закрытие модального окна
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+});
     </script>
 </body>
 

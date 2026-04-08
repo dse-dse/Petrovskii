@@ -1181,50 +1181,169 @@
         });
     </script>
 
-    <script>
-        // Функционал для открытия фото на весь экран
-        document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.modal-close');
+   <script>
+    // Функционал для открытия фото на весь экран с зумом
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        // Переменные для зума
+        let scale = 1;
+        let panning = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
 
-            function openModal(imageSrc) {
-                modalImage.src = imageSrc;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+        function openModal(imageSrc) {
+            // Сбрасываем трансформации при открытии нового фото
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+            
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modalImage.src = '';
+            // Сбрасываем зум
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        }
+
+        function updateTransform() {
+            modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            modalImage.style.cursor = scale > 1 ? 'zoom-out' : 'zoom-in';
+        }
+
+        // Зум при клике на изображение
+        modalImage.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (scale === 1) {
+                // Увеличиваем
+                scale = 2.5;
+                // Центрируем относительно точки клика
+                const rect = modalImage.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                translateX = (0.5 - x) * modalImage.clientWidth * (scale - 1);
+                translateY = (0.5 - y) * modalImage.clientHeight * (scale - 1);
+            } else {
+                // Уменьшаем обратно
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
             }
+            updateTransform();
+        });
 
-            function closeModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-                modalImage.src = '';
+        // Панорамирование при приближенном изображении (перетаскивание мышью)
+        modalImage.addEventListener('mousedown', function (e) {
+            if (scale > 1) {
+                e.preventDefault();
+                panning = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                modalImage.style.cursor = 'grabbing';
             }
+        });
 
-            const mainImages = document.querySelectorAll('.main-project-image');
-            mainImages.forEach(img => {
-                img.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    openModal(this.src);
-                });
-            });
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('mousemove', function (e) {
+            if (panning && scale > 1) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                
+                // Ограничиваем перемещение, чтобы не выходить за края
+                const maxX = (modalImage.clientWidth * (scale - 1)) / 2;
+                const maxY = (modalImage.clientHeight * (scale - 1)) / 2;
+                translateX = Math.min(maxX, Math.max(-maxX, translateX));
+                translateY = Math.min(maxY, Math.max(-maxY, translateY));
+                
+                updateTransform();
             }
+        });
 
-            modal.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    closeModal();
+        window.addEventListener('mouseup', function () {
+            panning = false;
+            if (scale > 1) {
+                modalImage.style.cursor = 'zoom-out';
+            }
+        });
+
+        // Зум колесиком мыши
+        modalImage.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            
+            const delta = e.deltaY > 0 ? -0.1 : 0.1;
+            const newScale = Math.min(3, Math.max(1, scale + delta));
+            
+            if (newScale !== scale) {
+                // Вычисляем точку зума относительно курсора
+                const rect = modalImage.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                
+                // Корректируем панорамирование
+                const deltaScale = newScale / scale;
+                translateX = (translateX - (0.5 - x) * modalImage.clientWidth * (scale - 1)) * deltaScale + (0.5 - x) * modalImage.clientWidth * (newScale - 1);
+                translateY = (translateY - (0.5 - y) * modalImage.clientHeight * (scale - 1)) * deltaScale + (0.5 - y) * modalImage.clientHeight * (newScale - 1);
+                
+                scale = newScale;
+                updateTransform();
+            }
+        });
+
+        // Открытие фото при клике на главное изображение
+        const mainImages = document.querySelectorAll('.main-project-image');
+        mainImages.forEach(img => {
+            img.addEventListener('click', function (e) {
+                e.stopPropagation();
+                
+                // Находим активную миниатюру для этого проекта
+                const project = this.closest('.project');
+                const activeThumb = project ? project.querySelector('.thumbnail.active') : null;
+                let fullImageSrc = null;
+                
+                if (activeThumb) {
+                    // Пытаемся взять data-full, если нет - берём data-image
+                    fullImageSrc = activeThumb.getAttribute('data-full') || activeThumb.getAttribute('data-image');
                 }
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
+                
+                // Если всё ещё нет - берём текущий src главного фото
+                if (!fullImageSrc) {
+                    fullImageSrc = this.src;
                 }
+                
+                openModal(fullImageSrc);
             });
         });
-    </script>
+
+        // Закрытие модального окна
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    });
+</script>
 
     <script>
         // Обработка якорей в URL
