@@ -337,13 +337,16 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
 }
+.project-stage{
 
+    padding-top: 24px;
+}
 .project-desc-row {
     display: flex;
     align-items: center;
     gap: 16px;
     padding-bottom: 24px;
-    padding-top: 28px;
+   padding-top: 9px;
 }
 
 .project-desc-row h3 {
@@ -783,7 +786,7 @@ sup {
     .project-desc-row {
         padding-bottom: 16px;
         flex-wrap: wrap;
-        padding-top: 33px;
+        padding-top: 9px;
     }
 
     .project-desc-row h3 {
