@@ -265,7 +265,7 @@ body {
 .hero__title span {
     display: block;
     font-size: 48px;
-    font-style: italic;
+
 }
 
 .hero__actions {
@@ -2244,9 +2244,9 @@ body {
     }
 
     .hero__title span {
-        font-size: 36px;
+        font-size: 16px;
         display: block;
-        font-style: italic;
+    
     }
 
     /* Убираем псевдоэлемент */
@@ -2269,6 +2269,7 @@ body {
 
     /* 3. Кнопки */
     .hero__actions {
+        justify-content: center;
         order: 3;
         gap: 10px;
         margin-bottom: 20px;
@@ -2295,12 +2296,12 @@ body {
     }
 
     /* 4. Полоски слайдера */
-    /* .hero__slider-bars {
+    .hero__slider-bars {
         order: 4;
         margin: 10px 0 0 0;
         max-width: 100%;
         width: 100%;
-    } */
+    } 
 
     .hero__tag--right {
         display: none;
