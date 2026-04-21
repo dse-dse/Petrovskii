@@ -559,7 +559,12 @@ sup {
 .footer__help-icons a:hover svg {
     opacity: 1;
 }
-
+@media screen and (max-width: 1060px) {
+.projects-count-body h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+}
 /* ==================== АДАПТИВ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) ==================== */
 @media screen and (max-width: 1024px) {
     .header {
