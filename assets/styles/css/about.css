@@ -3157,3 +3157,46 @@ section, div, header, footer {
     transition: width 10s linear; /* 10s должно совпадать с вашим JS intervalTime */
 }
 
+@media screen and (max-width: 768px) {
+    .contact-btn-dark {
+        width: 233px !important;
+    }
+}.contact-btn-dark {
+    width: 233px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #000000;
+    border-radius: 64px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ffffff;
+    border: none;
+}.contact-btn-dark {
+    flex-shrink: 0;
+    width: 239px;
+    height: 61px;
+    background: #000000;
+    border-radius: 64px;
+    gap: 16px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.contact-btn-dark svg {
+    fill: #ffffff;
+}
