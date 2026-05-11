@@ -3200,3 +3200,208 @@ section, div, header, footer {
 .contact-btn-dark svg {
     fill: #ffffff;
 }
+
+
+/* =================TEXTBLOCK================= */
+.about-text-block-section{
+   padding-bottom: 64px;
+    padding-top: 125px;
+}
+.about-text-block-main{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    flex-direction: column;
+
+ 
+}
+.about-text-block-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 48px;
+}
+.about-text-block-main h3{
+    /* О поселке Петровский • 2 */
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 56px;
+line-height: 56px;
+/* identical to box height, or 100% */
+letter-spacing: -0.04em;
+
+color: #040506;
+
+
+}
+.about-text-block-main span{
+    /* Актуальные цены и планировки уточняйте у отдела продаж */
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 24px;
+/* identical to box height, or 100% */
+letter-spacing: -0.04em;
+
+color: #040506;
+
+opacity: 0.4;
+padding-bottom: 64px;
+}
+.about-text-blocks{
+    display: flex;
+    flex-direction: row;
+    margin: auto 80px;
+    column-gap: 80px;
+    padding-bottom: 32px;
+    
+}
+.about-text-block-left{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+flex: 1;
+}
+.about-text-block-right{
+display: flex;
+    flex-direction: column;
+    gap: 64px;
+    flex: 1;
+}
+.about-text-block-title-text{
+    /* Местоположение и транспортная доступность */
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 24px;
+/* identical to box height, or 100% */
+letter-spacing: -0.04em;
+
+color: #1A1C1F;
+padding-bottom: 24px;
+padding-top: 40px;
+}
+.about-text-block-main-text{
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+/* or 171% */
+letter-spacing: -0.02em;
+
+color: #2C2F37;
+
+
+}
+.about-text-block-main-text span{
+    display: flex;
+}
+.about-text-blocks-mini{
+       margin: auto 80px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+    gap: 140px;
+    justify-content: center;
+
+}
+.about-text-block-mini-left{
+    display: flex;
+    flex-direction: column;
+
+}
+.about-text-block-mini-right{
+    display: flex;
+    flex-direction: column;
+gap: 48px;
+}
+.about-text-block-mini-title{
+    /* Управляющая компания */
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 24px;
+/* identical to box height, or 100% */
+letter-spacing: -0.04em;
+
+color: #1A1C1F;
+padding-bottom: 24px;
+
+}
+.about-text-block-mini-main{
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+/* or 171% */
+letter-spacing: -0.02em;
+
+color: #2C2F37;
+
+
+}
+
+@media (max-width: 768px) {
+
+.about-text-blocks{
+    display: flex;
+    flex-direction: column;
+    margin: auto 20px;
+    column-gap: 80px;
+    padding-bottom: 32px;
+    row-gap: 32px;
+}
+.about-text-blocks-mini{
+    margin: auto 20px;
+}
+.about-text-block-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-text-block-main h3 {
+    font-size: 24px;
+}
+.about-text-block-main span{
+    font-size: 16px;
+    text-align: center;
+}
+
+.about-text-blocks-mini{
+    grid-template-columns: 1fr;
+}
+.about-text-blocks-mini{
+    gap: 48px;
+}
+
+.about-text-block-section{
+    margin: auto 20px;
+}
+.about-text-block-section{
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+}
